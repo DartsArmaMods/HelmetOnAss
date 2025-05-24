@@ -1,6 +1,6 @@
 #define MAINPREFIX z
-#define PREFIX MOD_PREFIX
-#define MOD_NAME MOD_TITLE
+#define PREFIX slh
+#define MOD_NAME Sling Helmet
 #define AUTHOR "DartRuffian"
 
 #define REQUIRED_VERSION 2.18
