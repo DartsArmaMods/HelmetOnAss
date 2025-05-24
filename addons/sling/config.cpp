@@ -10,10 +10,12 @@ class CfgPatches {
         requiredAddons[] = {
             "slh_main"
         };
-        units[] = {};
+        units[] = {"slh_groundholder"};
         weapons[] = {};
         VERSION_CONFIG;
     };
 };
 
+#include "CfgWeapons.hpp"
+#include "CfgVehicles.hpp"
 #include "CfgEventHandlers.hpp"

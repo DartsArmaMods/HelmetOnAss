@@ -3,7 +3,7 @@
 <h1 align="center">Sling Helmet</h1>
 <p align="center">
     <a href="https://github.com/DartsArmaMods/SlingHelmet/releases/latest">
-        <img src="https://img.shields.io/badge/Version-0.0.0-blue?style=flat-square" alt="Sling Helmet Version">
+        <img src="https://img.shields.io/badge/Version-1.0.0-blue?style=flat-square" alt="Sling Helmet Version">
     </a>
     <a href="https://github.com/DartsArmaMods/SlingHelmet/issues">
         <img src="https://img.shields.io/github/issues-raw/DartsArmaMods/SlingHelmet.svg?style=flat-square&label=Issues" alt="Sling Helmet Issues">
@@ -36,7 +36,7 @@ Delete this section after the project has been initially set up:
 
 For third parties, make sure to also replace `DartsArmaMods` with your Github username / organization name, and to replace `DartRuffian` with your username.
 
-**Sling Helmet** (SlingHelmet) aims to...
+**Sling Helmet** adds a simple ACE interaction and keybind to sling your helmet, facewear, and nvgs to a configurable point on your uniform.
 
 The project is entirely **open-source** and any contributions are welcome.
 

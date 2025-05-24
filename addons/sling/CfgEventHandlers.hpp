@@ -9,3 +9,35 @@ class Extended_PreInit_EventHandlers {
         init = QUOTE(call COMPILE_SCRIPT(XEH_preInit));
     };
 };
+
+class Extended_GetInMan_EventHandlers {
+    class CAManBase {
+        class ADDON {
+            getIn = QUOTE(call FUNC(handleGetInMan));
+        };
+    };
+};
+
+class Extended_GetOutMan_EventHandlers {
+    class CAManBase {
+        class ADDON {
+            getOut = QUOTE(call FUNC(handleGetOutMan));
+        };
+    };
+};
+
+class Extended_Respawn_EventHandlers {
+    class CAManBase {
+        class ADDON {
+            respawn = QUOTE(call FUNC(handleRespawn));
+        };
+    };
+};
+
+class Extended_Deleted_EventHandlers {
+    class CAManBase {
+        class ADDON {
+            deleted = QUOTE(call FUNC(handleDeleted));
+        };
+    };
+};

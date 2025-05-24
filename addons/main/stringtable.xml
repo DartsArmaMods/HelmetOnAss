@@ -1,9 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project name="SlingHelmet">
     <Package name="Main">
-        <Key ID="STR_slh_main_displayName">
-            <English>Main</English>
-        </Key>
         <Key ID="STR_slh_main_url">
             <English>https://github.com/DartsArmaMods/SlingHelmet</English>
             <Czech>https://github.com/DartsArmaMods/SlingHelmet</Czech>
