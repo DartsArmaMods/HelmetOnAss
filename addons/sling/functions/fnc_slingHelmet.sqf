@@ -49,23 +49,14 @@ _items = switch (_mode) do {
     case 1: { [] };
     case 2: { [_nvg] };
     case 3: { [_facewear] };
-    default { [_nvg, _facewear] select { getNumber (_x call CBA_fnc_getItemConfig >> QGVAR(slingWithHelmet)) == 1 } };
+    default { [_nvg, _facewear] select { _x call FUNC(getSlingParams) select 0 } };
 };
 
 _items = _items select { _x != "" };
 _items pushBack _helmet;
 
-private _uniformConfig = configFile >> "CfgWeapons" >> uniform _unit;
-private _attachPos = getArray (_uniformConfig >> QGVAR(slungHelmetPos));
-if (_attachPos isEqualTo []) then {
-    _attachPos = GVAR(defaultPos);
-};
-
-private _pitchBank = getArray (_uniformConfig >> QGVAR(slungHelmetPitchBankYaw));
-if (_pitchBank isEqualTo []) then {
-    _pitchBank = GVAR(defaultPitchBankYaw);
-};
-_pitchBank params ["_pitch", "_bank", "_yaw"];
+uniform _unit call FUNC(getSlingParams) params ["_attachPos", "_pitchBankYaw"];
+_pitchBankYaw params ["_pitch", "_bank", "_yaw"];
 
 {
     private _groundholder = createVehicle ["slh_groundholder", [0, 0, 0], [], 0, "CAN_COLLIDE"];
@@ -82,7 +73,7 @@ if (_removeCurrentItems) then {
 
 
 private _holdersToHide = _groundholders select {
-    getNumber ((getItemCargo _x select 0 select 0) call CBA_fnc_getItemConfig >> QGVAR(hideWhenSlung)) == 1;
+    (getItemCargo _x select 0 select 0) call FUNC(getSlingParams) select 1
 };
 [_unit, true, _holdersToHide] call FUNC(hideHelmet);
 _unit setVariable [QGVAR(slungHelmetHidden), count _holdersToHide == count _groundholders]; // Only mark helmet as hidden if everything is hidden
