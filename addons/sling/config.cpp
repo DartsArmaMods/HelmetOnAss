@@ -11,7 +11,7 @@ class CfgPatches {
             "slh_main",
             "ace_arsenal"
         };
-        units[] = {"slh_groundholder"};
+        units[] = {"slh_groundholder", "slh_moduleSlingHelmet"};
         weapons[] = {};
         VERSION_CONFIG;
     };
@@ -19,4 +19,5 @@ class CfgPatches {
 
 #include "CfgWeapons.hpp"
 #include "CfgVehicles.hpp"
+#include "CfgFactionClasses.hpp"
 #include "CfgEventHandlers.hpp"

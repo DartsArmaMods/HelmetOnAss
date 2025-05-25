@@ -28,6 +28,6 @@ if (hasInterface) then {
     [[6, 7, 8], QGVAR(slingHelmet), "Sling Helmet", [
         ["text", "Text", {true}, "Sling Helmet"],
         ["statement", "Statement", {true}, ""],
-        ["button", "Switch", {true}, "", {}, {ace_player call FUNC(swapHelmets); true call ace_arsenal_fnc_refresh}]
+        ["button", "Switch", {true}, "", {}, {ace_arsenal_center call FUNC(swapHelmets); true call ace_arsenal_fnc_refresh}]
     ]] call ace_arsenal_fnc_addAction;
 };

@@ -50,6 +50,27 @@ class CfgVehicles {
         };
     };
 
+    class Module_F;
+    class slh_moduleBase: Module_F {
+        scope = 0;
+        scopeCurator = 2;
+        author = AUTHOR;
+
+        category = QUOTE(ADDON);
+        function = "";
+        functionPriority = 1;
+        isGlobal = 1; // 0 = server only, 1 = global, 2 = global w/ JIP
+        isTriggerActivated = 0;
+    };
+
+    class slh_moduleSlingHelmet: slh_moduleBase {
+        scope = 1;
+        author = AUTHOR;
+        displayName = CSTRING(slingHelmet_name);
+        curatorCanAttach = 1;
+        function = QFUNC(moduleSlingHelmet);
+    };
+
     class ReammoBox;
     class slh_groundholder: ReammoBox {
         scope = 1;

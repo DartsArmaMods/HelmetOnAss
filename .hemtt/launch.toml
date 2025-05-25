@@ -9,3 +9,11 @@ presets = []
 dlc = []
 optionals = []
 parameters = []
+
+[photo]
+extends = "default"
+workshop = [
+    "1862880106", # POLPOX's Base Functions
+    "1341387001", # POLPOX's Artwork Supporter
+    "2776005424"  # Enhanced Artwork Supporter
+]
