@@ -38,20 +38,21 @@ _items = _items select { _x != "" };
 _items pushBack _helmet;
 
 private _uniformConfig = configFile >> "CfgWeapons" >> uniform _unit;
-private _attachPos = getArray (_uniformConfig >> QGVAR(slungPelmetPos));
+private _attachPos = getArray (_uniformConfig >> QGVAR(slungHelmetPos));
 if (_attachPos isEqualTo []) then {
-    _attachPos = [-0.41, 0.3, 0]; // [-0.41, 0.3, 0]
+    _attachPos = GVAR(defaultPos);
 };
 
-private _vectorDirAndUp = getArray (_uniformConfig >> QGVAR(slungPelmetDirAndUp));
-if (_vectorDirAndUp isEqualTo []) then {
-    _vectorDirAndUp = [[1, -0.8, 0], [0, 0, 1]]; // [[1, -0.8, 0], [0, 0, 1]]
+private _pitchBank = getArray (_uniformConfig >> QGVAR(slungHelmetPitchBankYaw));
+if (_pitchBank isEqualTo []) then {
+    _pitchBank = GVAR(defaultPitchBankYaw);
 };
+_pitchBank params ["_pitch", "_bank", "_yaw"];
 
 {
     private _groundholder = createVehicle ["slh_groundholder", [0, 0, 0], [], 0, "CAN_COLLIDE"];
     _groundholder attachTo [_unit, _attachPos, "pelvis", true];
-    _groundholder setVectorDirAndUp _vectorDirAndUp;
+    [_groundholder, _pitch, _bank, _yaw] call ace_common_fnc_setPitchBankYaw;
     _groundholder addItemCargoGlobal [_x, 1];
     _groundholders pushBack _groundholder;
 } forEach _items;
