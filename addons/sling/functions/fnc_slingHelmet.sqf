@@ -11,6 +11,7 @@
  *    2: Helmet and nvg
  *    3: Helmet and facewear
  * 2: Items to sling (optional, default: equipped gear) <ARRAY>
+ * 3: Remove current items (optional, default: true) <BOOL>
  *
  * Return Value:
  * None
@@ -21,7 +22,7 @@
  * Public: No
  */
 
-params ["_unit", ["_mode", 0], ["_items", []]];
+params ["_unit", ["_mode", 0], ["_items", []], ["_removeCurrentItems", true]];
 TRACE_2("fnc_slingHelmet",_unit,_mode);
 
 if (_items isEqualTo []) then {
@@ -74,6 +75,8 @@ _pitchBank params ["_pitch", "_bank", "_yaw"];
     _groundholders pushBack _groundholder;
 } forEach _items;
 
-removeHeadgear _unit;
-{ _unit unlinkItem _x } forEach _items;
+if (_removeCurrentItems) then {
+    removeHeadgear _unit;
+    { _unit unlinkItem _x } forEach _items;
+};
 _unit setVariable [QGVAR(slungHelmetItems), _groundholders, true];

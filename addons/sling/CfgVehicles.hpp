@@ -4,7 +4,7 @@ class CfgVehicles {
         class ACE_SelfActions {
             class slh_slingHelmet {
                 displayName = CSTRING(slingHelmet_name);
-                condition = QUOTE(headgear _player != '');
+                condition = QUOTE(_player call FUNC(canSlingHelmet));
                 statement = QUOTE(_player call FUNC(slingHelmet));
 
                 class slh_slingHelmet_helmet {
@@ -26,13 +26,13 @@ class CfgVehicles {
 
             class slh_unslingHelmet {
                 displayName = CSTRING(unslingHelmet_name);
-                condition = QUOTE(headgear _player == '');
+                condition = QUOTE(_player call FUNC(canUnslingHelmet));
                 statement = QUOTE(_player call FUNC(unslingHelmet));
             };
 
             class slh_swapHelmets {
                 displayName = CSTRING(swapHelmets_name);
-                condition = QUOTE(headgear _player != '' && { _player getVariable [ARR_2(QQGVAR(slungHelmetItems),[])] isNotEqualTo [] });
+                condition = QUOTE(_player call FUNC(canSwapHelmets));
                 statement = QUOTE(_player call FUNC(swapHelmets));
             };
         };

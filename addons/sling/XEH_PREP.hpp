@@ -1,3 +1,6 @@
+PREP(canSlingHelmet);
+PREP(canSwapHelmets);
+PREP(canUnslingHelmet);
 PREP(handleDeleted);
 PREP(handleGetInMan);
 PREP(handleGetOutMan);
