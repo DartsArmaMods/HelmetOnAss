@@ -41,10 +41,14 @@ For third parties, make sure to also replace `DartsArmaMods` with your Github us
 The project is entirely **open-source** and any contributions are welcome.
 
 ## Core Features
-- Feature
+- Ability to sling your worn helmet to a customizable position.
+  - For modders, helmet positions / angles are configured per-uniform
+- ACE Arsenal action to sling / swap your helmet.
 
 ## Contributing
 For new contributers, see the [Contributing Setup & Guidelines](./.github/CONTRIBUTING.md).
 
 ## License
 Sling Helmet is licensed under [APL-ND](./LICENSE.md).
+
+Sling Helmet uses a custom model for the ground holder that helmets are placed in, this model is a reupload (with permission) of the model from [GRAD_slingHelmet](https://github.com/gruppe-adler/grad_slingHelmet/blob/master/addons/main/model.p3d) and is instead licensed under the [GRAD APL](https://github.com/gruppe-adler/grad_slingHelmet/blob/master/LICENSE) license.
