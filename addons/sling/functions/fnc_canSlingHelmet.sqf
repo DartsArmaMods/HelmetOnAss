@@ -10,7 +10,7 @@
  * True if helmet can be slung, otherwise false
  *
  * Example:
- * player call slh_sling_fnc_canSlingHelmet
+ * player call hoa_sling_fnc_canSlingHelmet
  *
  * Public: No
  */

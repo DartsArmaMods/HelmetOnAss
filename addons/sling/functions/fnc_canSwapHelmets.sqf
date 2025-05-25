@@ -10,7 +10,7 @@
  * True if helmets can be swapped, otherwise false <BOOL>
  *
  * Example:
- * player call slh_sling_fnc_canSwapHelmets
+ * player call hoa_sling_fnc_canSwapHelmets
  *
  * Public: No
  */

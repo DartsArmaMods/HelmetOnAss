@@ -1,6 +1,6 @@
 #define MAINPREFIX z
-#define PREFIX slh
-#define MOD_NAME Sling Helmet
+#define PREFIX hoa
+#define MOD_NAME Helmet on Ass
 #define AUTHOR "DartRuffian"
 
 #define REQUIRED_VERSION 2.18

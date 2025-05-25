@@ -12,7 +12,7 @@
  * None
  *
  * Example:
- * player call slh_sling_fnc_hideHelmet
+ * player call hoa_sling_fnc_hideHelmet
  *
  * Public: No
  */

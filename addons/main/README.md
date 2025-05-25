@@ -1,4 +1,4 @@
-slh_main
+hoa_main
 ===================
 
-Main Addon for Sling Helmet
+Main Addon for Helmet on Ass

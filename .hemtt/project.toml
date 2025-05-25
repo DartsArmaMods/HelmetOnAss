@@ -1,6 +1,6 @@
-name = "Sling Helmet"
+name = "Helmet on Ass"
 author = "DartRuffian"
-prefix = "slh"
+prefix = "hoa"
 mainprefix = "z"
 
 [version]
@@ -11,8 +11,8 @@ git_hash = 0
 include = [
     "mod.cpp",
     "meta.cpp",
-    "logo_slh.png",
-    "logo_slh_ca.paa",
+    "logo_hoa.png",
+    "logo_hoa_ca.paa",
     "LICENSE.md",
     "README.md",
 ]

@@ -10,7 +10,7 @@
  * None
  *
  * Example:
- * [] call slh_addonName_fnc_empty;
+ * [] call hoa_addonName_fnc_empty;
  *
  * Public: No
  */

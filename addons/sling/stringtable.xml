@@ -1,61 +1,61 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Project name="SlingHelmet">
+<Project name="HelmetOnAss">
     <Package name="Sling">
-        <Key ID="STR_slh_sling_displayName">
+        <Key ID="STR_hoa_sling_displayName">
             <English>Sling</English>
         </Key>
-        <Key ID="STR_slh_sling_enabled_name">
+        <Key ID="STR_hoa_sling_enabled_name">
             <English>Enabled</English>
         </Key>
-        <Key ID="STR_slh_sling_enabled_tooltip">
+        <Key ID="STR_hoa_sling_enabled_tooltip">
             <English>Enables or disables helmet slinging</English>
         </Key>
-        <Key ID="STR_slh_sling_hideHelmet_name">
+        <Key ID="STR_hoa_sling_hideHelmet_name">
             <English>Hide Slung Helmet</English>
         </Key>
-        <Key ID="STR_slh_sling_hideHelmet_tooltip">
+        <Key ID="STR_hoa_sling_hideHelmet_tooltip">
             <English>Hides your slung helmet.</English>
         </Key>
-        <Key ID="STR_slh_sling_slingHelmet_helmetFacewear_name">
+        <Key ID="STR_hoa_sling_slingHelmet_helmetFacewear_name">
             <English>Sling Helmet (Helmet + Facewear)</English>
         </Key>
-        <Key ID="STR_slh_sling_slingHelmet_helmetFacewear_tooltip">
+        <Key ID="STR_hoa_sling_slingHelmet_helmetFacewear_tooltip">
             <English>Slings your helmet and facewear.</English>
         </Key>
-        <Key ID="STR_slh_sling_slingHelmet_helmetNVG_name">
+        <Key ID="STR_hoa_sling_slingHelmet_helmetNVG_name">
             <English>Sling Helmet (Helmet + NVG)</English>
         </Key>
-        <Key ID="STR_slh_sling_slingHelmet_helmetNVG_tooltip">
+        <Key ID="STR_hoa_sling_slingHelmet_helmetNVG_tooltip">
             <English>Slings your helmet and nvgs.</English>
         </Key>
-        <Key ID="STR_slh_sling_slingHelmet_helmet_name">
+        <Key ID="STR_hoa_sling_slingHelmet_helmet_name">
             <English>Sling Helmet (Helmet)</English>
         </Key>
-        <Key ID="STR_slh_sling_slingHelmet_helmet_tooltip">
+        <Key ID="STR_hoa_sling_slingHelmet_helmet_tooltip">
             <English>Slings your helmet.</English>
         </Key>
-        <Key ID="STR_slh_sling_slingHelmet_name">
+        <Key ID="STR_hoa_sling_slingHelmet_name">
             <English>Sling Helmet</English>
         </Key>
-        <Key ID="STR_slh_sling_slingHelmet_tooltip">
+        <Key ID="STR_hoa_sling_slingHelmet_tooltip">
             <English>Slings your helmet, facewear, and nvg based on their configuration.</English>
         </Key>
-        <Key ID="STR_slh_sling_swapHelmets_name">
+        <Key ID="STR_hoa_sling_swapHelmets_name">
             <English>Swap Helmets</English>
         </Key>
-        <Key ID="STR_slh_sling_swapHelmets_tooltip">
+        <Key ID="STR_hoa_sling_swapHelmets_tooltip">
             <English>Swaps your equipped helmet with your slung helmet.</English>
         </Key>
-        <Key ID="STR_slh_sling_unhideHelmet_name">
+        <Key ID="STR_hoa_sling_unhideHelmet_name">
             <English>Unhide Slung Helmet</English>
         </Key>
-        <Key ID="STR_slh_sling_unhideHelmet_tooltip">
+        <Key ID="STR_hoa_sling_unhideHelmet_tooltip">
             <English>Unhides your slung helmet.</English>
         </Key>
-        <Key ID="STR_slh_sling_unslingHelmet_name">
+        <Key ID="STR_hoa_sling_unslingHelmet_name">
             <English>Unsling Helmet</English>
         </Key>
-        <Key ID="STR_slh_sling_unslingHelmet_tooltip">
+        <Key ID="STR_hoa_sling_unslingHelmet_tooltip">
             <English>Unslings your helmet.</English>
         </Key>
     </Package>

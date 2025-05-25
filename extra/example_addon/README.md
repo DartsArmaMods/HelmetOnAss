@@ -1,4 +1,4 @@
-slh_addonName
+hoa_addonName
 ===================
 
 Description for this addon

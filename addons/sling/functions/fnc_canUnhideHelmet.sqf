@@ -10,7 +10,7 @@
  * True if helmet can be unhidden, otherwise false
  *
  * Example:
- * player call slh_sling_fnc_canUnhideHelmet
+ * player call hoa_sling_fnc_canUnhideHelmet
  *
  * Public: No
  */

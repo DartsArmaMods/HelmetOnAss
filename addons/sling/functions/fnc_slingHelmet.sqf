@@ -17,7 +17,7 @@
  * None
  *
  * Example:
- * player call slh_sling_fnc_slingHelmet;
+ * player call hoa_sling_fnc_slingHelmet;
  *
  * Public: No
  */
@@ -59,7 +59,7 @@ uniform _unit call FUNC(getSlingParams) params ["_attachPos", "_pitchBankYaw"];
 _pitchBankYaw params ["_pitch", "_bank", "_yaw"];
 
 {
-    private _groundholder = createVehicle ["slh_groundholder", [0, 0, 0], [], 0, "CAN_COLLIDE"];
+    private _groundholder = createVehicle ["hoa_groundholder", [0, 0, 0], [], 0, "CAN_COLLIDE"];
     _groundholder attachTo [_unit, _attachPos, "pelvis", true];
     [_groundholder, _pitch, _bank, _yaw] call ace_common_fnc_setPitchBankYaw;
     _groundholder addItemCargoGlobal [_x, 1];

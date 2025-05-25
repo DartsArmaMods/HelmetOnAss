@@ -11,7 +11,7 @@
  * None
  *
  * Example:
- * [_logic, "message"] call slh_sling_fnc_errorAndClose
+ * [_logic, "message"] call hoa_sling_fnc_errorAndClose
  *
  * Public: No
  */

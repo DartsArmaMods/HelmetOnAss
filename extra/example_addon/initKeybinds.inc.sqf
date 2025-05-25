@@ -1,4 +1,4 @@
-#include "\z\slh\addons\main\data\hpp\defineDIKCodes.hpp"
+#include "\z\hoa\addons\main\data\hpp\defineDIKCodes.hpp"
 
 [
     _category, QGVAR(key_doTheThing),

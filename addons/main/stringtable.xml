@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Project name="SlingHelmet">
+<Project name="HelmetOnAss">
     <Package name="Main">
-        <Key ID="STR_slh_main_url">
-            <English>https://github.com/DartsArmaMods/SlingHelmet</English>
-            <Czech>https://github.com/DartsArmaMods/SlingHelmet</Czech>
-            <French>https://github.com/DartsArmaMods/SlingHelmet</French>
-            <Spanish>https://github.com/DartsArmaMods/SlingHelmet</Spanish>
-            <Italian>https://github.com/DartsArmaMods/SlingHelmet</Italian>
-            <Polish>https://github.com/DartsArmaMods/SlingHelmet</Polish>
-            <Portuguese>https://github.com/DartsArmaMods/SlingHelmet</Portuguese>
-            <Russian>https://github.com/DartsArmaMods/SlingHelmet</Russian>
-            <German>https://github.com/DartsArmaMods/SlingHelmet</German>
-            <Korean>https://github.com/DartsArmaMods/SlingHelmet</Korean>
-            <Japanese>https://github.com/DartsArmaMods/SlingHelmet</Japanese>
-            <Chinese>https://github.com/DartsArmaMods/SlingHelmet</Chinese>
-            <Chinesesimp>https://github.com/DartsArmaMods/SlingHelmet</Chinesesimp>
-            <Turkish>https://github.com/DartsArmaMods/SlingHelmet</Turkish>
+        <Key ID="STR_hoa_main_url">
+            <English>https://github.com/DartsArmaMods/HelmetOnAss</English>
+            <Czech>https://github.com/DartsArmaMods/HelmetOnAss</Czech>
+            <French>https://github.com/DartsArmaMods/HelmetOnAss</French>
+            <Spanish>https://github.com/DartsArmaMods/HelmetOnAss</Spanish>
+            <Italian>https://github.com/DartsArmaMods/HelmetOnAss</Italian>
+            <Polish>https://github.com/DartsArmaMods/HelmetOnAss</Polish>
+            <Portuguese>https://github.com/DartsArmaMods/HelmetOnAss</Portuguese>
+            <Russian>https://github.com/DartsArmaMods/HelmetOnAss</Russian>
+            <German>https://github.com/DartsArmaMods/HelmetOnAss</German>
+            <Korean>https://github.com/DartsArmaMods/HelmetOnAss</Korean>
+            <Japanese>https://github.com/DartsArmaMods/HelmetOnAss</Japanese>
+            <Chinese>https://github.com/DartsArmaMods/HelmetOnAss</Chinese>
+            <Chinesesimp>https://github.com/DartsArmaMods/HelmetOnAss</Chinesesimp>
+            <Turkish>https://github.com/DartsArmaMods/HelmetOnAss</Turkish>
         </Key>
     </Package>
 </Project>

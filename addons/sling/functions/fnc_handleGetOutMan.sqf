@@ -14,7 +14,7 @@
  * None
  *
  * Example:
- * player call slh_sling_fnc_handleGetOutMan
+ * player call hoa_sling_fnc_handleGetOutMan
  *
  * Public: No
  */

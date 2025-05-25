@@ -2,47 +2,47 @@ class CfgVehicles {
     class Man;
     class CAManBase: Man {
         class ACE_SelfActions {
-            class slh_slingHelmet {
+            class hoa_slingHelmet {
                 displayName = CSTRING(slingHelmet_name);
                 condition = QUOTE(_player call FUNC(canSlingHelmet));
                 statement = QUOTE(_player call FUNC(slingHelmet));
 
-                class slh_slingHelmet_helmet {
+                class hoa_slingHelmet_helmet {
                     displayName = CSTRING(slingHelmet_helmet_name);
                     condition = "true";
                     statement = QUOTE([ARR_2(_player,1)] call FUNC(slingHelmet));
                 };
-                class slh_slingHelmet_helmetNVG {
+                class hoa_slingHelmet_helmetNVG {
                     displayName = CSTRING(slingHelmet_helmetNVG_name);
                     condition = "true";
                     statement = QUOTE([ARR_2(_player,2)] call FUNC(slingHelmet));
                 };
-                class slh_slingHelmet_helmetFacewear {
+                class hoa_slingHelmet_helmetFacewear {
                     displayName = CSTRING(slingHelmet_helmetFacewear_name);
                     condition = "true";
                     statement = QUOTE([ARR_2(_player,3)] call FUNC(slingHelmet));
                 };
             };
 
-            class slh_unslingHelmet {
+            class hoa_unslingHelmet {
                 displayName = CSTRING(unslingHelmet_name);
                 condition = QUOTE(_player call FUNC(canUnslingHelmet));
                 statement = QUOTE(_player call FUNC(unslingHelmet));
             };
 
-            class slh_swapHelmets {
+            class hoa_swapHelmets {
                 displayName = CSTRING(swapHelmets_name);
                 condition = QUOTE(_player call FUNC(canSwapHelmets));
                 statement = QUOTE(_player call FUNC(swapHelmets));
             };
 
-            class slh_hideSlungHelmet {
+            class hoa_hideSlungHelmet {
                 displayName = CSTRING(hideHelmet_name);
                 condition = QUOTE(_player call FUNC(canHideHelmet));
                 statement = QUOTE(_player call FUNC(hideHelmet));
             };
 
-            class slh_unhideSlungHelmet {
+            class hoa_unhideSlungHelmet {
                 displayName = CSTRING(unhideHelmet_name);
                 condition = QUOTE(_player call FUNC(canUnhideHelmet));
                 statement = QUOTE([ARR_2(_player,false)] call FUNC(hideHelmet));
@@ -51,7 +51,7 @@ class CfgVehicles {
     };
 
     class Module_F;
-    class slh_moduleBase: Module_F {
+    class hoa_moduleBase: Module_F {
         scope = 0;
         scopeCurator = 2;
         author = AUTHOR;
@@ -63,7 +63,7 @@ class CfgVehicles {
         isTriggerActivated = 0;
     };
 
-    class slh_moduleSlingHelmet: slh_moduleBase {
+    class hoa_moduleSlingHelmet: hoa_moduleBase {
         scope = 1;
         author = AUTHOR;
         displayName = CSTRING(slingHelmet_name);
@@ -72,11 +72,11 @@ class CfgVehicles {
     };
 
     class ReammoBox;
-    class slh_groundholder: ReammoBox {
+    class hoa_groundholder: ReammoBox {
         scope = 1;
         author = AUTHOR;
 
-        model = QPATHTOF(slh_groundholder.p3d);
+        model = QPATHTOF(hoa_groundholder.p3d);
         icon = "iconObject_1x1";
         mapSize = 1.39;
         accuracy = 0.2;

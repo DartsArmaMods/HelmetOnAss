@@ -10,7 +10,7 @@
  * Return description <NONE>
  *
  * Example:
- * _logic call slh_sling_fnc_moduleSlingHelmet
+ * _logic call hoa_sling_fnc_moduleSlingHelmet
  *
  * Public: No
  */

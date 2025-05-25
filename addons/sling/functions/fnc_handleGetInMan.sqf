@@ -13,7 +13,7 @@
  * None
  *
  * Example:
- * player call slh_sling_fnc_handleGetInMan
+ * player call hoa_sling_fnc_handleGetInMan
  *
  * Public: No
  */

@@ -10,7 +10,7 @@
  * None
  *
  * Example:
- * player call slh_sling_fnc_handleDeleted
+ * player call hoa_sling_fnc_handleDeleted
  *
  * Public: No
  */

@@ -8,7 +8,7 @@ class CfgPatches {
         name = COMPONENT_NAME;
         requiredVersion = REQUIRED_VERSION;
         requiredAddons[] = {
-            "slh_main"
+            "hoa_main"
         };
         units[] = {};
         weapons[] = {};

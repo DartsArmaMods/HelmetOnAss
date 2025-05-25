@@ -12,7 +12,7 @@
  *   - 1: Hide when slung <BOOL>
  *
  * Example:
- * "H_HelmetHBK_headset_F" call slh_sling_fnc_getSlingParams
+ * "H_HelmetHBK_headset_F" call hoa_sling_fnc_getSlingParams
  *
  * Public: No
  */

@@ -8,10 +8,10 @@ class CfgPatches {
         name = COMPONENT_NAME;
         requiredVersion = REQUIRED_VERSION;
         requiredAddons[] = {
-            "slh_main",
+            "hoa_main",
             "ace_arsenal"
         };
-        units[] = {"slh_groundholder", "slh_moduleSlingHelmet"};
+        units[] = {"hoa_groundholder", "hoa_moduleSlingHelmet"};
         weapons[] = {};
         VERSION_CONFIG;
     };
