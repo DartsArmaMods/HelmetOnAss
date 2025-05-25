@@ -8,8 +8,8 @@
     <a href="https://github.com/DartsArmaMods/HelmetOnAss/issues">
         <img src="https://img.shields.io/github/issues-raw/DartsArmaMods/HelmetOnAss.svg?style=flat-square&label=Issues" alt="Helmet on Ass Issues">
     </a>
-    <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=MOD_ID">
-        <img src="https://img.shields.io/steam/downloads/MOD_ID.svg?style=flat-square&label=Downloads" alt="Helmet on Ass Downloads">
+    <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3487820370">
+        <img src="https://img.shields.io/steam/downloads/3487820370.svg?style=flat-square&label=Downloads" alt="Helmet on Ass Downloads">
     </a>
     <a href="https://github.com/DartsArmaMods/HelmetOnAss/blob/master/LICENSE">
         <img src="https://img.shields.io/badge/License-APL ND-red?style=flat-square" alt="Helmet on Ass License">
@@ -22,19 +22,6 @@
 <p align="center">
     <b>Requires the latest version of <a href="https://github.com/CBATeam/CBA_A3/releases/latest">CBA</a> and <a href="https://github.com/acemod/ACE3/releases/latest">ACE3</a></b>
 </p>
-
-# Initial Project Setup!
-Delete this section after the project has been initially set up:
-1. Find and replace all instances of `Helmet on Ass` with the mod's name.
-2. Find and replace all instances of `HelmetOnAss` with the mod's name *and no spaces*.
-   - This should be the name of the repository on GitHub.
-3. Find and replace all instances of `hoa` with the mod's prefix.
-   - This should be all lowercase.
-4. Find and replace all instances of `HelmetOnAss` with the mod's acronym.
-   - This should be all uppercase.
-5. After the initial Steam upload, find and replace all instances of `MOD_ID` with the mod's Steam Workshop id.
-
-For third parties, make sure to also replace `DartsArmaMods` with your Github username / organization name, and to replace `DartRuffian` with your username.
 
 **Helmet on Ass** adds a simple ACE interaction and keybind to sling your helmet, facewear, and nvgs to a configurable point on your uniform.
 
