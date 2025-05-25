@@ -32,3 +32,4 @@ deleteVehicle _helmetGH;
 
 deleteVehicle _groundholders;
 _unit setVariable [QGVAR(slungHelmetItems), nil, true];
+[QGVAR(helmetUnslung), [_unit], _unit] call CBA_fnc_targetEvent;
