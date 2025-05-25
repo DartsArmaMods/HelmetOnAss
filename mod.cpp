@@ -1,5 +1,5 @@
 author = "DartRuffian";
-name = "Helmet on Ass";
+name = "Helmet on Ass - Helmet Slinging";
 description = "Helmet on Ass - Version 0.0.0";
 overview = "";
 overviewPicture = "logo_hoa_ca.paa";

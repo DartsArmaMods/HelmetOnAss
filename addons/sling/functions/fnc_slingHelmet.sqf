@@ -55,7 +55,13 @@ _items = switch (_mode) do {
 _items = _items select { _x != "" };
 _items pushBack _helmet;
 
-uniform _unit call FUNC(getSlingParams) params ["_attachPos", "_pitchBankYaw"];
+private _uniform = uniform _unit;
+if (_uniform != "") then {
+    _uniform call FUNC(getSlingParams) params ["_attachPos", "_pitchBankYaw"];
+} else {
+    _attachPos = GVAR(defaultPos);
+    _pitchBankYaw = GVAR(defaultPitchBankYaw);
+};
 _pitchBankYaw params ["_pitch", "_bank", "_yaw"];
 
 {
