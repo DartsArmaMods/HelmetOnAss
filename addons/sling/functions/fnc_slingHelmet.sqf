@@ -49,7 +49,7 @@ _items = switch (_mode) do {
     case 1: { [] };
     case 2: { [_nvg] };
     case 3: { [_facewear] };
-    default { [_nvg, _facewear] select { getNumber (_x call CBA_fnc_getItemConfig >> QGVAR(slingWithHelmet)) == 1} };
+    default { [_nvg, _facewear] select { getNumber (_x call CBA_fnc_getItemConfig >> QGVAR(slingWithHelmet)) == 1 } };
 };
 
 _items = _items select { _x != "" };
