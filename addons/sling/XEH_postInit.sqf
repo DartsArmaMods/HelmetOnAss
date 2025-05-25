@@ -13,7 +13,7 @@
 
 ["CBA_loadoutGet", {
     params ["_unit", "_loadout", "_extendedInfo"];
-    private _items = (_unit getVariable [QGVAR(slungHelmetItems), []]) apply { getItemCargo _x select 0 select 0};
+    private _items = (_unit getVariable [QGVAR(slungHelmetItems), []]) apply { getItemCargo _x select 0 select 0 };
     _extendedInfo set [QGVAR(slungHelmetItems), _items];
 }] call CBA_fnc_addEventHandler;
 

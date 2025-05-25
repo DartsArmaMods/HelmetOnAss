@@ -79,6 +79,13 @@ if (_removeCurrentItems) then {
     removeHeadgear _unit;
     { _unit unlinkItem _x } forEach _items;
 };
+
+
+private _holdersToHide = _groundholders select {
+    getNumber ((getItemCargo _x select 0 select 0) call CBA_fnc_getItemConfig >> QGVAR(hideWhenSlung)) == 1;
+};
+[_unit, true, _holdersToHide] call FUNC(hideHelmet);
+_unit setVariable [QGVAR(slungHelmetHidden), count _holdersToHide == count _groundholders]; // Only mark helmet as hidden if everything is hidden
+
 _unit setVariable [QGVAR(slungHelmetItems), _groundholders, true];
-_unit setVariable [QGVAR(slungHelmetHidden), false];
 [QGVAR(helmetSlung), [_unit, _groundholders], _unit] call CBA_fnc_targetEvent;

@@ -1,5 +1,5 @@
-#define COMPONENT compat_kat
-#define COMPONENT_BEAUTIFIED KAT Compatibility
+#define COMPONENT compat_remasteredhair
+#define COMPONENT_BEAUTIFIED Remastered Hair Compatibility
 #include "\z\slh\addons\main\script_mod.hpp"
 
 // #define DEBUG_MODE_FULL
