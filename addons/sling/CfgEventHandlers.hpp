@@ -19,7 +19,7 @@ class Extended_PostInit_EventHandlers {
 class Extended_GetInMan_EventHandlers {
     class CAManBase {
         class ADDON {
-            getIn = QUOTE(call FUNC(handleGetInMan));
+            getInMan = QUOTE(call FUNC(handleGetInMan));
         };
     };
 };
@@ -27,7 +27,7 @@ class Extended_GetInMan_EventHandlers {
 class Extended_GetOutMan_EventHandlers {
     class CAManBase {
         class ADDON {
-            getOut = QUOTE(call FUNC(handleGetOutMan));
+            getOutMan = QUOTE(call FUNC(handleGetOutMan));
         };
     };
 };
