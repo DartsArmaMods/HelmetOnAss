@@ -71,7 +71,6 @@ if (_removeCurrentItems) then {
     { _unit unlinkItem _x } forEach _items;
 };
 
-
 private _holdersToHide = _groundholders select {
     (getItemCargo _x select 0 select 0) call FUNC(getSlingParams) select 1
 };
