@@ -21,3 +21,4 @@ TRACE_1("fnc_handleRespawn",_unit);
 if (!local _unit) exitWith {};
 
 _unit setVariable [QGVAR(slungHelmetItems), nil, true];
+_unit setVariable [QGVAR(slungHelmetHidden), nil, true];

@@ -53,3 +53,21 @@
         };
     }, {}, []
 ] call CBA_fnc_addKeybind;
+
+[
+    _category, QGVAR(key_hideHelmet),
+    [LSTRING(hideHelmet_name), LSTRING(hideHelmet_tooltip)], {
+        if (ace_player call FUNC(hideHelmet)) then {
+            ace_player call FUNC(hideHelmet);
+        };
+    }, {}, []
+] call CBA_fnc_addKeybind;
+
+[
+    _category, QGVAR(key_unhideHelmet),
+    [LSTRING(unhideHelmet_name), LSTRING(unhideHelmet_tooltip)], {
+        if (ace_player call FUNC(unhideHelmet)) then {
+            [ace_player, false] call FUNC(hideHelmet);
+        };
+    }, {}, []
+] call CBA_fnc_addKeybind;

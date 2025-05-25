@@ -17,6 +17,13 @@
     _extendedInfo set [QGVAR(slungHelmetItems), _items];
 }] call CBA_fnc_addEventHandler;
 
+if (isServer) then {
+    [QGVAR(hideObjects), {
+        params ["_objects", "_set"];
+        { _x hideObjectGlobal _set } forEach _objects;
+    }] call CBA_fnc_addEventHandler;
+};
+
 if (hasInterface) then {
     [[6, 7, 8], QGVAR(slingHelmet), "Sling Helmet", [
         ["text", "Text", {true}, "Sling Helmet"],

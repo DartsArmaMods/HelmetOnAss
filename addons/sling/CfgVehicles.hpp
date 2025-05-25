@@ -35,6 +35,18 @@ class CfgVehicles {
                 condition = QUOTE(_player call FUNC(canSwapHelmets));
                 statement = QUOTE(_player call FUNC(swapHelmets));
             };
+
+            class slh_hideSlungHelmet {
+                displayName = CSTRING(hideHelmet_name);
+                condition = QUOTE(_player call FUNC(canHideHelmet));
+                statement = QUOTE(_player call FUNC(hideHelmet));
+            };
+
+            class slh_unhideSlungHelmet {
+                displayName = CSTRING(unhideHelmet_name);
+                condition = QUOTE(_player call FUNC(canUnhideHelmet));
+                statement = QUOTE([ARR_2(_player,false)] call FUNC(hideHelmet));
+            };
         };
     };
 

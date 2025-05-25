@@ -80,4 +80,5 @@ if (_removeCurrentItems) then {
     { _unit unlinkItem _x } forEach _items;
 };
 _unit setVariable [QGVAR(slungHelmetItems), _groundholders, true];
+_unit setVariable [QGVAR(slungHelmetHidden), false];
 [QGVAR(helmetSlung), [_unit, _groundholders], _unit] call CBA_fnc_targetEvent;

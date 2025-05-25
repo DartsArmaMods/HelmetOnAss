@@ -10,6 +10,12 @@
         <Key ID="STR_slh_sling_enabled_tooltip">
             <English>Enables or disables helmet slinging</English>
         </Key>
+        <Key ID="STR_slh_sling_hideHelmet_name">
+            <English>Hide Slung Helmet</English>
+        </Key>
+        <Key ID="STR_slh_sling_hideHelmet_tooltip">
+            <English>Hides your slung helmet.</English>
+        </Key>
         <Key ID="STR_slh_sling_slingHelmet_helmetFacewear_name">
             <English>Sling Helmet (Helmet + Facewear)</English>
         </Key>
@@ -39,6 +45,12 @@
         </Key>
         <Key ID="STR_slh_sling_swapHelmets_tooltip">
             <English>Swaps your equipped helmet with your slung helmet.</English>
+        </Key>
+        <Key ID="STR_slh_sling_unhideHelmet_name">
+            <English>Unhide Slung Helmet</English>
+        </Key>
+        <Key ID="STR_slh_sling_unhideHelmet_tooltip">
+            <English>Unhides your slung helmet.</English>
         </Key>
         <Key ID="STR_slh_sling_unslingHelmet_name">
             <English>Unsling Helmet</English>
