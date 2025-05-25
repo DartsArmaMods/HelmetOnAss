@@ -10,6 +10,7 @@
  *    1: Helmet only
  *    2: Helmet and nvg
  *    3: Helmet and facewear
+ * 2: Items to sling (optional, default: equipped gear) <ARRAY>
  *
  * Return Value:
  * None
@@ -20,18 +21,34 @@
  * Public: No
  */
 
-params ["_unit", ["_mode", 0]];
+params ["_unit", ["_mode", 0], ["_items", []]];
 TRACE_2("fnc_slingHelmet",_unit,_mode);
 
-private _helmet = headgear _unit;
+if (_items isEqualTo []) then {
+    _items = [headgear _unit, hmd _unit, goggles _unit];
+} else {
+    private _itemTypes = _items apply { (_x call ace_common_fnc_getItemType) select 1 };
+    private _itemsTemp = _items;
+    _items = +_items;
+    {
+        if (_x == -1) then {
+            _items set [_forEachIndex, ""];
+        } else {
+            _items set [_forEachIndex, _itemsTemp select _x];
+        };
+    } forEach [_itemTypes find "headgear", _itemTypes find "hmd", _itemTypes find "glasses"];
+    _items resize 3;
+};
+_items params ["_helmet", "_nvg", "_facewear"];
+
 private _groundholders = _unit getVariable [QGVAR(slungHelmetItems), []];
 if (_helmet == "" || _groundholders isNotEqualTo []) exitWith {};
 
-private _items = switch (_mode) do {
+_items = switch (_mode) do {
     case 1: { [] };
-    case 2: { [hmd _unit] };
-    case 3: { [goggles _unit] };
-    default { [hmd _unit, goggles _unit] select { getNumber (_x call CBA_fnc_getItemConfig >> QGVAR(slingWithHelmet)) == 1} };
+    case 2: { [_nvg] };
+    case 3: { [_facewear] };
+    default { [_nvg, _facewear] select { getNumber (_x call CBA_fnc_getItemConfig >> QGVAR(slingWithHelmet)) == 1} };
 };
 
 _items = _items select { _x != "" };
