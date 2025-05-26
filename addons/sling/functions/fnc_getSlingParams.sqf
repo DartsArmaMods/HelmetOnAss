@@ -41,7 +41,7 @@ if (_type == "uniform") then {
 } else {
     GVAR(slingCache) getOrDefaultCall [_item, {
         [
-            _type == "headgear" || getNumber (_itemConfig >> QGVAR(slingWithHelmet)) == 1,
+            _type == "headgear" || { getNumber (_itemConfig >> QGVAR(slingWithHelmet)) == 1 },
             getNumber (_itemConfig >> QGVAR(hideWhenSlung)) == 1
         ] // return
     }, true];

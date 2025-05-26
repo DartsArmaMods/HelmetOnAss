@@ -56,8 +56,11 @@ _items = _items select { _x != "" };
 _items pushBack _helmet;
 
 private _uniform = uniform _unit;
+private ["_attachPos", "_pitchBankYaw"];
 if (_uniform != "") then {
-    _uniform call FUNC(getSlingParams) params ["_attachPos", "_pitchBankYaw"];
+    private _return = _uniform call FUNC(getSlingParams);
+    _attachPos = _return select 0; // params would create new variables, not update the exisitng ones
+    _pitchBankYaw = _return select 1;
 } else {
     _attachPos = GVAR(defaultPos);
     _pitchBankYaw = GVAR(defaultPitchBankYaw);
