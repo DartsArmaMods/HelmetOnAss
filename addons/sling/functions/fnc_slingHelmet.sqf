@@ -68,7 +68,8 @@ if (_uniform != "") then {
 _pitchBankYaw params ["_pitch", "_bank", "_yaw"];
 
 {
-    private _groundholder = createVehicle ["hoa_groundholder", [0, 0, 0], [], 0, "CAN_COLLIDE"];
+    private _groundholderClass = ["hoa_groundholder", "hoa_groundholder_facewear"] select ((_x call ace_common_fnc_getItemType) select 1 == "glasses");
+    private _groundholder = createVehicle [_groundholderClass, [0, 0, 0], [], 0, "CAN_COLLIDE"];
     _groundholder attachTo [_unit, _attachPos, "pelvis", true];
     [_groundholder, _pitch, _bank, _yaw] call ace_common_fnc_setPitchBankYaw;
     _groundholder addItemCargoGlobal [_x, 1];

@@ -96,4 +96,10 @@ class CfgVehicles {
         class TransportItems {};
         class TransportBackpacks {};
     };
+
+    // Facewear models are rotated 180 degrees when in a groundholder
+    // This model has the proxy rotated 180 degress to counteract this
+    class hoa_groundholder_facewear: hoa_groundholder {
+        model = QPATHTOF(hoa_groundholder_facewear.p3d);
+    };
 };
