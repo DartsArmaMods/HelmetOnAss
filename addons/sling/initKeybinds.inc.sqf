@@ -66,7 +66,7 @@
 [
     _category, QGVAR(key_unhideHelmet),
     [LSTRING(unhideHelmet_name), LSTRING(unhideHelmet_tooltip)], {
-        if (ace_player call FUNC(unhideHelmet)) then {
+        if (ace_player call FUNC(canUnhideHelmet)) then {
             [ace_player, false] call FUNC(hideHelmet);
         };
     }, {}, []
