@@ -71,8 +71,8 @@ class CfgVehicles {
         function = QFUNC(moduleSlingHelmet);
     };
 
-    class ReammoBox;
-    class hoa_groundholder: ReammoBox {
+    class CargoNet_01_box_F;
+    class hoa_groundholder: CargoNet_01_box_F {
         scope = 1;
         author = AUTHOR;
 
@@ -83,7 +83,7 @@ class CfgVehicles {
         destrType = "DestructNo";
         isGround = 0;
 
-        memoryPointSupply = "";
+        memoryPointSupply = "supply_pos";
         forceSupply = 0;
         supplyRadius = 0;
         showWeaponCargo = 1;
@@ -100,6 +100,7 @@ class CfgVehicles {
     // Facewear models are rotated 180 degrees when in a groundholder
     // This model has the proxy rotated 180 degress to counteract this
     class hoa_groundholder_facewear: hoa_groundholder {
+        // weapon proxy should be rotated - X: -89.9737d Y: -0.000005d Z: 0.000019d
         model = QPATHTOF(hoa_groundholder_facewear.p3d);
     };
 };
