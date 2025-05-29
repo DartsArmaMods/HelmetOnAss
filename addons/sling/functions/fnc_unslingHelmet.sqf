@@ -5,6 +5,8 @@
  *
  * Arguments:
  * 0: Unit <OBJECT>
+ * 1: Mode (optional, default: 0) (unused, for future proofing) <NUMBER>
+ * 2: Items (optional, default: []) (unused, for future proofing) <ARRAY>
  *
  * Return Value:
  * None
@@ -12,13 +14,17 @@
  * Example:
  * player call hoa_sling_fnc_unslingHelmet;
  *
- * Public: No
+ * Public: Yes
  */
 
-params ["_unit"];
-TRACE_1("fnc_unslingHelmet",_unit);
+params [
+    ["_unit", objNull, [objNull]],
+    ["_mode", 0, [0]],
+    ["_items", [], [[]]]
+];
+TRACE_3("fnc_unslingHelmet",_unit,_mode,_items);
 
-if (headgear _unit != "") exitWith {};
+if (isNull _unit || headgear _unit != "") exitWith {};
 
 private _groundholders = _unit getVariable [QGVAR(slungHelmetItems), []];
 private _helmetGH = (_groundholders deleteAt [-1]) select 0;

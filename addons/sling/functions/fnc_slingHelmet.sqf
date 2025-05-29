@@ -19,11 +19,18 @@
  * Example:
  * player call hoa_sling_fnc_slingHelmet;
  *
- * Public: No
+ * Public: Yes
  */
 
-params ["_unit", ["_mode", 0], ["_items", []], ["_removeCurrentItems", true]];
-TRACE_2("fnc_slingHelmet",_unit,_mode);
+params [
+    ["_unit", objNull, [objNull]],
+    ["_mode", 0, [0]],
+    ["_items", [], [[]]],
+    ["_removeCurrentItems", true, [true]]
+];
+TRACE_4("fnc_slingHelmet",_unit,_mode,_items,_removeCurrentItems);
+
+if (isNull _unit) exitWith {};
 
 if (_items isEqualTo []) then {
     _items = [headgear _unit, hmd _unit, goggles _unit];

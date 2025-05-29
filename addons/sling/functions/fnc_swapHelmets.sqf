@@ -5,6 +5,8 @@
  *
  * Arguments:
  * 0: Unit <OBJECT>
+ * 1: Mode (optional, default: 0) (unused, for future proofing) <NUMBER>
+ * 2: Items (optional, default: []) (unused, for future proofing) <ARRAY>
  *
  * Return Value:
  * None
@@ -12,13 +14,19 @@
  * Example:
  * player call hoa_sling_fnc_swapHelmets;
  *
- * Public: No
+ * Public: Yes
  */
 
-params ["_unit"];
-TRACE_1("fnc_swapHelmets",_unit);
+params [
+    ["_unit", objNull, [objNull]],
+    ["_mode", 0, [0]],
+    ["_items", [], [[]]]
+];
+TRACE_3("fnc_swapHelmets",_unit,_mode,_items);
 
-private _items = [hmd _unit, goggles _unit];
+if (isNull _unit) exitWith {};
+
+_items = [hmd _unit, goggles _unit];
 _items = _items select { _x call FUNC(getSlingParams) select 0 };
 { _unit unlinkItem _x } forEach _items;
 _items insert [0, [headgear _unit]];
