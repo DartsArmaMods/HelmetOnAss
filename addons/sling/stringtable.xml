@@ -28,15 +28,6 @@
         <Key ID="STR_hoa_sling_hideHelmet_tooltip">
             <English>Hides your slung helmet.</English>
         </Key>
-        <Key ID="STR_hoa_sling_mode_helmet">
-            <English>Helmet Only</English>
-        </Key>
-        <Key ID="STR_hoa_sling_mode_helmetFacewear">
-            <English>Helmet and Facewear</English>
-        </Key>
-        <Key ID="STR_hoa_sling_mode_helmetNVG">
-            <English>Helmet and NVGs</English>
-        </Key>
         <Key ID="STR_hoa_sling_slingHelmet_helmetFacewear_name">
             <English>Sling Helmet (Helmet + Facewear)</English>
         </Key>
