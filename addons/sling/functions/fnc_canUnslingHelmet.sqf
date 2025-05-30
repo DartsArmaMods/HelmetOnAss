@@ -18,4 +18,4 @@
 params ["_unit"];
 TRACE_1("fnc_canUnslingHelmet",_unit);
 
-headgear _unit == "" && { _unit getVariable [QGVAR(slungHelmetItems), []] isNotEqualTo [] };
+GVAR(enabled) && headgear _unit == "" && { _unit getVariable [QGVAR(slungHelmetItems), []] isNotEqualTo [] };

@@ -12,7 +12,7 @@
 [
     _category, QGVAR(key_slingHelmet_helmet),
     [LSTRING(slingHelmet_helmet_name), LSTRING(slingHelmet_helmet_tooltip)], {
-        if (ace_player call FUNC(canSlingHelmet)) then {
+        if ([ace_player, 1] call FUNC(canSlingHelmet)) then {
             [ace_player, 1] call FUNC(slingHelmet);
         };
     }, {}, []
@@ -21,7 +21,7 @@
 [
     _category, QGVAR(key_slingHelmet_helmetNVG),
     [LSTRING(slingHelmet_helmetNVG_name), LSTRING(slingHelmet_helmetNVG_tooltip)], {
-        if (ace_player call FUNC(canSlingHelmet)) then {
+        if ([ace_player, 2] call FUNC(canSlingHelmet)) then {
             [ace_player, 2] call FUNC(slingHelmet);
         };
     }, {}, []
@@ -30,7 +30,7 @@
 [
     _category, QGVAR(key_slingHelmet_helmetFacewear),
     [LSTRING(slingHelmet_helmetFacewear_name), LSTRING(slingHelmet_helmetFacewear_tooltip)], {
-        if (ace_player call FUNC(canSlingHelmet)) then {
+        if ([ace_player, 3] call FUNC(canSlingHelmet)) then {
             [ace_player, 3] call FUNC(slingHelmet);
         };
     }, {}, []

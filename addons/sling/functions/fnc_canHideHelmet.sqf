@@ -18,4 +18,4 @@
 params ["_unit"];
 TRACE_1("fnc_canHideHelmet",_unit);
 
-_unit getVariable [QGVAR(slungHelmetItems), []] isNotEqualTo [] && !(_unit getVariable [QGVAR(slungHelmetHidden), false]);
+GVAR(canHideHelmet) && _unit getVariable [QGVAR(slungHelmetItems), []] isNotEqualTo [] && !(_unit getVariable [QGVAR(slungHelmetHidden), false]);

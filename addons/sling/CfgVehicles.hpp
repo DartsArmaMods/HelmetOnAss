@@ -9,17 +9,17 @@ class CfgVehicles {
 
                 class hoa_slingHelmet_helmet {
                     displayName = CSTRING(slingHelmet_helmet_name);
-                    condition = "true";
+                    condition = QUOTE([ARR_2(_player,1)] call FUNC(canSlingHelmet));
                     statement = QUOTE([ARR_2(_player,1)] call FUNC(slingHelmet));
                 };
                 class hoa_slingHelmet_helmetNVG {
                     displayName = CSTRING(slingHelmet_helmetNVG_name);
-                    condition = "true";
+                    condition = QUOTE([ARR_2(_player,2)] call FUNC(canSlingHelmet));
                     statement = QUOTE([ARR_2(_player,2)] call FUNC(slingHelmet));
                 };
                 class hoa_slingHelmet_helmetFacewear {
                     displayName = CSTRING(slingHelmet_helmetFacewear_name);
-                    condition = "true";
+                    condition = QUOTE([ARR_2(_player,3)] call FUNC(canSlingHelmet));
                     statement = QUOTE([ARR_2(_player,3)] call FUNC(slingHelmet));
                 };
             };

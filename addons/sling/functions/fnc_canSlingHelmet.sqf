@@ -15,7 +15,7 @@
  * Public: No
  */
 
-params ["_unit"];
-TRACE_1("fnc_canSlingHelmet",_unit);
+params ["_unit", ["_mode", 0]];
+TRACE_2("fnc_canSlingHelmet",_unit,_mode);
 
-headgear _unit != "" && { _unit getVariable [QGVAR(slungHelmetItems), []] isEqualTo [] };
+GVAR(enabled) && (_mode == 0 || _mode in GVAR(allowedModes)) && headgear _unit != "" && { _unit getVariable [QGVAR(slungHelmetItems), []] isEqualTo [] };
