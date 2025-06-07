@@ -32,6 +32,15 @@ class Extended_GetOutMan_EventHandlers {
     };
 };
 
+
+class Extended_Killed_EventHandlers {
+    class CAManBase {
+        class ADDON {
+            killed = QUOTE(call FUNC(handleKilled));
+        };
+    };
+};
+
 class Extended_Respawn_EventHandlers {
     class CAManBase {
         class ADDON {
