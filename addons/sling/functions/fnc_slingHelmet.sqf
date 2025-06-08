@@ -62,23 +62,14 @@ _items = switch (_mode) do {
 _items = _items select { _x != "" };
 _items pushBack _helmet;
 
-private _uniform = uniform _unit;
-private ["_attachPos", "_pitchBankYaw"];
-if (_uniform != "") then {
-    private _return = _uniform call FUNC(getSlingParams);
-    _attachPos = _return select 0; // params would create new variables, not update the exisitng ones
-    _pitchBankYaw = _return select 1;
-} else {
-    _attachPos = GVAR(defaultPos);
-    _pitchBankYaw = GVAR(defaultPitchBankYaw);
-};
-_pitchBankYaw params ["_pitch", "_bank", "_yaw"];
-
+GVAR(slungHelmetPosition) params ["_bone", "_attachPos", "_vectorDirAndUp"];
 {
     private _groundholderClass = ["hoa_groundholder", "hoa_groundholder_facewear"] select ((_x call ace_common_fnc_getItemType) select 1 == "glasses");
     private _groundholder = createVehicle [_groundholderClass, [0, 0, 0], [], 0, "CAN_COLLIDE"];
-    _groundholder attachTo [_unit, _attachPos, "pelvis", true];
-    [_groundholder, _pitch, _bank, _yaw] call ace_common_fnc_setPitchBankYaw;
+
+    _groundholder attachTo [_unit, _attachPos, _bone, true];
+    _groundholder setVectorDirAndUp _vectorDirAndUp;
+
     _groundholder addItemCargoGlobal [_x, 1];
     _groundholders pushBack _groundholder;
 } forEach _items;

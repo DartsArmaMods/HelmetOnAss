@@ -1,3 +1,4 @@
+PREP(addSlingOption);
 PREP(canHideHelmet);
 PREP(canSlingHelmet);
 PREP(canSwapHelmets);

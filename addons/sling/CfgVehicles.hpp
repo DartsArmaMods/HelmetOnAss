@@ -63,6 +63,7 @@ class CfgVehicles {
         isTriggerActivated = 0;
     };
 
+    // TODO: Make UI to select sling position
     class hoa_moduleSlingHelmet: hoa_moduleBase {
         scope = 1;
         author = AUTHOR;

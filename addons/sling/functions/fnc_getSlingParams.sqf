@@ -21,28 +21,12 @@ params ["_item"];
 TRACE_1("fnc_getSlingParams",_item);
 
 private _type = _item call ace_common_fnc_getItemType select 1;
-if !(_type in ["uniform", "headgear", "hmd", "glasses"]) exitWith {};
+if !(_type in ["headgear", "hmd", "glasses"]) exitWith {};
 
-private _itemConfig = _item call CBA_fnc_getItemConfig;
-
-if (_type == "uniform") then {
-    GVAR(uniformCache) getOrDefaultCall [_item, {
-        private _attachPos = getArray (_itemConfig >> QGVAR(slungHelmetPos));
-        if (_attachPos isEqualTo []) then {
-            _attachPos = GVAR(defaultPos);
-        };
-
-        private _pitchBankYaw = getArray (_itemConfig >> QGVAR(slungHelmetPitchBankYaw));
-        if (_pitchBankYaw isEqualTo []) then {
-            _pitchBankYaw = GVAR(defaultPitchBankYaw);
-        };
-        [_attachPos, _pitchBankYaw]; // return
-    }, true];
-} else {
-    GVAR(slingCache) getOrDefaultCall [_item, {
-        [
-            _type == "headgear" || { getNumber (_itemConfig >> QGVAR(slingWithHelmet)) == 1 },
-            getNumber (_itemConfig >> QGVAR(hideWhenSlung)) == 1
-        ] // return
-    }, true];
-};
+GVAR(slingCache) getOrDefaultCall [_item, {
+    private _itemConfig = _item call CBA_fnc_getItemConfig;
+    [
+        _type == "headgear" || { getNumber (_itemConfig >> QGVAR(slingWithHelmet)) == 1 },
+        getNumber (_itemConfig >> QGVAR(hideWhenSlung)) == 1
+    ] // return
+}, true];

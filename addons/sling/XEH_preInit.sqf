@@ -6,15 +6,20 @@ PREP_RECOMPILE_END;
 
 private _category = [QUOTE(MOD_NAME), LLSTRING(displayName)];
 
+// Needs to be two separate arrays because these are used by reference for CBA settings
+GVAR(positionNames) = [
+    "Belt",
+    "Belt (GRAD)"
+];
+GVAR(positions) = [
+    ["pelvis", [-0.15, 0.35, -0.2], [[0.469846, -0.813798, 0.34202], [-0.17101, 0.296198, 0.939693]]],
+    ["pelvis", [-0.41, 0.3, 0], [[1, -0.8, 0], [0, 0, 1]]]
+];
+
 #include "initSettings.inc.sqf"
 #include "initKeybinds.inc.sqf"
 
-GVAR(uniformCache) = createHashMap; // Hashmap of uniforms and their sling position / angle
 GVAR(slingCache) = createHashMap; // Hashamp of helmets, nvgs, and facewear and whether they should sling with the helmet and hidden when slung
-
-// These are mainly here for modders (probably you) to quickly test setups
-GVAR(defaultPos) = [-0.15, 0.35, -0.2];
-GVAR(defaultPitchBankYaw) = [20, 0, 150];
 
 ["CBA_loadoutSet", {
     params ["_unit", "", "_extendedInfo"];

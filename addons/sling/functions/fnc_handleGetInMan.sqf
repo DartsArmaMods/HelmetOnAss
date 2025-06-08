@@ -26,3 +26,4 @@ private _slungItems = _unit getVariable [QGVAR(slungHelmetItems), []];
     detach _x;
     _x setPosASL [0, 0, 0];
 } forEach _slungItems;
+[QGVAR(hideObjects), [_slungItems, true]] call CBA_fnc_serverEvent;
