@@ -28,6 +28,15 @@
         <Key ID="STR_hoa_sling_hideHelmet_tooltip">
             <English>Hides your slung helmet.</English>
         </Key>
+        <Key ID="STR_hoa_sling_position_belt">
+            <English>Belt</English>
+        </Key>
+        <Key ID="STR_hoa_sling_position_beltGrad">
+            <English>Belt (GRAD)</English>
+        </Key>
+        <Key ID="STR_hoa_sling_position_genarmerie">
+            <English>Genarmerie</English>
+        </Key>
         <Key ID="STR_hoa_sling_slingHelmet_helmetFacewear_name">
             <English>Sling Helmet (Helmet + Facewear)</English>
         </Key>
