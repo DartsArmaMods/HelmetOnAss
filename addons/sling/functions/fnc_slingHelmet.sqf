@@ -26,7 +26,8 @@ params [
     ["_unit", objNull, [objNull]],
     ["_mode", 0, [0]],
     ["_items", [], [[]]],
-    ["_removeCurrentItems", true, [true]]
+    ["_removeCurrentItems", true, [true]],
+    ["_slingParams", [], [[]]]
 ];
 TRACE_4("fnc_slingHelmet",_unit,_mode,_items,_removeCurrentItems);
 
@@ -62,7 +63,11 @@ _items = switch (_mode) do {
 _items = _items select { _x != "" };
 _items pushBack _helmet;
 
-GVAR(slungHelmetPosition) params ["_bone", "_attachPos", "_vectorDirAndUp"];
+if (_slingParams isEqualTo []) then {
+    _slingParams = GVAR(slungHelmetPosition);
+};
+_slingParams params ["_bone", "_attachPos", "_vectorDirAndUp"];
+
 {
     private _groundholderClass = ["hoa_groundholder", "hoa_groundholder_facewear"] select ((_x call ace_common_fnc_getItemType) select 1 == "glasses");
     private _groundholder = createVehicle [_groundholderClass, [0, 0, 0], [], 0, "CAN_COLLIDE"];

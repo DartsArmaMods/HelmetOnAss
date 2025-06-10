@@ -50,28 +50,6 @@ class CfgVehicles {
         };
     };
 
-    class Module_F;
-    class hoa_moduleBase: Module_F {
-        scope = 0;
-        scopeCurator = 2;
-        author = AUTHOR;
-
-        category = QUOTE(ADDON);
-        function = "";
-        functionPriority = 1;
-        isGlobal = 1; // 0 = server only, 1 = global, 2 = global w/ JIP
-        isTriggerActivated = 0;
-    };
-
-    // TODO: Make UI to select sling position
-    class hoa_moduleSlingHelmet: hoa_moduleBase {
-        scope = 1;
-        author = AUTHOR;
-        displayName = CSTRING(slingHelmet_name);
-        curatorCanAttach = 1;
-        function = QFUNC(moduleSlingHelmet);
-    };
-
     class CargoNet_01_box_F;
     class hoa_groundholder: CargoNet_01_box_F {
         scope = 1;

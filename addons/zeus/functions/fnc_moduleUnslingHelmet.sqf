@@ -1,22 +1,22 @@
 #include "..\script_component.hpp"
 /*
  * Authors: DartRuffian
- * Slings or unslings a unit's helmet.
+ * Unslings a unit's helmet.
  *
  * Arguments:
- * 0: Argument (optional, default: value) <OBJECT>
+ * 0: Logic <OBJECT>
  *
  * Return Value:
- * Return description <NONE>
+ * None
  *
  * Example:
- * _logic call hoa_sling_fnc_moduleSlingHelmet
+ * _logic call hoa_zeus_fnc_moduleUnslingHelmet
  *
  * Public: No
  */
 
 params ["_logic"];
-TRACE_1("fnc_moduleSlingHelmet",_logic);
+TRACE_1("fnc_moduleUnslingHelmet",_logic);
 
 if (!local _logic) exitWith {};
 
@@ -30,21 +30,14 @@ switch (false) do {
     case (alive _unit): {
         [_logic, "$STR_ace_zeus_onlyAlive"] call FUNC(errorAndClose);
     };
+    case (_unit call EFUNC(sling,canUnslingHelmet)): {
+        [_logic, LSTRING(unslingHelmet_noSlungHelmet)] call FUNC(errorAndClose);
+    };
     default { _exit = false };
 };
 
 if (_exit) exitWith {};
 
-switch (true) do {
-    case (_unit call FUNC(canSwapHelmets)): {
-        _unit call FUNC(swapHelmets);
-    };
-    case (_unit call FUNC(canSlingHelmet)): {
-        _unit call FUNC(slingHelmet);
-    };
-    case (_unit call FUNC(canUnslingHelmet)): {
-        _unit call FUNC(unslingHelmet);
-    };
-};
+_unit call EFUNC(sling,unslingHelmet);
 
 deleteVehicle _logic;

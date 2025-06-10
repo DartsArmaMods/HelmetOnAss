@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project name="HelmetOnAss">
+    <Package name="Zeus">
+        <!-- <Key ID="STR_hoa_zeus_displayName">
+            <English>Zeus</English>
+        </Key> -->
+        <Key ID="STR_hoa_zeus_slingHelmet_noHelmet">
+            <English>Unit must have a helmet, or must have slung helmet</English>
+        </Key>
+        <Key ID="STR_hoa_zeus_unslingHelmet_noSlungHelmet">
+            <English>Unit must have a slung helmet</English>
+        </Key>
+    </Package>
+</Project>

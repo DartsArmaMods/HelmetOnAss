@@ -8,18 +8,19 @@ class CfgPatches {
         name = COMPONENT_NAME;
         requiredVersion = REQUIRED_VERSION;
         requiredAddons[] = {
-            "hoa_main",
-            "ace_arsenal"
+            "hoa_sling",
+            "ace_zeus"
         };
         units[] = {
-            "hoa_groundholder",
-            "hoa_groundholder_facewear"
+            "hoa_moduleSlingHelmet",
+            "hoa_moduleUnslingHelmet"
         };
         weapons[] = {};
         VERSION_CONFIG;
     };
 };
 
-#include "CfgWeapons.hpp"
 #include "CfgVehicles.hpp"
+#include "CfgFactionClasses.hpp"
 #include "CfgEventHandlers.hpp"
+#include "RscAttributes.hpp"
