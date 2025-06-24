@@ -77,6 +77,9 @@ _slingParams params ["_bone", "_attachPos", "_vectorDirAndUp"];
 
     _groundholder addItemCargoGlobal [_x, 1];
     _groundholders pushBack _groundholder;
+
+    // Have object claim itself to remove ace interactions
+    [_groundholder, _groundholder] call ace_common_fnc_claimSafeServer;
 } forEach _items;
 
 if (_removeCurrentItems) then {

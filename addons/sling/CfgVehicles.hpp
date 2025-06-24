@@ -74,9 +74,6 @@ class CfgVehicles {
         class TransportMagazines {};
         class TransportItems {};
         class TransportBackpacks {};
-
-        ace_cargo_noRename = 1;
-        class ACE_Actions {};
     };
 
     // Facewear models are rotated 180 degrees when in a groundholder
