@@ -34,8 +34,8 @@
         <Key ID="STR_hoa_sling_position_beltGrad">
             <English>Belt (GRAD)</English>
         </Key>
-        <Key ID="STR_hoa_sling_position_genarmerie">
-            <English>Genarmerie</English>
+        <Key ID="STR_hoa_sling_position_gendarmerie">
+            <English>Gendarmerie</English>
         </Key>
         <Key ID="STR_hoa_sling_slingHelmet_helmetFacewear_name">
             <English>Sling Helmet (Helmet + Facewear)</English>

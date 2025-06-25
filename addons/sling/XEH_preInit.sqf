@@ -10,7 +10,7 @@ private _category = [QUOTE(MOD_NAME), LLSTRING(displayName)];
 GVAR(positionNames) = [
     LSTRING(position_belt),
     LSTRING(position_beltGrad),
-    LSTRING(position_genarmerie)
+    LSTRING(position_gendarmerie)
 ];
 GVAR(positions) = [
     ["pelvis", [-0.15, 0.35, -0.2], [[0.469846, -0.813798, 0.34202], [-0.17101, 0.296198, 0.939693]]],
