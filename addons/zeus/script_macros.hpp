@@ -1,6 +1,3 @@
-#define IDC_SLING_HELMET 80100
-#define IDC_SLING_HELMET_POSITION 80101
-
 // UI grid
 #define SIZEX ((safeZoneW / safeZoneH) min 1.2)
 #define SIZEY (SIZEX / 1.2)

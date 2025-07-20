@@ -8,3 +8,4 @@
 
 #include "\z\hoa\addons\main\script_macros.hpp"
 #include "script_macros.hpp"
+#include "defines.hpp"

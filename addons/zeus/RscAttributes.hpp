@@ -1,4 +1,3 @@
-class RscControlsGroup;
 class RscControlsGroupNoScrollbars;
 class RscText;
 class RscListBox;
@@ -7,9 +6,7 @@ class RscDisplayAttributes {
     class Controls {
         class Background;
         class Title;
-        class Content: RscControlsGroup {
-            class controls;
-        };
+        class Content;
         class ButtonOK;
         class ButtonCancel;
     };
