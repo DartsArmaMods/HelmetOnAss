@@ -3,7 +3,7 @@
 <h1 align="center">Helmet on Ass</h1>
 <p align="center">
     <a href="https://github.com/DartsArmaMods/HelmetOnAss/releases/latest">
-        <img src="https://img.shields.io/badge/Version-1.1.1-blue?style=flat-square" alt="Helmet on Ass Version">
+        <img src="https://img.shields.io/badge/Version-1.1.2-blue?style=flat-square" alt="Helmet on Ass Version">
     </a>
     <a href="https://github.com/DartsArmaMods/HelmetOnAss/issues">
         <img src="https://img.shields.io/github/issues-raw/DartsArmaMods/HelmetOnAss.svg?style=flat-square&label=Issues" alt="Helmet on Ass Issues">
