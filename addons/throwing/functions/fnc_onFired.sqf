@@ -26,22 +26,29 @@ TRACE_3("fnc_onFired",_unit,_magazine,_projectile);
 
 if (!local _unit || !alive _unit || _magazine != QGVAR(helmetGrenade)) exitWith {};
 
-private _holder = "GroundWeaponHolder" createVehicle [0, 0, 0];
-_holder setPosASL (getPosASL _projectile); // Needed to attach properly
-_holder addItemCargoGlobal [headgear _unit, 1];
-_holder attachTo [_projectile];
-_projectile setVariable [QGVAR(helmetHitParams), [headgear _unit, getPosASL _unit]];
+private _groundholder = "GroundWeaponHolder" createVehicle [0, 0, 0];
+_groundholder setPosASL (getPosASL _projectile); // Needed to attach properly
+_groundholder addItemCargoGlobal [headgear _unit, 1];
+_groundholder attachTo [_projectile, [0.36, -0.7, 0.52]];
+_groundholder setVectorDirAndUp [[0, 1, 0], [1, 0, 1]];
+_projectile setVariable [QGVAR(helmetHitParams), [headgear _unit, getPosASL _unit, _groundholder]];
+
+#ifdef DEBUG_MODE_FULL
+private _debugMarker = createSimpleObject ["Sign_Sphere25cm_F", getPosASL _projectile];
+_debugMarker attachTo [_projectile, [0, 0, 0]];
+#endif
 
 _projectile addEventHandler ["HitPart", {
     // Prevents the HitPart running multiple times
-    #define EXIT_CODE _projectile removeEventHandler [_thisEvent, _thisEventHandler]
+    #define EXIT_CODE \
+        _projectile removeEventHandler [_thisEvent, _thisEventHandler]; \
+        deleteVehicle _projectile
 
 	params ["_projectile", "_hitEntity", "", "_position", "_velocity", "", "_components", "" ,"", "_instigator"];
-    private _helmet = (_projectile getVariable [QGVAR(helmetClass), ""]);
 
-    (_projectile getVariable [QGVAR(helmetHitParams), []]) params ["_helmet", "_instigatorPositionASL"];
+    (_projectile getVariable [QGVAR(helmetHitParams), []]) params [["_helmet", ""], "_instigatorPositionASL", "_groundholder"];
 
-    if (isNull _hitEntity || _helmet == "" || _components isEqualTo []) exitWith { EXIT_CODE };
+    if (isNull _hitEntity || _helmet == "" || _components isEqualTo [] || { !(_hitEntity isKindOf "CAManBase") }) exitWith { EXIT_CODE };
 
     // Incorporate velocity and helmet mass into damage, with a little randomization to not always get the same results
     private _mass = GVAR(helmetMassCache) getOrDefaultCall [_helmet, {
