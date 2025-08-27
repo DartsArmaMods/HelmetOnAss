@@ -13,5 +13,5 @@
 [
     QGVAR(ragdollStrength), "SLIDER",
     [LSTRING(ragdollStrength_name), LSTRING(ragdollStrength_tooltip)],
-    _category, [0, 20]
+    _category, [0, 20, 2], 1
 ] call CBA_fnc_addSetting;

@@ -24,26 +24,39 @@
 params ["_unit", "", "", "", "", "_magazine", "_projectile"];
 TRACE_3("fnc_onFired",_unit,_magazine,_projectile);
 
-if (!alive _unit || _magazine != QGVAR(helmetGrenade)) exitWith {};
+if (!local _unit || !alive _unit || _magazine != QGVAR(helmetGrenade)) exitWith {};
 
 private _holder = "GroundWeaponHolder" createVehicle [0, 0, 0];
 _holder setPosASL (getPosASL _projectile); // Needed to attach properly
 _holder addItemCargoGlobal [headgear _unit, 1];
 _holder attachTo [_projectile];
+_projectile setVariable [QGVAR(helmetHitParams), [headgear _unit, getPosASL _unit]];
 
 _projectile addEventHandler ["HitPart", {
-    params ["_projectile", "_hitEntity", "", "_pos", "_velocity", "", "_components", "" ,"", "_instigator"];
+    // Prevents the HitPart running multiple times
+    #define EXIT_CODE _projectile removeEventHandler [_thisEvent, _thisEventHandler]
 
-    systemChat str [_hitEntity, _components];
-    if (isNull _hitEntity || _components isEqualTo []) exitWith {};
+	params ["_projectile", "_hitEntity", "", "_position", "_velocity", "", "_components", "" ,"", "_instigator"];
+    private _helmet = (_projectile getVariable [QGVAR(helmetClass), ""]);
 
-    if (missionNamespace getVariable ["ace_medical_enabled", false]) then {
-        // TODO: networking, needs to be local to _hitEntity
-        [_hitEntity, 0.1, _components select 2, "punch", _instigator] call ace_medical_fnc_addDamageToUnit;
+    (_projectile getVariable [QGVAR(helmetHitParams), []]) params ["_helmet", "_instigatorPositionASL"];
+
+    if (isNull _hitEntity || _helmet == "" || _components isEqualTo []) exitWith { EXIT_CODE };
+
+    // Incorporate velocity and helmet mass into damage, with a little randomization to not always get the same results
+    private _mass = GVAR(helmetMassCache) getOrDefaultCall [_helmet, {
+        getNumber ((_helmet call CBA_fnc_getItemConfig) >> "ItemInfo" >> "mass")
+    }, true];
+    private _damage = ((vectorMagnitude _velocity * _mass) / 1500) * random [0.8, 0.9, 1];
+
+    private _strength = [0, 0, 0];
+    if (GVAR(ragdollStrength) > 0) then {
+        private _dirVector = _position vectorDiff _instigatorPositionASL;
+        private _oppVector = vectorNormalized (_instigatorPositionASL vectorDiff _position);
+        _strength = _oppVector vectorMultiply -(GVAR(ragdollStrength) * 100);
     };
 
-    _hitEntity setPosASL (getPosASL _hitEntity vectorAdd [0, 0, 0.01]);
-    _hitEntity addForce [[500, 500, 500], _pos, true];
+    [QGVAR(helmetHit), [_hitEntity, _instigator, _damage, _components select 2, _strength, _position], _hitEntity] call CBA_fnc_targetEvent;
 
-    _projectile removeEventHandler [_thisEvent, _thisEventHandler]; // Prevents the HitPart running multiple times
+    EXIT_CODE;
 }];
