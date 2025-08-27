@@ -26,7 +26,8 @@ TRACE_3("fnc_onFired",_unit,_magazine,_projectile);
 
 if (!local _unit || !alive _unit || _magazine != QGVAR(helmetGrenade)) exitWith {};
 
-private _groundholder = "GroundWeaponHolder" createVehicle [0, 0, 0];
+// Uses normal GroundWeaponHolder (not HOA) because it should be interactable
+private _groundholder = "hoa_groundholder_physx" createVehicle [0, 0, 0];
 _groundholder setPosASL (getPosASL _projectile); // Needed to attach properly
 _groundholder addItemCargoGlobal [headgear _unit, 1];
 _groundholder attachTo [_projectile, [0.36, -0.7, 0.52]];
