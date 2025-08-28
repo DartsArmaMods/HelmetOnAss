@@ -24,7 +24,7 @@
 params ["_unit", "", "", "", "", "_magazine", "_projectile"];
 TRACE_3("fnc_onFired",_unit,_magazine,_projectile);
 
-if (!local _unit || !alive _unit || _magazine != QGVAR(helmetGrenade)) exitWith {};
+if (!GVAR(enabled) || !local _unit || !alive _unit || _magazine != QGVAR(helmetGrenade)) exitWith {};
 
 // TODO: Logic could definitely be improved here, without just copy/pasting
 private ["_items"];
@@ -57,6 +57,10 @@ if (GVAR(helmetPriority) == USE_SLUNG_HELMET) then {
 
 if (_items isEqualTo []) exitWith {
     deleteVehicle _projectile;
+};
+
+if (headgear _unit != "" || _unit getVariable [QEGVAR(sling,slungHelmetItems), []] isNotEqualTo []) then {
+    _unit addMagazine QGVAR(helmetGrenade);
 };
 
 private _groundholder = "hoa_groundholder_physx" createVehicle [0, 0, 0];

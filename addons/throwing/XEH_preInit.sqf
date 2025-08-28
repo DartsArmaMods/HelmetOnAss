@@ -20,3 +20,20 @@ GVAR(helmetMassCache) = createHashMap;
         _hitEntity addForce [_strength, _position, false];
     };
 }] call CBA_fnc_addEventHandler;
+
+["CAManBase", "SlotItemChanged", {
+    params ["_unit", "", "_slot", "_assigned"];
+    if (!GVAR(enabled) || !local _unit || _slot != TYPE_HEADGEAR) exitWith {};
+
+    // Add grenade if the muzzle isn't loaded, because keepInInventory = 0 is set the first grenade is
+    // loaded into the muzzle and not kept in the inventory directly
+    if (_assigned && { _unit weaponState QGVAR(helemetGrenade_muzzle) select 4 == 0 }) then {
+        systemChat "added mag";
+        _unit addMagazine QGVAR(helmetGrenade);
+    } else {
+        if (!_assigned && _unit getVariable [QEGVAR(sling,slungHelmetItems), []] isEqualTo []) then {
+            systemChat "removed mag";
+            _unit removeMagazine QGVAR(helmetGrenade);
+        };
+    };
+}] call CBA_fnc_addClassEventHandler;

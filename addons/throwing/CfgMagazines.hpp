@@ -1,7 +1,7 @@
 class CfgMagazines {
     class HandGrenade;
     class GVAR(helmetGrenade): HandGrenade {
-        scope = 2;
+        scope = 1;
         author = AUTHOR;
         displayName = CSTRING(helmetGrenade);
         displayNameShort = "$STR_A3_RscDisplayArsenal_tab_headgear";
