@@ -26,13 +26,47 @@ TRACE_3("fnc_onFired",_unit,_magazine,_projectile);
 
 if (!local _unit || !alive _unit || _magazine != QGVAR(helmetGrenade)) exitWith {};
 
-// Uses normal GroundWeaponHolder (not HOA) because it should be interactable
+// TODO: Logic could definitely be improved here, without just copy/pasting
+private ["_items"];
+private _slungItems = _unit call EFUNC(sling,getSlungItems);
+private _wornItems = [headgear _unit, hmd _unit, goggles _unit] select {
+    (_x call EFUNC(sling,getSlingParams)) select 0
+};
+
+if (GVAR(helmetPriority) == USE_SLUNG_HELMET) then {
+    if (_slungItems isNotEqualTo []) then {
+        _items = _slungItems;
+        deleteVehicle (_unit getVariable [QEGVAR(sling,slungHelmetItems), []]);
+        _unit setVariable [QEGVAR(sling,slungHelmetItems), nil, true];
+    } else {
+        _items = _wornItems;
+        removeHeadgear _unit;
+        { _unit unlinkItem _x } forEach _items;
+    };
+} else {
+    if (_wornItems isNotEqualTo []) then {
+        _items = _wornItems;
+        removeHeadgear _unit;
+        { _unit unlinkItem _x } forEach _items;
+    } else {
+        _items = _slungItems;
+        deleteVehicle (_unit getVariable [QEGVAR(sling,slungHelmetItems), []]);
+        _unit setVariable [QEGVAR(sling,slungHelmetItems), nil, true];
+    };
+};
+
+if (_items isEqualTo []) exitWith {
+    deleteVehicle _projectile;
+};
+
 private _groundholder = "hoa_groundholder_physx" createVehicle [0, 0, 0];
 _groundholder setPosASL (getPosASL _projectile); // Needed to attach properly
-_groundholder addItemCargoGlobal [headgear _unit, 1];
+{
+    _groundHolder addItemCargoGlobal [_x, 1];
+} forEach _items;
 _groundholder attachTo [_projectile, [0.36, -0.7, 0.52]];
 _groundholder setVectorDirAndUp [[0, 1, 0], [1, 0, 1]];
-_projectile setVariable [QGVAR(helmetHitParams), [headgear _unit, getPosASL _unit, _groundholder]];
+_projectile setVariable [QGVAR(helmetHitParams), [_items, getPosASL _unit, _groundholder]];
 
 #ifdef DEBUG_MODE_FULL
 private _debugMarker = createSimpleObject ["Sign_Sphere25cm_F", getPosASL _projectile];
@@ -47,13 +81,13 @@ _projectile addEventHandler ["HitPart", {
 
 	params ["_projectile", "_hitEntity", "", "_position", "_velocity", "", "_components", "" ,"", "_instigator"];
 
-    (_projectile getVariable [QGVAR(helmetHitParams), []]) params [["_helmet", ""], "_instigatorPositionASL", "_groundholder"];
+    (_projectile getVariable [QGVAR(helmetHitParams), []]) params [["_items", []], "_instigatorPositionASL", "_groundholder"];
 
-    if (isNull _hitEntity || _helmet == "" || _components isEqualTo [] || { !(_hitEntity isKindOf "CAManBase") }) exitWith { EXIT_CODE };
+    if (isNull _hitEntity || _items isEqualTo [] || _components isEqualTo [] || { !(_hitEntity isKindOf "CAManBase") }) exitWith { EXIT_CODE };
 
     // Incorporate velocity and helmet mass into damage, with a little randomization to not always get the same results
     private _mass = GVAR(helmetMassCache) getOrDefaultCall [_helmet, {
-        getNumber ((_helmet call CBA_fnc_getItemConfig) >> "ItemInfo" >> "mass")
+        getNumber (configFile >> "CfgWeapons" >> _items select 0 >> "ItemInfo" >> "mass")
     }, true];
     private _damage = ((vectorMagnitude _velocity * _mass) / 1500) * random [0.8, 0.9, 1];
 
