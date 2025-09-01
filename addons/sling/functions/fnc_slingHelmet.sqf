@@ -83,7 +83,7 @@ private _holdersToHide = _groundholders select {
     (getItemCargo _x select 0 select 0) call FUNC(getSlingParams) select 1
 };
 [_unit, true, _holdersToHide] call FUNC(hideHelmet);
-_unit setVariable [QGVAR(slungHelmetHidden), count _holdersToHide == count _groundholders]; // Only mark helmet as hidden if everything is hidden
+_unit setVariable [QGVAR(slungHelmetHidden), count _holdersToHide == count _groundholders, true]; // Only mark helmet as hidden if everything is hidden
 
 _unit setVariable [QGVAR(slungHelmetItems), _groundholders, true];
 [QGVAR(helmetSlung), [_unit, _groundholders], _unit] call CBA_fnc_targetEvent;

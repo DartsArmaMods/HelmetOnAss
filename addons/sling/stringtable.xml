@@ -73,6 +73,12 @@
         <Key ID="STR_hoa_sling_swapHelmets_tooltip">
             <English>Swaps your equipped helmet with your slung helmet.</English>
         </Key>
+        <Key ID="STR_hoa_sling_trackHiddenItems_name">
+            <English>Track Hidden Items</English>
+        </Key>
+        <Key ID="STR_hoa_sling_trackHiddenItems_tooltip">
+            <English>If enabled, items you hide will be remembered and automatically re-hidden when slung.</English>
+        </Key>
         <Key ID="STR_hoa_sling_unhideHelmet_name">
             <English>Unhide Slung Helmet</English>
         </Key>

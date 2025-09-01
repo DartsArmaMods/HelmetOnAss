@@ -29,3 +29,9 @@
     [LSTRING(canHideHelmet_name), LSTRING(canHideHelmet_tooltip)],
     _category, true, true
 ] call CBA_fnc_addSetting;
+
+[
+    QGVAR(trackHiddenItems), "CHECKBOX",
+    [LSTRING(trackHiddenItems_name), LSTRING(trackHiddenItems_tooltip)],
+    _category, true
+] call CBA_fnc_addSetting;
