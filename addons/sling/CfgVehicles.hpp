@@ -6,6 +6,7 @@ class CfgVehicles {
                 displayName = CSTRING(slingHelmet_name);
                 condition = QUOTE(_player call FUNC(canSlingHelmet));
                 statement = QUOTE(_player call FUNC(slingHelmet));
+                exceptions[] = {"isNotSitting", "isNotSwimming"};
 
                 class hoa_slingHelmet_helmet {
                     displayName = CSTRING(slingHelmet_helmet_name);
