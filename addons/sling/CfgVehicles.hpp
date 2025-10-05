@@ -12,13 +12,14 @@ class CfgVehicles {
                     displayName = CSTRING(slingHelmet_helmet_name);
                     condition = QUOTE([ARR_2(_player,1)] call FUNC(canSlingHelmet));
                     statement = QUOTE([ARR_2(_player,1)] call FUNC(slingHelmet));
+                    exceptions[] = {"isNotSitting", "isNotSwimming"};
                 };
-                class hoa_slingHelmet_helmetNVG {
+                class hoa_slingHelmet_helmetNVG: hoa_slingHelmet_helmet {
                     displayName = CSTRING(slingHelmet_helmetNVG_name);
                     condition = QUOTE([ARR_2(_player,2)] call FUNC(canSlingHelmet));
                     statement = QUOTE([ARR_2(_player,2)] call FUNC(slingHelmet));
                 };
-                class hoa_slingHelmet_helmetFacewear {
+                class hoa_slingHelmet_helmetFacewear: hoa_slingHelmet_helmet {
                     displayName = CSTRING(slingHelmet_helmetFacewear_name);
                     condition = QUOTE([ARR_2(_player,3)] call FUNC(canSlingHelmet));
                     statement = QUOTE([ARR_2(_player,3)] call FUNC(slingHelmet));
@@ -29,21 +30,22 @@ class CfgVehicles {
                 displayName = CSTRING(unslingHelmet_name);
                 condition = QUOTE(_player call FUNC(canUnslingHelmet));
                 statement = QUOTE(_player call FUNC(unslingHelmet));
+                exceptions[] = {"isNotSitting", "isNotSwimming"};
             };
 
-            class hoa_swapHelmets {
+            class hoa_swapHelmets: hoa_unslingHelmet {
                 displayName = CSTRING(swapHelmets_name);
                 condition = QUOTE(_player call FUNC(canSwapHelmets));
                 statement = QUOTE(_player call FUNC(swapHelmets));
             };
 
-            class hoa_hideSlungHelmet {
+            class hoa_hideSlungHelmet: hoa_unslingHelmet {
                 displayName = CSTRING(hideHelmet_name);
                 condition = QUOTE(_player call FUNC(canHideHelmet));
                 statement = QUOTE(_player call FUNC(hideHelmet));
             };
 
-            class hoa_unhideSlungHelmet {
+            class hoa_unhideSlungHelmet: hoa_unslingHelmet {
                 displayName = CSTRING(unhideHelmet_name);
                 condition = QUOTE(_player call FUNC(canUnhideHelmet));
                 statement = QUOTE([ARR_2(_player,false)] call FUNC(hideHelmet));
