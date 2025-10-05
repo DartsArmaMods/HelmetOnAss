@@ -26,6 +26,19 @@ GVAR(slingCache) = createHashMap; // Hashamp of helmets, nvgs, and facewear and 
 ["CBA_loadoutSet", {
     params ["_unit", "", "_extendedInfo"];
     private _slungItems = _extendedInfo getOrDefault [QGVAR(slungHelmetItems), []];
+
+    private _arsenal = missionNamespace getVariable ["ace_arsenal_currentBox", objNull];
+    if (!isNull _arsenal) then {
+        private _virtualItems = keys (_arsenal call ace_arsenal_fnc_getVirtualItems);
+        if (hasInterface) then {
+            private _unavailableItems = (_slungItems - _virtualItems) apply { getText ((_x call CBA_fnc_getItemConfig) >> "displayName") };
+            [{
+                [findDisplay 1127001, format [LLSTRING(unavailableItems), _this joinString ", "]] call ace_arsenal_fnc_message;
+            }, _unavailableItems] call CBA_fnc_execNextFrame;
+        };
+        _slungItems = _slungItems arrayIntersect _virtualItems;
+    };
+
     if (_slungItems isEqualTo []) then {
         deleteVehicle (_unit getVariable [QGVAR(slungHelmetItems), []]);
         _unit setVariable [QGVAR(slungHelmetItems), nil, true];

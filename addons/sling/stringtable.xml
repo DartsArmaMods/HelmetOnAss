@@ -22,6 +22,9 @@
         <Key ID="STR_hoa_sling_enabled_tooltip">
             <English>Enables or disables helmet slinging</English>
         </Key>
+        <Key ID="STR_hoa_sling_unavailableItems">
+            <English>Some items are not available in arsenal: %1</English>
+        </Key>
         <Key ID="STR_hoa_sling_hideHelmet_name">
             <English>Hide Slung Helmet</English>
         </Key>

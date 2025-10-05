@@ -19,5 +19,5 @@
 params ["_pitch", "_bank", "_yaw"];
 [
 	[sin _yaw * cos _pitch, cos _yaw * cos _pitch, sin _pitch],
-	[[sin _roll, -sin _pitch, cos _roll * cos _pitch], -_yaw] call BIS_fnc_rotateVector2D
+	[[sin _bank, -sin _pitch, cos _bank * cos _pitch], -_yaw] call BIS_fnc_rotateVector2D
 ];
