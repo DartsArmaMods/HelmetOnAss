@@ -90,14 +90,14 @@ _projectile addEventHandler ["HitPart", {
     if (isNull _hitEntity || _items isEqualTo [] || _components isEqualTo [] || { !(_hitEntity isKindOf "CAManBase") }) exitWith { EXIT_CODE };
 
     // Incorporate velocity and helmet mass into damage, with a little randomization to not always get the same results
+    private _helmet = _items select 0;
     private _mass = GVAR(helmetMassCache) getOrDefaultCall [_helmet, {
-        getNumber (configFile >> "CfgWeapons" >> _items select 0 >> "ItemInfo" >> "mass")
+        getNumber (configFile >> "CfgWeapons" >> _helmet >> "ItemInfo" >> "mass")
     }, true];
     private _damage = ((vectorMagnitude _velocity * _mass) / 1500) * random [0.8, 0.9, 1];
 
     private _strength = [0, 0, 0];
     if (GVAR(ragdollStrength) > 0) then {
-        private _dirVector = _position vectorDiff _instigatorPositionASL;
         private _oppVector = vectorNormalized (_instigatorPositionASL vectorDiff _position);
         _strength = _oppVector vectorMultiply -(GVAR(ragdollStrength) * 100);
     };
