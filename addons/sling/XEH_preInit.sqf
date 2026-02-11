@@ -32,17 +32,21 @@ GVAR(slingCache) = createHashMap; // Hashamp of helmets, nvgs, and facewear and 
         private _virtualItems = keys (_arsenal call ace_arsenal_fnc_getVirtualItems);
         if (hasInterface) then {
             private _unavailableItems = (_slungItems - _virtualItems) apply { getText ((_x call CBA_fnc_getItemConfig) >> "displayName") };
-            [{
-                [findDisplay 1127001, format [LLSTRING(unavailableItems), _this joinString ", "]] call ace_arsenal_fnc_message;
-            }, _unavailableItems] call CBA_fnc_execNextFrame;
+            if (_unavailableItems isNotEqualTo []) then {
+                [{
+                    [findDisplay 1127001, format [LLSTRING(unavailableItems), _this joinString ", "]] call ace_arsenal_fnc_message;
+                }, _unavailableItems] call CBA_fnc_execNextFrame;
+            };
         };
         _slungItems = _slungItems arrayIntersect _virtualItems;
     };
 
-    if (_slungItems isEqualTo []) then {
-        deleteVehicle (_unit getVariable [QGVAR(slungHelmetItems), []]);
-        _unit setVariable [QGVAR(slungHelmetItems), nil, true];
-    } else {
+    // Syncing isn't needed when a new helmet is being slung, since that always syncs it
+    private _sync = _slungItems isEqualTo [];
+    deleteVehicle (_unit getVariable [QGVAR(slungHelmetItems), []]);
+    _unit setVariable [QGVAR(slungHelmetItems), nil, _sync];
+
+    if (!_sync) then {
         [_unit, 0, _slungItems, false] call FUNC(slingHelmet);
     };
 }] call CBA_fnc_addEventHandler;
