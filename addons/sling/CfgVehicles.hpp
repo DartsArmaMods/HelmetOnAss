@@ -85,4 +85,26 @@ class CfgVehicles {
         // weapon proxy should be rotated - X: -89.9737d Y: -0.000005d Z: 0.000019d
         model = QPATHTOF(hoa_groundholder_facewear.p3d);
     };
+
+    class hoa_groundholder_physx: CargoNet_01_box_F {
+        scope = 1;
+        author = AUTHOR;
+        displayName = "$STR_cfgVehicles_WeaponHolder0";
+
+        model = "\A3\Weapons_f\dummyweapon.p3d";
+
+        icon = "iconObject_1x1";
+        mapSize = 1.39;
+        accuracy = 0.2;
+        destrType = "DestructNo";
+        isGround = 1;
+
+        memoryPointSupply = "doplnovani";
+        showWeaponCargo = 1;
+        transportMaxMagazines = 0;
+        transportMaxWeapons = 1e+009; // Really big number to allow storing items
+        transportMaxBackpacks = 0;
+
+        ace_cargo_noRename = 1;
+    };
 };
