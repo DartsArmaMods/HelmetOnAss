@@ -29,16 +29,19 @@ GVAR(slingCache) = createHashMap; // Hashamp of helmets, nvgs, and facewear and 
 
     private _arsenal = missionNamespace getVariable ["ace_arsenal_currentBox", objNull];
     if (!isNull _arsenal) then {
+        // _virtualItems will be [] on full arsenals (i.e. used `true` for items)
         private _virtualItems = keys (_arsenal call ace_arsenal_fnc_getVirtualItems);
-        if (hasInterface) then {
-            private _unavailableItems = (_slungItems - _virtualItems) apply { getText ((_x call CBA_fnc_getItemConfig) >> "displayName") };
-            if (_unavailableItems isNotEqualTo []) then {
-                [{
-                    [findDisplay 1127001, format [LLSTRING(unavailableItems), _this joinString ", "]] call ace_arsenal_fnc_message;
-                }, _unavailableItems] call CBA_fnc_execNextFrame;
+        if (_virtualitems isNotEqualTo []) then {
+            if (hasInterface) then {
+                private _unavailableItems = (_slungItems - _virtualItems) apply { getText ((_x call CBA_fnc_getItemConfig) >> "displayName") };
+                if (_unavailableItems isNotEqualTo []) then {
+                    [{
+                        [findDisplay 1127001, format [LLSTRING(unavailableItems), _this joinString ", "]] call ace_arsenal_fnc_message;
+                    }, _unavailableItems] call CBA_fnc_execNextFrame;
+                };
             };
+            _slungItems = _slungItems arrayIntersect _virtualItems;
         };
-        _slungItems = _slungItems arrayIntersect _virtualItems;
     };
 
     // Syncing isn't needed when a new helmet is being slung, since that always syncs it
