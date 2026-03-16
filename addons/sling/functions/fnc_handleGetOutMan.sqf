@@ -26,7 +26,9 @@ TRACE_1("fnc_handleGetOutMan",_unit);
     private _slungItems = _this getVariable [QGVAR(slungHelmetItems), []];
     GVAR(slungHelmetPosition) params ["_bone", "_attachPos", "_vectorDirAndUp"];
 
+    private _positionASL = getPosASL _this;
     {
+        _x setPosASL _positionASL;
         _x attachTo [_this, _attachPos, _bone, true];
         _x setVectorDirAndUp _vectorDirAndUp;
     } forEach _slungItems;
