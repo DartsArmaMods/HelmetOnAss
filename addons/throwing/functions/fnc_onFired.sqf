@@ -83,7 +83,7 @@ _projectile addEventHandler ["HitPart", {
         _projectile removeEventHandler [_thisEvent, _thisEventHandler]; \
         deleteVehicle _projectile
 
-	params ["_projectile", "_hitEntity", "", "_position", "_velocity", "", "_components", "" ,"", "_instigator"];
+    params ["_projectile", "_hitEntity", "", "_position", "_velocity", "", "_components", "" ,"", "_instigator"];
 
     (_projectile getVariable [QGVAR(helmetHitParams), []]) params [["_items", []], "_instigatorPositionASL", "_groundholder"];
 
