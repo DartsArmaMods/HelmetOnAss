@@ -22,7 +22,7 @@ TRACE_2("fnc_moduleSlingHelmet",_unit,_slingMode);
 private _slingParams = EGVAR(sling,positions) select _slingMode;
 
 // If a helmet is already slung, instead move the helmet to the selected position
-private _slungItems = _unit getVariable [QEGVAR(sling,slungHelmetItems), []];
+private _slungItems = _unit getVariable [QEGVAR(sling,slungHolders), []];
 if (_slungItems isNotEqualTo []) then {
     _slingParams params ["_bone", "_attachPos", "_vectorDirAndUp"];
     {

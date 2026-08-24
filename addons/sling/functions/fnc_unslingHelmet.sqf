@@ -14,7 +14,7 @@
  * Example:
  * player call hoa_sling_fnc_unslingHelmet;
  *
- * Public: Yes
+ * Public: No
  */
 
 params [
@@ -24,18 +24,15 @@ params [
 ];
 TRACE_3("fnc_unslingHelmet",_unit,_mode,_items);
 
-if (isNull _unit || headgear _unit != "") exitWith {};
+if !(_unit call FUNC(canUnslingHelmet)) exitWith {};
 
-private _groundholders = _unit getVariable [QGVAR(slungHelmetItems), []];
-private _helmetGH = (_groundholders deleteAt [-1]) select 0;
+(_unit call FUNC(getSlungItems)) params ["_helmet", "_nvg", "_facewear"];
 
-_unit addHeadgear (getItemCargo _helmetGH select 0 select 0);
-deleteVehicle _helmetGH;
+_unit addHeadgear _helmet;
+_unit linkItem _nvg;
+_unit linkItem _facewear;
+deleteVehicle (_unit getVariable [QGVAR(slungHolders), []]);
 
-{
-    _unit linkItem (getItemCargo _x select 0 select 0);
-} forEach _groundholders;
-
-deleteVehicle _groundholders;
-_unit setVariable [QGVAR(slungHelmetItems), nil, true];
+_unit setVariable [QGVAR(slungItems), nil, true];
+_unit setVariable [QGVAR(slungHolders), nil, true];
 [QGVAR(helmetUnslung), [_unit], _unit] call CBA_fnc_targetEvent;

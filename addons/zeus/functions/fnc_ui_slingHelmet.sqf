@@ -40,7 +40,7 @@ switch (false) do {
 
     // Not using canSlingHelmet because we don't want to exit if they already have a helmet slung
     // If a helmet is slung, the module instead moves the helmet to the selected position
-    case (headgear _unit != "" || {_unit getVariable [QEGVAR(sling,slungHelmetItems), []] isNotEqualTo []}): {
+    case (headgear _unit != "" || {_unit getVariable [QEGVAR(sling,slungHolders), []] isNotEqualTo []}): {
         [_logic, LSTRING(slingHelmet_noHelmet)] call FUNC(errorAndClose);
     };
     default { _exit = false };

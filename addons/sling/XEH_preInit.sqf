@@ -25,7 +25,7 @@ GVAR(slingCache) = createHashMap; // Hashamp of helmets, nvgs, and facewear and 
 
 ["CBA_loadoutSet", {
     params ["_unit", "", "_extendedInfo"];
-    private _slungItems = _extendedInfo getOrDefault [QGVAR(slungHelmetItems), []];
+    private _slungItems = _extendedInfo getOrDefault [QGVAR(slungHolders), []];
 
     private _arsenal = missionNamespace getVariable ["ace_arsenal_currentBox", objNull];
     if (!isNull _arsenal) then {
@@ -46,8 +46,8 @@ GVAR(slingCache) = createHashMap; // Hashamp of helmets, nvgs, and facewear and 
 
     // Syncing isn't needed when a new helmet is being slung, since that always syncs it
     private _sync = _slungItems isEqualTo [];
-    deleteVehicle (_unit getVariable [QGVAR(slungHelmetItems), []]);
-    _unit setVariable [QGVAR(slungHelmetItems), nil, _sync];
+    deleteVehicle (_unit getVariable [QGVAR(slungHolders), []]);
+    _unit setVariable [QGVAR(slungHolders), nil, _sync];
 
     if (!_sync) then {
         [_unit, 0, _slungItems, false] call FUNC(slingHelmet);
@@ -56,5 +56,5 @@ GVAR(slingCache) = createHashMap; // Hashamp of helmets, nvgs, and facewear and 
 
 ["CBA_loadoutGet", {
     params ["_unit", "", "_extendedInfo"];
-    _extendedInfo set [QGVAR(slungHelmetItems), _unit call FUNC(getSlungItems)];
+    _extendedInfo set [QGVAR(slungHolders), _unit call FUNC(getSlungItems)];
 }] call CBA_fnc_addEventHandler;

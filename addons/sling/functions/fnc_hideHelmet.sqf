@@ -6,7 +6,7 @@
  * Arguments:
  * 0: Unit <OBJECT>
  * 1: True to hide, false to unhide (optional, default: true) <BOOL>
- * 2: Items to hide (optional, default: slung items) <ARRAY>
+ * 2: Items (optional, default: []) (unused, for future proofing) <ARRAY>
  *
  * Return Value:
  * None
@@ -17,11 +17,25 @@
  * Public: No
  */
 
-params ["_unit", ["_set", true], ["_items", []]];
-TRACE_3("fnc_hideHelmet",_unit,_set,_items);
+params ["_unit", ["_hide", true], ["_items", []]];
+TRACE_3("fnc_hideHelmet",_unit,_hide,_items);
 
-if (_items isEqualTo []) then {
-    _items = _unit getVariable [QGVAR(slungHelmetItems), []];
+// Check correct condition function based on if the items should be hidden or not
+private _conditionCheck = if (_hide) then {
+    _unit call FUNC(canHideHelmet);
+} else {
+    _unit call FUNC(canUnhideHelmet);
 };
-[QGVAR(hideObjects), [_items, _set]] call CBA_fnc_serverEvent;
-_unit setVariable [QGVAR(slungHelmetHidden), _set];
+
+if (!_conditionCheck) exitWith {};
+
+_items = _unit call FUNC(getSlungItems);
+private _groundholders = _unit getVariable [QGVAR(slungHolders), []];
+
+// Groundholders were deleted, so we need to re-create them
+if (!_hide && _groundholders isEqualTo []) then {
+    [_unit, 0, _items, false] call FUNC(slingHelmet);
+};
+
+[QGVAR(hideObjects), [_groundholders, _hide]] call CBA_fnc_serverEvent;
+_unit setVariable [QGVAR(slungHelmetHidden), _hide];

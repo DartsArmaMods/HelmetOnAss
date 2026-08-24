@@ -1,7 +1,7 @@
 #include "..\script_component.hpp"
 /*
  * Authors: DartRuffian
- * Returns the contents of a unit's slung groundholders.
+ * Returns the contents of a unit's slung items.
  *
  * Arguments:
  * 0: Unit <OBJECT>
@@ -18,6 +18,6 @@
 params [["_unit", objNull, [objNull]]];
 TRACE_1("fnc_getSlungItems",_unit);
 
-if (isNull _unit || !(_unit isKindOf "CAManBase")) exitWith {};
+if (isNull _unit || !(_unit isKindOf "CAManBase")) exitWith { [] };
 
-(_unit getVariable [QGVAR(slungHelmetItems), []]) apply { getItemCargo _x select 0 select 0 };
+_unit getVariable [QGVAR(slungItems), []];

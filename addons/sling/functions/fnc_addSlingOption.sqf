@@ -9,7 +9,7 @@
  * 1: Sling settings <ARRAY>
  *    - 0: Memory point to attach to <STRING>
  *    - 1: Attach position <ARRAY>
- *    - 2: vectorDirAndUp
+ *    - 2: vectorDirAndUp <ARRAY>
  *
  * Return Value:
  * Succeeded <BOOL>
@@ -22,11 +22,17 @@
 
 params [
     ["_name", "", [""]],
-    ["_slingParams", [], [[]]]
+    ["_slingParams", [], [[]]],
+    ["_overwriteExisting", false, [false]]
 ];
-TRACE_2("fnc_addSlingOption",_name,_slingParams);
+TRACE_3("fnc_addSlingOption",_name,_slingParams,_overwriteExisting);
 
-if (_name == "" || _slingParams isEqualTo [] || _name in GVAR(positionNames)) exitWith { false };
+if (_name == "" || _slingParams isEqualTo []) exitWith { false };
+
+if (_name in GVAR(positionNames) && !_overwriteExisting) exitWith {
+    WARNING_1("Sling option '%1' already exists",_name);
+    false;
+};
 
 GVAR(positionNames) pushBack _name;
 GVAR(positions) pushBack _slingParams;

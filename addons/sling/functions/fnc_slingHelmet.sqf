@@ -19,7 +19,7 @@
  * Example:
  * player call hoa_sling_fnc_slingHelmet;
  *
- * Public: Yes
+ * Public: No
  */
 
 params [
@@ -31,11 +31,12 @@ params [
 ];
 TRACE_4("fnc_slingHelmet",_unit,_mode,_items,_removeCurrentItems);
 
-if (isNull _unit) exitWith {};
+if !([_unit, _mode] call FUNC(canSlingHelmet)) exitWith {};
 
 if (_items isEqualTo []) then {
     _items = [headgear _unit, hmd _unit, goggles _unit];
 } else {
+    // If a specific list of items is passed, order it as [helmet, nvg, facewear]
     private _itemTypes = _items apply { (_x call ace_common_fnc_getItemType) select 1 };
     private _itemsTemp = _items;
     _items = +_items;
@@ -50,9 +51,10 @@ if (_items isEqualTo []) then {
 };
 _items params ["_helmet", "_nvg", "_facewear"];
 
-private _groundholders = _unit getVariable [QGVAR(slungHelmetItems), []];
+private _groundholders = _unit getVariable [QGVAR(slungHolders), []];
 if (_helmet == "" || _groundholders isNotEqualTo []) exitWith {};
 
+// Filter out items that shouldn't slung, 1/2 force nvg / facewear to sling
 _items = switch (_mode) do {
     case 1: { [] };
     case 2: { [_nvg] };
@@ -61,7 +63,7 @@ _items = switch (_mode) do {
 };
 
 _items = _items select { _x != "" };
-_items pushBack _helmet;
+_items pushBack _helmet; // Helmet should always sling
 
 if (_slingParams isEqualTo []) then {
     _slingParams = GVAR(slungHelmetPosition);
@@ -69,6 +71,8 @@ if (_slingParams isEqualTo []) then {
 _slingParams params ["_bone", "_attachPos", "_vectorDirAndUp"];
 
 {
+    // Facewear models are rotated 180 degrees when dropped on the ground
+    // Facewear ground holder just has the proxy rotated
     private _groundholderClass = ["hoa_groundholder", "hoa_groundholder_facewear"] select ((_x call ace_common_fnc_getItemType) select 1 == "glasses");
     private _groundholder = createVehicle [_groundholderClass, [0, 0, 0], [], 0, "CAN_COLLIDE"];
 
@@ -93,5 +97,6 @@ private _holdersToHide = _groundholders select {
 [_unit, true, _holdersToHide] call FUNC(hideHelmet);
 _unit setVariable [QGVAR(slungHelmetHidden), count _holdersToHide == count _groundholders]; // Only mark helmet as hidden if everything is hidden
 
-_unit setVariable [QGVAR(slungHelmetItems), _groundholders, true];
+_unit setVariable [QGVAR(slungItems), _items, true];
+_unit setVariable [QGVAR(slungHolders), _groundholders, true];
 [QGVAR(helmetSlung), [_unit, _groundholders], _unit] call CBA_fnc_targetEvent;
