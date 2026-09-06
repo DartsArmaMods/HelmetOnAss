@@ -12,7 +12,7 @@
         {
             _x attachTo [ace_player, _attachPos, _bone, true];
             _x setVectorDirAndUp _vectorDirAndUp;
-        } forEach (ace_player getVariable [QGVAR(slungHelmetItems), []]);
+        } forEach (ace_player getVariable [QGVAR(slungHolders), []]);
     }
 ] call CBA_fnc_addSetting;
 

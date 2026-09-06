@@ -1,15 +1,15 @@
 #include "script_component.hpp"
 
 class CfgPatches {
-    class ADDON {
+    class SUBADDON {
         author = AUTHOR;
         authors[] = {"DartRuffian"};
         url = ECSTRING(main,url);
         name = COMPONENT_NAME;
         requiredVersion = REQUIRED_VERSION;
         requiredAddons[] = {
-            "hoa_sling",
-            "kat_misc"
+            QUOTE(ADDON),
+            "MA_Armor"
         };
         units[] = {};
         weapons[] = {};
@@ -19,4 +19,4 @@ class CfgPatches {
     };
 };
 
-#include "CfgWeapons.hpp"
+#include "CfgGlasses.hpp"

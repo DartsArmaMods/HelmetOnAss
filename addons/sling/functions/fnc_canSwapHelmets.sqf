@@ -18,4 +18,4 @@
 params ["_unit"];
 TRACE_1("fnc_canSwapHelmets",_unit);
 
-headgear _unit != "" && { _unit getVariable [QGVAR(slungHelmetItems), []] isNotEqualTo [] }
+headgear _unit != "" && { _unit call FUNC(getSlungItems) isNotEqualTo [] }

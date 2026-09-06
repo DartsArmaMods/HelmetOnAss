@@ -8,8 +8,7 @@ class CfgPatches {
         name = COMPONENT_NAME;
         requiredVersion = REQUIRED_VERSION;
         requiredAddons[] = {
-            "hoa_sling",
-            "MA_Armor"
+            "hoa_sling"
         };
         units[] = {};
         weapons[] = {};
@@ -18,5 +17,3 @@ class CfgPatches {
         skipWhenMissingDependencies = 1;
     };
 };
-
-#include "CfgGlasses.hpp"

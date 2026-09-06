@@ -21,9 +21,4 @@
 params ["_unit"];
 TRACE_1("fnc_handleGetInMan",_unit);
 
-private _slungItems = _unit getVariable [QGVAR(slungHelmetItems), []];
-{
-    detach _x;
-    _x setPosASL [0, 0, 0];
-} forEach _slungItems;
-[QGVAR(hideObjects), [_slungItems, true]] call CBA_fnc_serverEvent;
+deleteVehicle (_unit getVariable [QGVAR(slungHolders), []]);

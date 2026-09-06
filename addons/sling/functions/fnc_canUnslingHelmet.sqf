@@ -7,7 +7,7 @@
  * 0: Unit <OBJECT>
  *
  * Return Value:
- * True if helmet can be unslung, otherwise false
+ * True if helmet can be unslung, otherwise false <BOOL>
  *
  * Example:
  * player call hoa_sling_fnc_canSlingHelmet
@@ -18,4 +18,4 @@
 params ["_unit"];
 TRACE_1("fnc_canUnslingHelmet",_unit);
 
-GVAR(enabled) && headgear _unit == "" && { _unit getVariable [QGVAR(slungHelmetItems), []] isNotEqualTo [] };
+GVAR(enabled) && headgear _unit == "" && { _unit getVariable [QGVAR(slungHolders), []] isNotEqualTo [] };

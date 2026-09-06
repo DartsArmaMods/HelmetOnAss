@@ -14,7 +14,7 @@
  * Example:
  * player call hoa_sling_fnc_swapHelmets;
  *
- * Public: Yes
+ * Public: No
  */
 
 params [
@@ -24,7 +24,7 @@ params [
 ];
 TRACE_3("fnc_swapHelmets",_unit,_mode,_items);
 
-if (isNull _unit) exitWith {};
+if !(_unit call FUNC(canSwapHelmets)) exitWith {};
 
 _items = [hmd _unit, goggles _unit];
 _items = _items select { _x call FUNC(getSlingParams) select 0 };
