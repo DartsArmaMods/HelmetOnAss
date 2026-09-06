@@ -8,8 +8,8 @@ class CfgPatches {
         name = COMPONENT_NAME;
         requiredVersion = REQUIRED_VERSION;
         requiredAddons[] = {
-            "hoa_sling",
-            "kat_misc"
+            QUOTE(ADDON),
+            "PLP_RemasteredHair"
         };
         units[] = {};
         weapons[] = {};
