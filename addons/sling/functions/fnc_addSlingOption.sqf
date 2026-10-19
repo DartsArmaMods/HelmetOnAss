@@ -12,7 +12,7 @@
  *    - 2: vectorDirAndUp
  *
  * Return Value:
- * Succeeded <BOOL>
+ * True if succeeded, otherwise false <BOOL>
  *
  * Example:
  * ["Belt", [-0.15, 0.35, -0.2], [[0.469846, -0.813798, 0.34202], [-0.17101, 0.296198, 0.939693]]] call hoa_sling_fnc_addSlingOption

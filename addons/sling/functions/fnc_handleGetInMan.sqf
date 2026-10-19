@@ -21,9 +21,6 @@
 params ["_unit"];
 TRACE_1("fnc_handleGetInMan",_unit);
 
-if (!isServer) exitWith {};
+if (_unit isNotEqualTo ace_player) exitWith {};
 
-private _slungItems = _unit call FUNC(getSlungItems);
-deleteVehicle (_unit getVariable [QGVAR(slungHelmetItems), []]);
-_unit setVariable [QGVAR(slungHelmetItems), nil, true];
-_unit setVariable [QGVAR(slungItemsTempDoNotUseThis), _slungItems];
+deleteVehicle GET_SLUNG_HOLDERS(_unit);
