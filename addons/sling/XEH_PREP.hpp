@@ -1,7 +1,11 @@
 PREP(addSlingOption);
+PREP(canSlingHelmet);
+PREP(canUnslingHelmet);
 PREP(getSlungItems);
 PREP(handleDeleted);
 PREP(handleGetInMan);
 PREP(handleGetOutMan);
 PREP(handleKilled);
 PREP(handleRespawn);
+PREP(slingHelmet);
+PREP(unslingHelmet);
