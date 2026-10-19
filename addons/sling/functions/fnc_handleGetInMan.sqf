@@ -21,6 +21,7 @@
 params ["_unit"];
 TRACE_1("fnc_handleGetInMan",_unit);
 
-if (_unit isNotEqualTo ace_player) exitWith {};
+if !(local _unit) exitWith {};
 
 deleteVehicle GET_SLUNG_HOLDERS(_unit);
+_unit setVariable [VAR_SLUNG_HOLDERS, nil, true];

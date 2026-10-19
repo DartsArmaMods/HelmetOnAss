@@ -20,4 +20,4 @@ TRACE_1("fnc_getSlungItems",_unit);
 
 if (isNull _unit || !(_unit isKindOf "CAManBase")) exitWith { [] };
 
-_unit getVariable [QGVAR(slungItems), []];
+_unit getVariable [VAR_SLUNG_ITEMS, []];

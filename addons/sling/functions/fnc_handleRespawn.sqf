@@ -20,6 +20,6 @@ TRACE_1("fnc_handleRespawn",_unit);
 
 if (!local _unit) exitWith {};
 
-_unit setVariable [QGVAR(slungItems), nil, true];
-_unit setVariable [QGVAR(slungHolders), nil, true];
-_unit setVariable [QGVAR(hideSlungItems), nil];
+_unit setVariable [VAR_SLUNG_ITEMS, nil, true];
+_unit setVariable [VAR_SLUNG_HOLDERS, nil, true];
+_unit setVariable [VAR_HIDE_SLUNG_ITEMS, nil, true];
