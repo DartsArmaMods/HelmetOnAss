@@ -12,10 +12,11 @@
         {
             _x attachTo [ace_player, _attachPos, _bone, true];
             _x setVectorDirAndUp _vectorDirAndUp;
-        } forEach (ace_player getVariable [QGVAR(slungHelmetItems), []]);
+        } forEach GET_SLUNG_HOLDERS(ace_player);
     }
 ] call CBA_fnc_addSetting;
 
+// TODO: Cut?
 [
     QGVAR(allowedModesSetting), "EDITBOX",
     [LSTRING(allowedModes_name), LSTRING(allowedModes_tooltip)],

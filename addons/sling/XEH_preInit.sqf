@@ -6,6 +6,8 @@ PREP_RECOMPILE_END;
 
 private _category = [QUOTE(MOD_NAME), LLSTRING(displayName)];
 
+GVAR(slingCache) = createHashMap; // Hashamp of helmets, nvgs, and facewear and whether they should sling with the helmet and hidden when slung
+
 // Needs to be two separate arrays because these are used by reference for CBA settings
 GVAR(positionNames) = [
     LSTRING(position_belt),
@@ -21,8 +23,7 @@ GVAR(positions) = [
 #include "initSettings.inc.sqf"
 #include "initKeybinds.inc.sqf"
 
-GVAR(slingCache) = createHashMap; // Hashamp of helmets, nvgs, and facewear and whether they should sling with the helmet and hidden when slung
-
+// TODO: Move to own functions
 ["CBA_loadoutSet", {
     params ["_unit", "", "_extendedInfo"];
     private _slungItems = _extendedInfo getOrDefault [QGVAR(slungHelmetItems), []];
