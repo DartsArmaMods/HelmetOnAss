@@ -3,7 +3,7 @@
 <h1 align="center">Helmet on Ass</h1>
 <p align="center">
     <a href="https://github.com/DartsArmaMods/HelmetOnAss/releases/latest">
-        <img src="https://img.shields.io/badge/Version-1.1.3-blue?style=flat-square" alt="Helmet on Ass Version">
+        <img src="https://img.shields.io/badge/Version-1.1.7-blue?style=flat-square" alt="Helmet on Ass Version">
     </a>
     <a href="https://github.com/DartsArmaMods/HelmetOnAss/issues">
         <img src="https://img.shields.io/github/issues-raw/DartsArmaMods/HelmetOnAss.svg?style=flat-square&label=Issues" alt="Helmet on Ass Issues">
@@ -14,9 +14,7 @@
     <a href="https://github.com/DartsArmaMods/HelmetOnAss/blob/master/LICENSE">
         <img src="https://img.shields.io/badge/License-APL ND-red?style=flat-square" alt="Helmet on Ass License">
     </a>
-    <br>
     <img src="https://img.shields.io/github/actions/workflow/status/DartsArmaMods/HelmetOnAss/hemtt.yml?style=flat-square&label=HEMTT" alt="HEMTT">
-    <img src="https://img.shields.io/github/actions/workflow/status/DartsArmaMods/HelmetOnAss/arma.yml?style=flat-square&label=Validate" alt="Validate">
 </p>
 
 <p align="center">

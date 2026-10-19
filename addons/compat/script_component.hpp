@@ -1,5 +1,5 @@
-#define COMPONENT compat_ma
-#define COMPONENT_BEAUTIFIED Misriah Armory Compatibility
+#define COMPONENT compat
+#define COMPONENT_BEAUTIFIED Compatibility
 #include "\z\hoa\addons\main\script_mod.hpp"
 
 // #define DEBUG_MODE_FULL
