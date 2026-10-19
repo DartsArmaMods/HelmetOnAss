@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project name="HelmetOnAss">
+    <Package name="Throwing">
+        <Key ID="STR_hoa_throwing_displayName">
+            <English>Throwing</English>
+        </Key>
+        <Key ID="STR_hoa_throwing_enabled_tooltip">
+            <English>Enables or disables helmet throwing</English>
+        </Key>
+        <Key ID="STR_hoa_throwing_helmetGrenade">
+            <English>Helmet Grenade</English>
+        </Key>
+        <Key ID="STR_hoa_throwing_helmetPriority_name">
+            <English>Helmet Priority</English>
+        </Key>
+        <Key ID="STR_hoa_throwing_helmetPriority_tooltip">
+            <English>Selects which helmet should be used first when throwing a helmet.</English>
+        </Key>
+        <Key ID="STR_hoa_throwing_ragdollStrength_name">
+            <English>Ragdoll Strength</English>
+        </Key>
+        <Key ID="STR_hoa_throwing_ragdollStrength_tooltip">
+            <English>Strength of the ragdoll effect when hitting a unit with a helmet.\n0 = no ragdoll.</English>
+        </Key>
+        <Key ID="STR_hoa_throwing_slungHelmet">
+            <English>Slung Helmet</English>
+        </Key>
+        <Key ID="STR_hoa_throwing_wornHelmet">
+            <English>Worn Helmet</English>
+        </Key>
+    </Package>
+</Project>
