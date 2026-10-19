@@ -22,15 +22,18 @@
 params ["_unit"];
 TRACE_1("fnc_handleGetOutMan",_unit);
 
-[{
-    private _slungItems = _this getVariable [QGVAR(slungHelmetItems), []];
-    GVAR(slungHelmetPosition) params ["_bone", "_attachPos", "_vectorDirAndUp"];
+if (!isServer) exitWith {};
 
-    private _positionASL = getPosASL _this;
-    {
-        _x setPosASL _positionASL;
-        _x attachTo [_this, _attachPos, _bone, true];
-        _x setVectorDirAndUp _vectorDirAndUp;
-    } forEach _slungItems;
-    [QGVAR(hideObjects), [_slungItems, _this getVariable [QGVAR(slungHelmetHidden), false]]] call CBA_fnc_serverEvent;
-}, _unit, 0.5] call CBA_fnc_waitAndExecute;
+private _slungItems = _unit getVariable [QGVAR(slungItemsTempDoNotUseThis), []];
+if (_slungItems isEqualTo []) exitWith {};
+
+[{
+    params ["_unit", "_slungItems"];
+
+    [_unit, 0, _slungItems, false] call FUNC(slingHelmet);
+    private _groundholders = _unit getVariable [QGVAR(slungHelmetItems), []];
+
+    if (_unit getVariable [QGVAR(slungHelmetHidden), false]) then {
+        [QGVAR(hideObjects), [_groundholders, true]] call CBA_fnc_serverEvent;
+    };
+}, [_unit, _slungItems], 0.1] call CBA_fnc_waitAndExecute;

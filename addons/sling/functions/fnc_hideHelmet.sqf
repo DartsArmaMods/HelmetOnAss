@@ -24,4 +24,4 @@ if (_items isEqualTo []) then {
     _items = _unit getVariable [QGVAR(slungHelmetItems), []];
 };
 [QGVAR(hideObjects), [_items, _set]] call CBA_fnc_serverEvent;
-_unit setVariable [QGVAR(slungHelmetHidden), _set];
+_unit setVariable [QGVAR(slungHelmetHidden), _set, true];
