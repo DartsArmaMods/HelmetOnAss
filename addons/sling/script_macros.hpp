@@ -1,8 +1,8 @@
 // These use E variants so they can be reused by other addons
 
-#define VAR_SLUNG_ITEMS EGVAR(sling,slungItems)
-#define VAR_SLUNG_HOLDERS EGVAR(sling,slungHolders)
-#define VAR_HIDE_SLUNG_ITEMS EGVAR(sling,hideSlungItems)
+#define VAR_SLUNG_ITEMS QEGVAR(sling,slungItems)
+#define VAR_SLUNG_HOLDERS QEGVAR(sling,slungHolders)
+#define VAR_HIDE_SLUNG_ITEMS QEGVAR(sling,hideSlungItems)
 
 #define GET_SLUNG_ITEMS(UNIT) (UNIT call EFUNC(sling,getSlungItems))
 #define GET_SLUNG_HOLDERS(UNIT) (UNIT getVariable [VAR_SLUNG_HOLDERS, []])

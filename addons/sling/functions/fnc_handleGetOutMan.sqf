@@ -22,9 +22,6 @@
 params ["_unit"];
 TRACE_1("fnc_handleGetOutMan",_unit);
 
-if (_unit isNotEqualTo ace_player) exitWith {};
+if !(local _unit && GET_SLUNG_ITEMS(_unit) isNotEqualTo []) exitWith {};
 
-private _slungItems = GET_SLUNG_ITEMS(_unit);
-if (_slungItems isEqualTo []) exitWith {};
-
-[LINKFUNC(slingHelmet), [_unit, 0, _slungItems, false], 0.1] call CBA_fnc_waitAndExecute;
+[LINKFUNC(createSlungHolders), _unit, 0.1] call CBA_fnc_waitAndExecute;

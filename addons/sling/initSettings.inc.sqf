@@ -8,11 +8,7 @@
     QGVAR(slungHelmetPosition), "LIST",
     [LSTRING(slungHelmetPosition_name), LSTRING(slungHelmetPosition_tooltip)],
     _category, [GVAR(positions), GVAR(positionNames), 0], 0, {
-        params ["_bone", "_attachPos", "_vectorDirAndUp"];
-        {
-            _x attachTo [ace_player, _attachPos, _bone, true];
-            _x setVectorDirAndUp _vectorDirAndUp;
-        } forEach GET_SLUNG_HOLDERS(ace_player);
+        [ace_player, _this] call FUNC(repositionSlungHolders);
     }
 ] call CBA_fnc_addSetting;
 

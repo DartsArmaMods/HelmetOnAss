@@ -1,11 +1,13 @@
 PREP(addSlingOption);
 PREP(canSlingHelmet);
 PREP(canUnslingHelmet);
+PREP(createSlungHolders);
 PREP(getSlungItems);
 PREP(handleDeleted);
 PREP(handleGetInMan);
 PREP(handleGetOutMan);
 PREP(handleKilled);
 PREP(handleRespawn);
+PREP(repositionSlungHolders);
 PREP(slingHelmet);
 PREP(unslingHelmet);
