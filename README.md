@@ -14,9 +14,7 @@
     <a href="https://github.com/DartsArmaMods/HelmetOnAss/blob/master/LICENSE">
         <img src="https://img.shields.io/badge/License-APL ND-red?style=flat-square" alt="Helmet on Ass License">
     </a>
-    <br>
     <img src="https://img.shields.io/github/actions/workflow/status/DartsArmaMods/HelmetOnAss/hemtt.yml?style=flat-square&label=HEMTT" alt="HEMTT">
-    <img src="https://img.shields.io/github/actions/workflow/status/DartsArmaMods/HelmetOnAss/arma.yml?style=flat-square&label=Validate" alt="Validate">
 </p>
 
 <p align="center">
