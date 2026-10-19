@@ -20,3 +20,6 @@ exclude = []
 
 [properties]
 author = "DartRuffian"
+
+[hemtt.publish]
+changelog = "CHANGELOG.md"
