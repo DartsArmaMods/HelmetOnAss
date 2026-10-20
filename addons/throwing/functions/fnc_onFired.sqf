@@ -102,7 +102,7 @@ _projectile addEventHandler ["HitPart", {
         _strength = _oppVector vectorMultiply -(GVAR(ragdollStrength) * 100);
     };
 
-    [QGVAR(helmetHit), [_hitEntity, _instigator, _damage, _components select 2, _strength, _position], _hitEntity] call CBA_fnc_targetEvent;
+    [QGVAR(applyDamage), [_hitEntity, _instigator, _damage, _components select 2, _strength, _position], _hitEntity] call CBA_fnc_targetEvent;
 
     EXIT_CODE;
 }];

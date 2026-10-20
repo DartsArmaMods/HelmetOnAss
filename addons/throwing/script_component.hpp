@@ -7,4 +7,5 @@
 // #define ENABLE_PERFORMANCE_COUNTERS
 
 #include "\z\hoa\addons\main\script_macros.hpp"
+#include "\z\hoa\addons\sling\script_macros.hpp"
 #include "defines.hpp"
