@@ -20,26 +20,25 @@ class GVAR(RscSlingItems): RscDisplayAttributes {
         class Title: Title {};
         class Content: Content {
             class Controls {
-                class SlingItems: RscControlsGroupNoScrollbars {
-                    onSetFocus = QUOTE(call FUNC(ui_slingItems));
-                    idc = IDC_SLING_ITEMS;
+                class SlingPosition: RscControlsGroupNoScrollbars {
+                    idc = IDC_SLING_POSITION;
                     x = 0;
                     y = 0;
                     w = QUOTE(W_PART(26));
                     h = QUOTE(H_PART(6.2));
                     class controls {
                         class PositionLabel: RscText {
-                            idc = 99;
+                            idc = IDC_LABEL;
                             text = ECSTRING(sling,slungItemsPosition_name);
                             x = 0;
                             y = 0;
-                            w = QUOTE(W_PART(10));
+                            w = QUOTE(W_PART(LABEL_W));
                             h = QUOTE(H_PART(1));
                             colorBackground[] = {0, 0, 0, 0.5};
                         };
                         class Position: RscListBox {
-                            idc = 100;
-                            x = QUOTE(W_PART(10.1));
+                            idc = IDC_VALUE;
+                            x = QUOTE(W_PART(LABEL_W + LABEL_SPACING));
                             y = 0;
                             w = QUOTE(W_PART(26));
                             h = QUOTE(H_PART(6));
@@ -50,7 +49,9 @@ class GVAR(RscSlingItems): RscDisplayAttributes {
             };
         };
 
-        class ButtonOK: ButtonOK {};
+        class ButtonOK: ButtonOK {
+            onSetFocus = QUOTE(call FUNC(ui_slingItems));
+        };
         class ButtonCancel: ButtonCancel {};
     };
 };

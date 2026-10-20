@@ -33,7 +33,7 @@ params [
 ];
 TRACE_5("fnc_slingItems",_unit,_mode,_items,_removeCurrentItems,_slingParams);
 
-if !(local _unit && { ([_unit, _mode] call FUNC(canSlingHelmet)) }) exitWith {};
+if !(local _unit && { _unit call FUNC(canSlingItems) }) exitWith {};
 
 if (_items isEqualTo []) then {
     _items = [headgear _unit, hmd _unit, goggles _unit];

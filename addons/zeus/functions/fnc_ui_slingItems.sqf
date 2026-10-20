@@ -11,72 +11,61 @@
  * None
  *
  * Example:
- * _control call hoa_zeus_fnc_ui_slingItems
+ * _ctrl call hoa_zeus_fnc_ui_slingItems
  *
  * Public: No
 */
 
-params ["_control"];
-TRACE_1("fnc_ui_slingItems",_control);
+params ["_ctrl"];
+TRACE_1("fnc_ui_slingItems",_ctrl);
 
-// Generic init
-private _display = ctrlParent _control;
-private _ctrlButtonOK = _display displayCtrl 1;
-private _logic = GETMVAR(BIS_fnc_initCuratorAttributes_target,objNull);
+_ctrl ctrlRemoveAllEventHandlers "SetFocus";
 
-_control ctrlRemoveAllEventHandlers "SetFocus";
-
+private _display = ctrlParent _ctrl;
+private _logic = GET_CURRENT_TARGET;
 private _unit = attachedTo _logic;
 
 private _exit = true;
 switch (false) do {
     case (!isNull _unit): {
-        [_logic, "$STR_ace_zeus_nothingSelected"] call FUNC(errorAndClose);
+        ["$STR_ace_zeus_nothingSelected", _logic, _display] call FUNC(errorAndClose);
     };
     case (alive _unit): {
-        [_logic, "$STR_ace_zeus_onlyAlive"] call FUNC(errorAndClose);
+        ["$STR_ace_zeus_onlyAlive", _logic, _display] call FUNC(errorAndClose);
     };
-
-    // Not using canSlingHelmet because we don't want to exit if they already have a helmet slung
-    // If a helmet is slung, the module instead moves the helmet to the selected position
-    case (headgear _unit != "" || {_unit getVariable [QEGVAR(sling,slungHelmetItems), []] isNotEqualTo []}): {
-        [_logic, LSTRING(slingHelmet_noHelmet)] call FUNC(errorAndClose);
+    default {
+        _exit = false;
     };
-    default { _exit = false };
 };
 
-if (_exit) exitWith { _display closeDisplay 0 };
 
-private _listBox = _display displayCtrl 100;
+private _listBox = _display displayCtrl IDC_VALUE;
 {
     private _name = _x;
-    if (isLocalized _name) then {
-        _name = localize _name;
-    };
+    if (isLocalized _name) then { _name = localize _name };
     _listBox lbAdd _name;
 } forEach EGVAR(sling,positionNames);
+_listBox lbSetCurSel 0;
 
-// Specific onLoad stuff
 private _fnc_onUnload = {
-    private _logic = GETMVAR(BIS_fnc_initCuratorAttributes_target,objNull);
-    if (isNull _logic) exitWith {};
-
-    deleteVehicle _logic;
+    deleteVehicle GET_CURRENT_TARGET;
 };
 
 private _fnc_onConfirm = {
     params [["_ctrlButtonOK", controlNull, [controlNull]]];
 
     private _display = ctrlParent _ctrlButtonOK;
-    if (isNull _display) exitWith {};
+    private _logic = GET_CURRENT_TARGET;
+    private _unit = attachedTo _logic;
 
-    private _logic = GETMVAR(BIS_fnc_initCuratorAttributes_target,objNull);
-    if (isNull _logic) exitWith {};
+    if (isNull _logic || isNull _display || !alive _unit) exitWith {};
 
-    private _slingMode = lbCurSel (_display displayCtrl 100);
-    [attachedTo _logic, _slingMode] call FUNC(moduleSlingHelmet);
-    nil;
+    private _slingMode = lbCurSel ((_display displayCtrl IDC_SLING_POSITION) controlsGroupCtrl IDC_VALUE);
+    private _slingParams = EGVAR(sling,positions) select _slingMode;
+
+    _logic setVariable [QGVAR(slingParams), _slingParams, true];
+    [QGVAR(moduleSlingItems), [_logic, [_unit], true], _unit] call CBA_fnc_targetEvent;
 };
 
 _display displayAddEventHandler ["Unload", _fnc_onUnload];
-_ctrlButtonOK ctrlAddEventHandler ["ButtonClick", _fnc_onConfirm];
+_ctrl ctrlAddEventHandler ["ButtonClick", _fnc_onConfirm];

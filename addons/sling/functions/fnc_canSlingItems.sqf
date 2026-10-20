@@ -16,6 +16,6 @@
  */
 
 params ["_unit"];
-TRACE_2("fnc_canSlingItems",_unit,_mode);
+TRACE_1("fnc_canSlingItems",_unit);
 
 GVAR(enabled) && alive _unit && { GET_SLUNG_ITEMS(_unit) isEqualTo [] };

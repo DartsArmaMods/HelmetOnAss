@@ -20,7 +20,7 @@ params [
 ];
 TRACE_1("fnc_unslingItems",_unit);
 
-if !(local _unit && { (_unit call FUNC(canUnslingHelmet)) }) exitWith {};
+if !(local _unit && { (_unit call FUNC(canUnslingItems)) }) exitWith {};
 
 [_unit, GET_SLUNG_ITEMS(_unit)] call FUNC(addItems);
 deleteVehicle (GET_SLUNG_HOLDERS(_unit));

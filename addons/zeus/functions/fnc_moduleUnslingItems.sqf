@@ -15,12 +15,15 @@
  * Public: No
  */
 
-params ["_logic"];
-TRACE_1("fnc_moduleUnslingItems",_logic);
+if (canSuspend) exitWith {
+    [FUNC(moduleUnslingItems), _this] call CBA_fnc_directCall;
+};
 
-if (!local _logic) exitWith {};
+params ["_logic", "", "_activated"];
+TRACE_2("fnc_moduleUnslingItems",_logic,_activated);
 
 private _unit = attachedTo _logic;
+if !(local _unit && _activated) exitWith {};
 
 private _exit = true;
 switch (false) do {
@@ -30,14 +33,14 @@ switch (false) do {
     case (alive _unit): {
         [_logic, "$STR_ace_zeus_onlyAlive"] call FUNC(errorAndClose);
     };
-    case (_unit call EFUNC(sling,canUnslingHelmet)): {
-        [_logic, LSTRING(unslingHelmet_noSlungHelmet)] call FUNC(errorAndClose);
+    case (_unit call EFUNC(sling,canUnslingItems)): {
+        [_logic, LSTRING(noSlungItems)] call FUNC(errorAndClose);
     };
     default { _exit = false };
 };
 
 if (_exit) exitWith {};
 
-_unit call EFUNC(sling,unslingHelmet);
+_unit call EFUNC(sling,unslingItems);
 
 deleteVehicle _logic;

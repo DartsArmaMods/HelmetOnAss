@@ -1,6 +1,6 @@
 class CfgVehicles {
     class Module_F;
-    class hoa_moduleBase: Module_F {
+    class MODULE(Base): Module_F {
         scope = 0;
         scopeCurator = 2;
         author = AUTHOR;
@@ -8,11 +8,11 @@ class CfgVehicles {
         category = QUOTE(ADDON);
         function = "";
         functionPriority = 1;
-        isGlobal = 1; // 0 = server only, 1 = global, 2 = global w/ JIP
+        isGlobal = GLOBAL;
         isTriggerActivated = 0;
     };
 
-    class hoa_moduleSlingItems: hoa_moduleBase {
+    class MODULE(SlingItems): MODULE(Base) {
         scope = 1;
         author = AUTHOR;
         displayName = ECSTRING(sling,slingItems_name);
@@ -21,7 +21,7 @@ class CfgVehicles {
         curatorInfoType = QGVAR(RscSlingItems);
     };
 
-    class hoa_moduleUnslingItems: hoa_moduleBase {
+    class MODULE(UnslingItems): MODULE(Base) {
         scope = 1;
         author = AUTHOR;
         displayName = ECSTRING(sling,unslingItems_name);
