@@ -10,13 +10,13 @@
  * None
  *
  * Example:
- * _logic call hoa_zeus_fnc_moduleUnslingHelmet
+ * _logic call hoa_zeus_fnc_moduleUnslingItems
  *
  * Public: No
  */
 
 params ["_logic"];
-TRACE_1("fnc_moduleUnslingHelmet",_logic);
+TRACE_1("fnc_moduleUnslingItems",_logic);
 
 if (!local _logic) exitWith {};
 

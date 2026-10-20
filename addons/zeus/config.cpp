@@ -12,8 +12,8 @@ class CfgPatches {
             "ace_zeus"
         };
         units[] = {
-            "hoa_moduleSlingHelmet",
-            "hoa_moduleUnslingHelmet"
+            "hoa_moduleSlingItems",
+            "hoa_moduleUnslingItems"
         };
         weapons[] = {};
         VERSION_CONFIG;

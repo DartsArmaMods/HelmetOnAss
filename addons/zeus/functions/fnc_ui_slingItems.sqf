@@ -11,19 +11,18 @@
  * None
  *
  * Example:
- * _control call hoa_zeus_fnc_ui_slingHelmet
+ * _control call hoa_zeus_fnc_ui_slingItems
  *
  * Public: No
 */
 
 params ["_control"];
-TRACE_1("fnc_ui_slingHelmet",_control);
+TRACE_1("fnc_ui_slingItems",_control);
 
 // Generic init
 private _display = ctrlParent _control;
 private _ctrlButtonOK = _display displayCtrl 1;
 private _logic = GETMVAR(BIS_fnc_initCuratorAttributes_target,objNull);
-TRACE_1("Logic Object",_logic);
 
 _control ctrlRemoveAllEventHandlers "SetFocus";
 
@@ -48,7 +47,7 @@ switch (false) do {
 
 if (_exit) exitWith { _display closeDisplay 0 };
 
-private _listBox = _display displayCtrl IDC_SLING_HELMET_POSITION;
+private _listBox = _display displayCtrl 100;
 {
     private _name = _x;
     if (isLocalized _name) then {
@@ -74,7 +73,7 @@ private _fnc_onConfirm = {
     private _logic = GETMVAR(BIS_fnc_initCuratorAttributes_target,objNull);
     if (isNull _logic) exitWith {};
 
-    private _slingMode = lbCurSel (_display displayCtrl IDC_SLING_HELMET_POSITION);
+    private _slingMode = lbCurSel (_display displayCtrl 100);
     [attachedTo _logic, _slingMode] call FUNC(moduleSlingHelmet);
     nil;
 };

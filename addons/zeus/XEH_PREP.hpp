@@ -1,4 +1,4 @@
 PREP(errorAndClose);
-PREP(moduleSlingHelmet);
-PREP(moduleUnslingHelmet);
-PREP(ui_slingHelmet);
+PREP(moduleSlingItems);
+PREP(moduleUnslingItems);
+PREP(ui_slingItems);

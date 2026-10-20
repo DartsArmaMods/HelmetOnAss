@@ -12,20 +12,20 @@ class CfgVehicles {
         isTriggerActivated = 0;
     };
 
-    class hoa_moduleSlingHelmet: hoa_moduleBase {
+    class hoa_moduleSlingItems: hoa_moduleBase {
         scope = 1;
         author = AUTHOR;
         displayName = ECSTRING(sling,slingItems_name);
         curatorCanAttach = 1;
         function = "ace_common_fnc_dummy";
-        curatorInfoType = QGVAR(RscSlingHelmet);
+        curatorInfoType = QGVAR(RscSlingItems);
     };
 
-    class hoa_moduleUnslingHelmet: hoa_moduleBase {
+    class hoa_moduleUnslingItems: hoa_moduleBase {
         scope = 1;
         author = AUTHOR;
         displayName = ECSTRING(sling,unslingItems_name);
         curatorCanAttach = 1;
-        function = QFUNC(moduleUnslingHelmet);
+        function = QFUNC(moduleUnslingItems);
     };
 };

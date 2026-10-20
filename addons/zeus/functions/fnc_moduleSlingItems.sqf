@@ -11,13 +11,13 @@
  * None
  *
  * Example:
- * player call hoa_zeus_fnc_moduleSlingHelmet
+ * player call hoa_zeus_fnc_moduleSlingItems
  *
  * Public: No
  */
 
 params ["_unit", ["_slingMode", 0]];
-TRACE_2("fnc_moduleSlingHelmet",_unit,_slingMode);
+TRACE_2("fnc_moduleSlingItems",_unit,_slingMode);
 
 private _slingParams = EGVAR(sling,positions) select _slingMode;
 
