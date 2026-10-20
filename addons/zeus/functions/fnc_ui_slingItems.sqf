@@ -38,14 +38,34 @@ switch (false) do {
     };
 };
 
+if (_exit) exitWith {};
 
-private _listBox = _display displayCtrl IDC_VALUE;
+private _slingParamsListBox = (_display displayCtrl IDC_SLING_POSITION) controlsGroupCtrl IDC_VALUE;
 {
     private _name = _x;
     if (isLocalized _name) then { _name = localize _name };
-    _listBox lbAdd _name;
+    _slingParamsListBox lbAdd _name;
 } forEach EGVAR(sling,positionNames);
-_listBox lbSetCurSel 0;
+_slingParamsListBox lbSetCurSel 0;
+
+// Disable the control if the unit has slung items
+private _slingModeToolbox = (_display displayCtrl IDC_SLING_MODE) controlsGroupCtrl IDC_VALUE;
+
+if (GET_SLUNG_ITEMS(_unit) isNotEqualTo []) then {
+    _slingModeToolbox ctrlEnable false;
+    _slingModeToolbox ctrlSetTooltip LLSTRING(hasSlungItems);
+
+    _slingModeToolbox ctrlSetFade 0.5;
+    _slingModeToolbox ctrlCommit 0;
+
+    // Ideally there's some way to deselect the items, but lbCurSel -1 doesn't work with toolboxes
+    // TODO: Test ctrlSetProperty #{"colorSelectedBg": [0, 0, 0, 0]} in 2.24
+};
+
+/*
+Wiki page for https://community.bistudio.com/wiki/lbSetCurSel describes a workaround to deselect items in a toolbox by clearing the toolbox, selecting -1, and then re-adding items
+However this doesn't seem to work anymore, tried doing it and it instead selects some new item
+*/
 
 private _fnc_onUnload = {
     deleteVehicle GET_CURRENT_TARGET;
@@ -60,10 +80,12 @@ private _fnc_onConfirm = {
 
     if (isNull _logic || isNull _display || !alive _unit) exitWith {};
 
-    private _slingMode = lbCurSel ((_display displayCtrl IDC_SLING_POSITION) controlsGroupCtrl IDC_VALUE);
-    private _slingParams = EGVAR(sling,positions) select _slingMode;
-
+    private _slingParamsIndex = lbCurSel ((_display displayCtrl IDC_SLING_POSITION) controlsGroupCtrl IDC_VALUE);
+    private _slingParams = EGVAR(sling,positions) select _slingParamsIndex;
     _logic setVariable [QGVAR(slingParams), _slingParams, true];
+
+    _logic setVariable [QGVAR(slingMode), lbCurSel ((_display displayCtrl IDC_SLING_MODE) controlsGroupCtrl IDC_VALUE), true];
+
     [QGVAR(moduleSlingItems), [_logic, [_unit], true], _unit] call CBA_fnc_targetEvent;
 };
 

@@ -29,7 +29,8 @@ private _slingParams = _logic getVariable [QGVAR(slingParams), QEGVAR(sling,slun
 
 {
     if (GET_SLUNG_ITEMS(_x) isEqualTo []) then {
-        [_x, SLING_MODE_DEFAULT, [], true, _slingParams] call EFUNC(sling,slingItems);
+        private _slingMode = _logic getVariable [QGVAR(slingMode), SLING_MODE_DEFAULT];
+        [_x, _slingMode, [], true, _slingParams] call EFUNC(sling,slingItems);
     } else {
         // Unit already has slung items, so just reposition the existing ones
         [_x, _slingParams] call EFUNC(sling,createSlungHolders);

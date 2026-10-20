@@ -9,3 +9,4 @@
 #define IDC_LABEL             99
 #define IDC_VALUE            100
 #define IDC_SLING_POSITION 80100
+#define IDC_SLING_MODE     80110

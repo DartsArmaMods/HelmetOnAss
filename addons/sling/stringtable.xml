@@ -52,6 +52,9 @@
         <Key ID="STR_hoa_sling_slingItems_tooltip">
             <English>Slings your helmet, facewear, and nvg based on their configuration.</English>
         </Key>
+        <Key ID="STR_hoa_sling_slingMode_name">
+            <English>Sling Mode</English>
+        </Key>
         <Key ID="STR_hoa_sling_slungItemsPosition_name">
             <English>Slung Items Position</English>
         </Key>
