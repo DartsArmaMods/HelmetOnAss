@@ -33,4 +33,23 @@ params [
 ];
 TRACE_5("fnc_slingHelmet",_unit,_mode,_items,_removeCurrentItems,_slingParams);
 
-if !(local _unit && (_items isNotEqualTo []) && { ([_unit, _mode] call FUNC(canSlingHelmet)) }) exitWith {};
+if !(local _unit && { ([_unit, _mode] call FUNC(canSlingHelmet)) }) exitWith {};
+
+if (_items isEqualTo []) then {
+    _items = [headgear _unit, hmd _unit, goggles _unit];
+};
+
+// TODO: Redo `_mode` logic, probably just handle it in the keybinds?
+
+_items = _items select {
+    (_x call FUNC(getSlingParams)) select 0
+};
+
+if (_items isEqualTo []) exitWith {};
+
+if (_removeCurrentItems) then {
+    { _unit unlinkItem _x } forEach _items;
+};
+
+_unit setVariable [VAR_SLUNG_ITEMS, _items, true];
+[_unit, _slingParams] call FUNC(createSlungHolders);

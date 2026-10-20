@@ -37,6 +37,9 @@ private _positionASL = getPosASL _unit;
 
     _groundholder setPosASL _positionASL; // Attaching objects when they're far away can cause issues sometimes
     _groundholders pushBack _groundholder;
+
+    // Have object claim itself to remove ace interactions
+    [_groundholder, _groundholder] call ace_common_fnc_claimSafeServer;
 } forEach GET_SLUNG_ITEMS(_unit);
 
 _unit setVariable [VAR_SLUNG_HOLDERS, _groundholders, true];
