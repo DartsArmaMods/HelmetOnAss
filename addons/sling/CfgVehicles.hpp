@@ -41,14 +41,14 @@ class CfgVehicles {
 
             class hoa_hideSlungHelmet: hoa_unslingHelmet {
                 displayName = CSTRING(hideHelmet_name);
-                condition = QUOTE(_player call FUNC(canHideHelmet));
-                statement = QUOTE(_player call FUNC(hideHelmet));
+                condition = QUOTE(_player call FUNC(canHideSlungItems));
+                statement = QUOTE(_player call FUNC(hideSlungItems));
             };
 
             class hoa_unhideSlungHelmet: hoa_unslingHelmet {
                 displayName = CSTRING(unhideHelmet_name);
-                condition = QUOTE(_player call FUNC(canUnhideHelmet));
-                statement = QUOTE([ARR_2(_player,false)] call FUNC(hideHelmet));
+                condition = QUOTE(_player call FUNC(canUnhideSlungItems));
+                statement = QUOTE([ARR_2(_player,false)] call FUNC(hideSlungItems));
             };
         };
     };

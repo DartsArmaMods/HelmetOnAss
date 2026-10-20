@@ -21,7 +21,7 @@ params ["_unit", ["_slingParams", []]];
 TRACE_2("fnc_createSlungHolders",_unit,_slingParams);
 
 private _slungItems = GET_SLUNG_ITEMS(_unit);
-if !(alive _unit &&
+if !(local _unit && alive _unit &&
     isNull objectParent _unit &&
     _slungItems isNotEqualTo []
 ) exitWith {};
@@ -48,5 +48,19 @@ private _positionASL = getPosASL _unit;
 
 _unit setVariable [VAR_SLUNG_HOLDERS, _groundholders, true];
 [_unit, _slingParams] call FUNC(repositionSlungHolders);
+
+// If player sets it to hide the slung items, always hide everything
+if (_unit getVariable [VAR_HIDE_SLUNG_HOLDERS, false]) then {
+    [QGVAR(hideObjects), [_groundholders, true]] call CBA_fnc_serverEvent;
+} else {
+    // Otherwise, hide items that are configured to hide on sling
+    private _groundholdersToHide = _groundHolders select {
+        (getItemCargo _x select 0 select 0) call FUNC(getSlingParams) select 1
+    };
+    [QGVAR(hideObjects), [_groundholdersToHide, true]] call CBA_fnc_serverEvent;
+
+    // If every item is hidden, set the variable to true
+    _unit setVariable [VAR_HIDE_SLUNG_HOLDERS, count _groundHolders == count _groundholdersToHide];
+};
 
 _groundholders;
