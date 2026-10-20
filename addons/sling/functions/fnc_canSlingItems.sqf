@@ -10,12 +10,12 @@
  * True if helmet can be slung, otherwise false
  *
  * Example:
- * player call hoa_sling_fnc_canSlingHelmet
+ * player call hoa_sling_fnc_canSlingItems
  *
  * Public: No
  */
 
 params ["_unit"];
-TRACE_2("fnc_canSlingHelmet",_unit,_mode);
+TRACE_2("fnc_canSlingItems",_unit,_mode);
 
 GVAR(enabled) && alive _unit && { GET_SLUNG_ITEMS(_unit) isEqualTo [] };

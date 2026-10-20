@@ -5,8 +5,8 @@
 ] call CBA_fnc_addSetting;
 
 [
-    QGVAR(slungHelmetPosition), "LIST",
-    [LSTRING(slungHelmetPosition_name), LSTRING(slungHelmetPosition_tooltip)],
+    QGVAR(slungItemsPosition), "LIST",
+    [LSTRING(slungItemsPosition_name), LSTRING(slungItemsPosition_tooltip)],
     _category, [GVAR(positions), GVAR(positionNames), 0], 0, {
         [ace_player, _this] call FUNC(repositionSlungHolders);
     }

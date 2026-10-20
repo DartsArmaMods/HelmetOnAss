@@ -10,7 +10,7 @@
  * None
  *
  * Example:
- * player call hoa_sling_fnc_unslingHelmet
+ * player call hoa_sling_fnc_unslingItems
  *
  * Public: Yes
  */
@@ -18,7 +18,7 @@
 params [
     ["_unit", objNull, [objNull]]
 ];
-TRACE_1("fnc_unslingHelmet",_unit);
+TRACE_1("fnc_unslingItems",_unit);
 
 if !(local _unit && { (_unit call FUNC(canUnslingHelmet)) }) exitWith {};
 

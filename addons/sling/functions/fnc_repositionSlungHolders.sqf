@@ -19,7 +19,7 @@
 params ["_unit", ["_slingParams", []]];
 TRACE_2("fnc_repositionSlungHolders",_unit,_slingParams);
 
-if (_slingParams isEqualTo []) then { _slingParams = GVAR(slungHelmetPosition) };
+if (_slingParams isEqualTo []) then { _slingParams = GVAR(slungItemsPosition) };
 
 _slingParams params ["_bone", "_attachPos", "_vectorDirAndUp"];
 {

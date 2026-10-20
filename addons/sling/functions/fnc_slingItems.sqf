@@ -19,7 +19,7 @@
  * None
  *
  * Example:
- * player call hoa_sling_fnc_slingHelmet
+ * player call hoa_sling_fnc_slingItems
  *
  * Public: Yes
  */
@@ -31,7 +31,7 @@ params [
     ["_removeCurrentItems", true, [true]],
     ["_slingParams", [], [[]]]
 ];
-TRACE_5("fnc_slingHelmet",_unit,_mode,_items,_removeCurrentItems,_slingParams);
+TRACE_5("fnc_slingItems",_unit,_mode,_items,_removeCurrentItems,_slingParams);
 
 if !(local _unit && { ([_unit, _mode] call FUNC(canSlingHelmet)) }) exitWith {};
 

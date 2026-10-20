@@ -31,8 +31,8 @@ if (isServer) then {
 };
 
 if (hasInterface) then {
-    [[6, 7, 8], QGVAR(slingHelmet), QUOTE(MOD_NAME), [
-        ["text", "Text", {true}, LLSTRING(slingHelmet_name)],
+    [[6, 7, 8], QGVAR(slingItems), QUOTE(MOD_NAME), [
+        ["text", "Text", {true}, LLSTRING(slingItems_name)],
         ["statement", "Statement", {true}, ""],
         ["button", "Switch", {true}, "", {}, {
             ace_arsenal_center call FUNC(swapSlungItems);

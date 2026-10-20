@@ -64,7 +64,7 @@ _items = _items select { _x != "" };
 _items pushBack _helmet;
 
 if (_slingParams isEqualTo []) then {
-    _slingParams = GVAR(slungHelmetPosition);
+    _slingParams = GVAR(slungItemsPosition);
 };
 _slingParams params ["_bone", "_attachPos", "_vectorDirAndUp"];
 

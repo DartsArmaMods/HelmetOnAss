@@ -15,7 +15,7 @@ class CfgVehicles {
     class hoa_moduleSlingHelmet: hoa_moduleBase {
         scope = 1;
         author = AUTHOR;
-        displayName = ECSTRING(sling,slingHelmet_name);
+        displayName = ECSTRING(sling,slingItems_name);
         curatorCanAttach = 1;
         function = "ace_common_fnc_dummy";
         curatorInfoType = QGVAR(RscSlingHelmet);
@@ -24,7 +24,7 @@ class CfgVehicles {
     class hoa_moduleUnslingHelmet: hoa_moduleBase {
         scope = 1;
         author = AUTHOR;
-        displayName = ECSTRING(sling,unslingHelmet_name);
+        displayName = ECSTRING(sling,unslingItems_name);
         curatorCanAttach = 1;
         function = QFUNC(moduleUnslingHelmet);
     };

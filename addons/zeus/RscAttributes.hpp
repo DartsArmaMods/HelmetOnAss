@@ -30,7 +30,7 @@ class GVAR(RscSlingHelmet): RscDisplayAttributes {
                     class controls {
                         class PositionLabel: RscText {
                             idc = -1;
-                            text = ECSTRING(sling,slungHelmetPosition_name);
+                            text = ECSTRING(sling,slungItemsPosition_name);
                             x = 0;
                             y = 0;
                             w = QUOTE(W_PART(10));
