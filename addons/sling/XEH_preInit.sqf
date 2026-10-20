@@ -35,7 +35,7 @@ if (hasInterface) then {
         ["text", "Text", {true}, LLSTRING(slingHelmet_name)],
         ["statement", "Statement", {true}, ""],
         ["button", "Switch", {true}, "", {}, {
-            ace_arsenal_center call FUNC(swapHelmets);
+            ace_arsenal_center call FUNC(swapSlungItems);
             true call ace_arsenal_fnc_refresh
         }]
     ]] call ace_arsenal_fnc_addAction;

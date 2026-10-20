@@ -18,4 +18,4 @@
 params ["_unit"];
 TRACE_2("fnc_canSlingHelmet",_unit,_mode);
 
-GVAR(enabled) && alive _unit
+GVAR(enabled) && alive _unit && { GET_SLUNG_ITEMS(_unit) isEqualTo [] };

@@ -1,6 +1,7 @@
 PREP(addSlingOption);
 PREP(canHideSlungItems);
 PREP(canSlingHelmet);
+PREP(canSwapSlungItems);
 PREP(canUnhideSlungItems);
 PREP(canUnslingHelmet);
 PREP(createSlungHolders);
@@ -17,4 +18,5 @@ PREP(loadoutSet);
 PREP(repositionSlungHolders);
 PREP(resetVariables);
 PREP(slingHelmet);
+PREP(swapSlungItems);
 PREP(unslingHelmet);

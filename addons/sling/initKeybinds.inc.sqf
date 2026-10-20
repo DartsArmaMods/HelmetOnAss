@@ -48,8 +48,8 @@
 [
     _category, QGVAR(key_swapHelmets),
     [LSTRING(swapHelmets_name), LSTRING(swapHelmets_tooltip)], {
-        if (ace_player call FUNC(canSwapHelmets)) then {
-            ace_player call FUNC(swapHelmets);
+        if (ace_player call FUNC(canSwapSlungItems)) then {
+            ace_player call FUNC(swapSlungItems);
         };
     }, {}, []
 ] call CBA_fnc_addKeybind;

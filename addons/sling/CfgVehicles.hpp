@@ -33,8 +33,8 @@ class CfgVehicles {
 
             class hoa_swapHelmets: hoa_unslingHelmet {
                 displayName = CSTRING(swapHelmets_name);
-                condition = QUOTE(_player call FUNC(canSwapHelmets));
-                statement = QUOTE(_player call FUNC(swapHelmets));
+                condition = QUOTE(_player call FUNC(canSwapSlungItems));
+                statement = QUOTE(_player call FUNC(swapSlungItems));
             };
 
             class hoa_hideSlungHelmet: hoa_unslingHelmet {
