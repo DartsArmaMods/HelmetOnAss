@@ -22,7 +22,7 @@ TRACE_1("fnc_unslingHelmet",_unit);
 
 if !(local _unit && { (_unit call FUNC(canUnslingHelmet)) }) exitWith {};
 
+// TODO: Handle not overwriting items, should be added to inventory
+
 { _unit linkItem _x } forEach GET_SLUNG_ITEMS(_unit);
-deleteVehicle GET_SLUNG_HOLDERS(_unit);
-_unit setVariable [VAR_SLUNG_ITEMS, nil, true];
-_unit setVariable [VAR_SLUNG_HOLDERS, nil, true];
+_unit call FUNC(resetVariables);

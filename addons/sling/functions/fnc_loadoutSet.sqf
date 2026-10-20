@@ -56,5 +56,10 @@ if (!isNull _arsenal) then {
     };
 };
 
-_unit setVariable [VAR_SLUNG_ITEMS, _slungItems, true];
-_unit call FUNC(createSlungHolders);
+// Sling items if loadout has them, otherwise delete holders
+if (_slungItems isEqualTo []) then {
+    _unit call FUNC(resetVariables);
+} else {
+    _unit setVariable [VAR_SLUNG_ITEMS, _slungItems, true];
+    _unit call FUNC(createSlungHolders);
+};

@@ -12,5 +12,6 @@ PREP(handleRespawn);
 PREP(loadoutGet);
 PREP(loadoutSet);
 PREP(repositionSlungHolders);
+PREP(resetVariables);
 PREP(slingHelmet);
 PREP(unslingHelmet);
