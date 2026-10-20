@@ -2,51 +2,59 @@ class CfgVehicles {
     class Man;
     class CAManBase: Man {
         class ACE_SelfActions {
-            class hoa_slingItems {
-                displayName = CSTRING(slingItems_name);
-                condition = QUOTE(_player call FUNC(canSlingItems));
-                statement = QUOTE(_player call FUNC(slingItems));
-                exceptions[] = {"isNotSitting", "isNotSwimming"};
+            class hoa {
+                displayName = QUOTE(MOD_NAME);
+                icon = "\A3\UI_F\data\gui\rsc\rscdisplayarsenal\headgear_ca.paa";
+                condition = "true";
+                statement = "";
+                exceptions[] = {ACTION_EXCEPTIONS};
 
-                class hoa_slingItems_helmet {
-                    displayName = CSTRING(slingItems_helmet_name);
+                class hoa_slingItems {
+                    displayName = CSTRING(slingItems_name);
                     condition = QUOTE(_player call FUNC(canSlingItems));
-                    statement = QUOTE([ARR_2(_player,SLING_MODE_HELMET)] call FUNC(slingItems));
-                    exceptions[] = {"isNotSitting", "isNotSwimming"};
+                    statement = QUOTE(_player call FUNC(slingItems));
+                    exceptions[] = {ACTION_EXCEPTIONS};
+
+                    class hoa_slingItems_helmet {
+                        displayName = CSTRING(slingItems_helmet_name);
+                        condition = QUOTE(_player call FUNC(canSlingItems));
+                        statement = QUOTE([ARR_2(_player,SLING_MODE_HELMET)] call FUNC(slingItems));
+                        exceptions[] = {ACTION_EXCEPTIONS};
+                    };
+                    class hoa_slingItems_helmetNVG: hoa_slingItems_helmet {
+                        displayName = CSTRING(slingItems_helmetNVG_name);
+                        statement = QUOTE([ARR_2(_player,SLING_MODE_HELMET_NVG)] call FUNC(slingItems));
+                    };
+                    class hoa_slingItems_helmetFacewear: hoa_slingItems_helmet {
+                        displayName = CSTRING(slingItems_helmetFacewear_name);
+                        statement = QUOTE([ARR_2(_player,SLING_MODE_HELMET_FACEWEAR)] call FUNC(slingItems));
+                    };
                 };
-                class hoa_slingItems_helmetNVG: hoa_slingItems_helmet {
-                    displayName = CSTRING(slingItems_helmetNVG_name);
-                    statement = QUOTE([ARR_2(_player,SLING_MODE_HELMET_NVG)] call FUNC(slingItems));
+
+                class hoa_unslingItems {
+                    displayName = CSTRING(unslingItems_name);
+                    condition = QUOTE(_player call FUNC(canUnslingItems));
+                    statement = QUOTE(_player call FUNC(unslingItems));
+                    exceptions[] = {ACTION_EXCEPTIONS};
                 };
-                class hoa_slingItems_helmetFacewear: hoa_slingItems_helmet {
-                    displayName = CSTRING(slingItems_helmetFacewear_name);
-                    statement = QUOTE([ARR_2(_player,SLING_MODE_HELMET_FACEWEAR)] call FUNC(slingItems));
+
+                class hoa_swapSlungItems: hoa_unslingItems {
+                    displayName = CSTRING(swapSlungItems_name);
+                    condition = QUOTE(_player call FUNC(canSwapSlungItems));
+                    statement = QUOTE(_player call FUNC(swapSlungItems));
                 };
-            };
 
-            class hoa_unslingItems {
-                displayName = CSTRING(unslingItems_name);
-                condition = QUOTE(_player call FUNC(canUnslingItems));
-                statement = QUOTE(_player call FUNC(unslingItems));
-                exceptions[] = {"isNotSitting", "isNotSwimming"};
-            };
+                class hoa_hideSlungItems: hoa_unslingItems {
+                    displayName = CSTRING(hideSlungItems_name);
+                    condition = QUOTE(_player call FUNC(canHideSlungItems));
+                    statement = QUOTE(_player call FUNC(hideSlungItems));
+                };
 
-            class hoa_swapSlungItems: hoa_unslingItems {
-                displayName = CSTRING(swapSlungItems_name);
-                condition = QUOTE(_player call FUNC(canSwapSlungItems));
-                statement = QUOTE(_player call FUNC(swapSlungItems));
-            };
-
-            class hoa_hideSlungItems: hoa_unslingItems {
-                displayName = CSTRING(hideSlungItems_name);
-                condition = QUOTE(_player call FUNC(canHideSlungItems));
-                statement = QUOTE(_player call FUNC(hideSlungItems));
-            };
-
-            class hoa_unhideSlungItems: hoa_unslingItems {
-                displayName = CSTRING(unhideSlungItems_name);
-                condition = QUOTE(_player call FUNC(canUnhideSlungItems));
-                statement = QUOTE([ARR_2(_player,false)] call FUNC(hideSlungItems));
+                class hoa_unhideSlungItems: hoa_unslingItems {
+                    displayName = CSTRING(unhideSlungItems_name);
+                    condition = QUOTE(_player call FUNC(canUnhideSlungItems));
+                    statement = QUOTE([ARR_2(_player,false)] call FUNC(hideSlungItems));
+                };
             };
         };
     };

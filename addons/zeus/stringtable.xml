@@ -7,17 +7,17 @@
         <Key ID="STR_hoa_zeus_noSlungItems">
             <English>Unit doesn't have any slung items</English>
         </Key>
-        <Key ID="STR_hoa_zeus_slingMode_tooltip">
-            <English>Select what items to sling</English>
-        </Key>
         <Key ID="STR_hoa_zeus_slingMode_helmet">
             <English>Helmet</English>
+        </Key>
+        <Key ID="STR_hoa_zeus_slingMode_helmetFacewear">
+            <English>Helmet + Facewear</English>
         </Key>
         <Key ID="STR_hoa_zeus_slingMode_helmetNVG">
             <English>Helmet + NVGs</English>
         </Key>
-        <Key ID="STR_hoa_zeus_slingMode_helmetFacewear">
-            <English>Helmet + Facewear</English>
+        <Key ID="STR_hoa_zeus_slingMode_tooltip">
+            <English>Select what items to sling</English>
         </Key>
     </Package>
 </Project>
