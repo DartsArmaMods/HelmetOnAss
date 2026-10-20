@@ -43,6 +43,7 @@ private _return = [];
     };
 } forEach _items;
 
+// Display a message if any item failed to add
 if (_showMessage && { (_return findIf { !_x }) > -1 }) then {
     [LSTRING(couldntFit), 2.5] call ace_common_fnc_displayTextStructured;
 };
