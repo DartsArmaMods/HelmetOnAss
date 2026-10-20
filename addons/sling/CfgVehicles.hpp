@@ -4,7 +4,7 @@ class CfgVehicles {
         class ACE_SelfActions {
             class hoa {
                 displayName = QUOTE(MOD_NAME);
-                icon = "\A3\UI_F\data\gui\rsc\rscdisplayarsenal\headgear_ca.paa";
+                icon = QPATHTOF(data\ui\helmet_ca.paa);
                 condition = "true";
                 statement = "";
                 exceptions[] = {ACTION_EXCEPTIONS};
