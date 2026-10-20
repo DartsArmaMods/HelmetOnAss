@@ -15,7 +15,7 @@
  * Public: No
  */
 
-params ["_unit", ["_mode", SLING_MODE_DEFAULT]];
+params ["_unit"];
 TRACE_2("fnc_canSlingHelmet",_unit,_mode);
 
-GVAR(enabled) && alive _unit && (_mode == SLING_MODE_DEFAULT || _mode in GVAR(allowedModes))
+GVAR(enabled) && alive _unit

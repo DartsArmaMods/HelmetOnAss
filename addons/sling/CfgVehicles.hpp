@@ -10,19 +10,17 @@ class CfgVehicles {
 
                 class hoa_slingHelmet_helmet {
                     displayName = CSTRING(slingHelmet_helmet_name);
-                    condition = QUOTE([ARR_2(_player,1)] call FUNC(canSlingHelmet));
-                    statement = QUOTE([ARR_2(_player,1)] call FUNC(slingHelmet));
+                    condition = QUOTE(_player call FUNC(canSlingHelmet));
+                    statement = QUOTE([ARR_2(_player,SLING_MODE_HELMET)] call FUNC(slingHelmet));
                     exceptions[] = {"isNotSitting", "isNotSwimming"};
                 };
                 class hoa_slingHelmet_helmetNVG: hoa_slingHelmet_helmet {
                     displayName = CSTRING(slingHelmet_helmetNVG_name);
-                    condition = QUOTE([ARR_2(_player,2)] call FUNC(canSlingHelmet));
-                    statement = QUOTE([ARR_2(_player,2)] call FUNC(slingHelmet));
+                    statement = QUOTE([ARR_2(_player,SLING_MODE_HELMET_NVG)] call FUNC(slingHelmet));
                 };
                 class hoa_slingHelmet_helmetFacewear: hoa_slingHelmet_helmet {
                     displayName = CSTRING(slingHelmet_helmetFacewear_name);
-                    condition = QUOTE([ARR_2(_player,3)] call FUNC(canSlingHelmet));
-                    statement = QUOTE([ARR_2(_player,3)] call FUNC(slingHelmet));
+                    statement = QUOTE([ARR_2(_player,SLING_MODE_HELMET_FACEWEAR)] call FUNC(slingHelmet));
                 };
             };
 

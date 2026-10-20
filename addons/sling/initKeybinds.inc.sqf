@@ -57,8 +57,8 @@
 [
     _category, QGVAR(key_hideHelmet),
     [LSTRING(hideHelmet_name), LSTRING(hideHelmet_tooltip)], {
-        if (ace_player call FUNC(canHideHelmet)) then {
-            ace_player call FUNC(hideHelmet);
+        if (ace_player call FUNC(canHideSlungItems)) then {
+            ace_player call FUNC(hideSlungItems);
         };
     }, {}, []
 ] call CBA_fnc_addKeybind;
@@ -66,8 +66,8 @@
 [
     _category, QGVAR(key_unhideHelmet),
     [LSTRING(unhideHelmet_name), LSTRING(unhideHelmet_tooltip)], {
-        if (ace_player call FUNC(canUnhideHelmet)) then {
-            [ace_player, false] call FUNC(hideHelmet);
+        if (ace_player call FUNC(canUnhideSlungItems)) then {
+            [ace_player, false] call FUNC(hideSlungItems);
         };
     }, {}, []
 ] call CBA_fnc_addKeybind;

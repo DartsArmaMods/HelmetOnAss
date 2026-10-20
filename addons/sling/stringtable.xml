@@ -1,18 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project name="HelmetOnAss">
     <Package name="Sling">
-        <Key ID="STR_hoa_sling_allowedModes_name">
-            <English>Allowed Sling Modes</English>
-        </Key>
-        <Key ID="STR_hoa_sling_allowedModes_tooltip">
-            <English>Sling modes that players can use.\n1: Helmet Only\n2: Helmet and NVGs\n3: Helmet and Facewear</English>
-        </Key>
-        <Key ID="STR_hoa_sling_canHideHelmet_name">
-            <English>Can Hide Helmet</English>
-        </Key>
-        <Key ID="STR_hoa_sling_canHideHelmet_tooltip">
-            <English>If true, players can hide their slung helmets.</English>
-        </Key>
         <Key ID="STR_hoa_sling_displayName">
             <English>Sling</English>
         </Key>

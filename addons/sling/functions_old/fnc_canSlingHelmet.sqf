@@ -15,10 +15,9 @@
  * Public: No
  */
 
-params ["_unit", ["_mode", SLING_MODE_DEFAULT]];
+params ["_unit"];
 TRACE_2("fnc_canSlingHelmet",_unit,_mode);
 
 GVAR(enabled) &&
-(_mode == SLING_MODE_DEFAULT || _mode in GVAR(allowedModes)) &&
 headgear _unit != "" &&
 { _unit getVariable [QGVAR(slungHelmetItems), []] isEqualTo [] };
