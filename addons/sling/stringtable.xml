@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project name="HelmetOnAss">
     <Package name="Sling">
+        <Key ID="STR_hoa_sling_couldntFit">
+            <English>Some items couldn't fit into your inventory, check the ground or nearby vehicles</English>
+        </Key>
         <Key ID="STR_hoa_sling_displayName">
             <English>Sling</English>
         </Key>
@@ -56,7 +59,7 @@
             <English>Select where your helmet will be slung.</English>
         </Key>
         <Key ID="STR_hoa_sling_swapSlungItems_name">
-            <English>Swap Itemss</English>
+            <English>Swap Slung Items</English>
         </Key>
         <Key ID="STR_hoa_sling_swapSlungItems_tooltip">
             <English>Swaps your equipped helmet with your slung helmet.</English>

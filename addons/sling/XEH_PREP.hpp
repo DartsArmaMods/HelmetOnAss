@@ -1,3 +1,4 @@
+PREP(addItems);
 PREP(addSlingOption);
 PREP(canHideSlungItems);
 PREP(canSlingItems);
