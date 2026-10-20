@@ -11,6 +11,9 @@ if (hasInterface) then {
     [[6, 7, 8], QGVAR(slingHelmet), QUOTE(MOD_NAME), [
         ["text", "Text", {true}, LLSTRING(slingHelmet_name)],
         ["statement", "Statement", {true}, ""],
-        ["button", "Switch", {true}, "", {}, {ace_arsenal_center call FUNC(swapHelmets); true call ace_arsenal_fnc_refresh}]
+        ["button", "Switch", {true}, "", {}, {
+            ace_arsenal_center call FUNC(swapHelmets);
+            true call ace_arsenal_fnc_refresh
+        }]
     ]] call ace_arsenal_fnc_addAction;
 };

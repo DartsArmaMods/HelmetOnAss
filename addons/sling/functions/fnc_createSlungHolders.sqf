@@ -20,7 +20,11 @@
 params ["_unit", ["_slingParams", []]];
 TRACE_2("fnc_createSlungHolders",_unit,_slingParams);
 
-if !(alive _unit && isNull objectParent _unit) exitWith {};
+private _slungItems = GET_SLUNG_ITEMS(_unit);
+if !(alive _unit &&
+    isNull objectParent _unit &&
+    _slungItems isNotEqualTo []
+) exitWith {};
 
 // Always delete the existing ones before re-creating them
 deleteVehicle GET_SLUNG_HOLDERS(_unit);
@@ -40,7 +44,7 @@ private _positionASL = getPosASL _unit;
 
     // Have object claim itself to remove ace interactions
     [_groundholder, _groundholder] call ace_common_fnc_claimSafeServer;
-} forEach GET_SLUNG_ITEMS(_unit);
+} forEach _slungItems;
 
 _unit setVariable [VAR_SLUNG_HOLDERS, _groundholders, true];
 [_unit, _slingParams] call FUNC(repositionSlungHolders);

@@ -9,6 +9,8 @@ PREP(handleGetInMan);
 PREP(handleGetOutMan);
 PREP(handleKilled);
 PREP(handleRespawn);
+PREP(loadoutGet);
+PREP(loadoutSet);
 PREP(repositionSlungHolders);
 PREP(slingHelmet);
 PREP(unslingHelmet);
