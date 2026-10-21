@@ -24,7 +24,7 @@
 params ["_unit", "", "", "", "", "_magazine", "_projectile"];
 TRACE_3("fnc_onFired",_unit,_magazine,_projectile);
 
-if (!GVAR(enabled) || !local _unit || !alive _unit || _magazine != QGVAR(helmetGrenade)) exitWith {};
+if !(GVAR(enabled) && local _unit && _magazine == GRENADE_CLASS) exitWith {};
 
 // TODO: Logic could definitely be improved here, without just copy/pasting
 private ["_items"];
