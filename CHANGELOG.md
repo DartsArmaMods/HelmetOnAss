@@ -9,7 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Added
 
-- Added [keep a changelog](https://keepachangelog.com) style changelog
+- Added [keep a changelog](https://keepachangelog.com) style changelog from [@DartRuffian]
 
 ## [1.1.7] - 2026-10-19
 
