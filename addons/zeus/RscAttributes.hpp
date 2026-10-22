@@ -87,18 +87,20 @@ class GVAR(RscSlingItems): RscDisplayAttributes {
                         };
                         class ToolBox: ToolBox {
                             rows = 1;
-                            columns = 4;
+                            columns = 5;
                             strings[] = {
                                 "$STR_vehicle_default",
                                 CSTRING(slingMode_helmet),
                                 "$STR_A3_RscDisplayArsenal_tab_nvgs",
-                                "$STR_A3_RscDisplayArsenal_tab_goggles"
+                                "$STR_A3_RscDisplayArsenal_tab_goggles",
+                                "$STR_all_voices"
                             };
                             tooltips[] = {
                                 "$STR_vehicle_default",
                                 CSTRING(slingMode_helmet),
                                 CSTRING(slingMode_helmetNVG),
-                                CSTRING(slingMode_helmetFacewear)
+                                CSTRING(slingMode_helmetFacewear),
+                                CSTRING(slingMode_all)
                             };
                         };
                     };
