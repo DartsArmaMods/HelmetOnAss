@@ -30,7 +30,6 @@ if (_assigned) then {
     if (!_hasGrenade) then {
         _unit addMagazine GRENADE_CLASS;
     };
-    systemChat str (throwables _unit);
 } else {
     if (GET_SLUNG_ITEMS(_unit) isEqualTo []) then {
         _unit removeMagazine GRENADE_CLASS;
