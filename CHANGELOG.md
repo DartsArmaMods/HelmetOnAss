@@ -18,6 +18,97 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Combine compatibility patches from [@DartRuffian]
 - Temporary fix for slung items after exiting a vehicle from [@DartRuffian]
 
+## [1.1.6] - 2026-3-16
+
+### Changed
+
+- Potential fix for vehicle sling issue from [@DartRuffian]
+
+## [1.1.5] - 2026-2-22
+
+### Changed
+
+- Fix items saying they're unavailable in a full arsenal from [@DartRuffian]
+- Fix ACE Arsenal action not being stringtabled from [@DartRuffian]
+- Fix not re-hiding objects if set when exiting a vehicle from [@DartRuffian]
+
+## [1.1.4] - 2026-1-12
+
+### Changed
+
+- Fix creating slung items when loading loadouts from [@DartRuffian]
+
+## [1.1.3] - 2025-9-16
+
+### Changed
+
+- Potential fix for vehicle sling issue from [@DartRuffian]
+- Allow (un)slinging items while sitting and in water from [@DartRuffian]
+- Prevent "smuggling" slung items into limited from [@DartRuffian]
+- Fix vector math in pitchBankYawToVector from [@DartRuffian]
+
+## [1.1.2] - 2025-6-24
+
+### Changed
+
+- Fix typo in Gendarmerie sling mode from [@DartRuffian]
+- Fix missing newlines in files from [@DartRuffian]
+
+### Removed
+
+- Remove Immersion Cigs compat, included in Immersion Cigs mod from [@DartRuffian]
+
+## [1.1.1] - 2025-5-29
+
+### Added
+
+- Add Gendarmerie sling position from [@DartRuffian]
+- Add sling modes from [@DartRuffian]
+- Add UI for Sling Items module from [@DartRuffian]
+- Add setting to disable ability to hide items from [@DartRuffian]
+
+### Changed
+
+- Fix being able to access ground holders from [@DartRuffian]
+- Fix ground holders having ACE Actions from [@DartRuffian]
+- Move zeus modules to new zeus component from [@DartRuffian]
+
+### Removed
+
+- Remove Immersion Cigs compat, included in Immersion Cigs mod from [@DartRuffian]
+- Remove unused stringtable keys from [@DartRuffian]
+
+## [1.0.4] - 2025-5-27
+
+### Added
+
+- Add Immersion Cigs compat from [@DartRuffian]
+- Add Misriah Armory compat from [@DartRuffian]
+
+## [1.0.3] - 2025-5-27
+
+### Changed
+
+- Fix swapHelmets not using cache from [@DartRuffian]
+
+## [1.0.2] - 2025-5-27
+
+### Changed
+
+- Fix facewear being rotated when slung from [@DartRuffian]
+
+## [1.0.1] - 2025-5-26
+
+### Changed
+
+- Fix not properly getting position and rotation from uniform from [@DartRuffian]
+
+## [1.0.0] - 2025-5-25
+
+### Added
+
+- Initial release from [@DartRuffian]
+
 [unreleased]: https://github.com/DartsArmaMods/HelmetOnAss/compare/v1.1.7...HEAD
 [1.1.7]: https://github.com/DartsArmaMods/HelmetOnAss/compare/v1.1.6...v1.1.7
 [1.1.6]: https://github.com/DartsArmaMods/HelmetOnAss/compare/v1.1.5...v1.1.6
@@ -25,7 +116,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 [1.1.4]: https://github.com/DartsArmaMods/HelmetOnAss/compare/v1.1.3...v1.1.4
 [1.1.3]: https://github.com/DartsArmaMods/HelmetOnAss/compare/v1.1.2...v1.1.3
 [1.1.2]: https://github.com/DartsArmaMods/HelmetOnAss/compare/v1.1.1...v1.1.2
-[1.1.1]: https://github.com/DartsArmaMods/HelmetOnAss/compare/v1.1.4...v1.1.1
+[1.1.1]: https://github.com/DartsArmaMods/HelmetOnAss/compare/v1.0.4...v1.1.1
 [1.0.4]: https://github.com/DartsArmaMods/HelmetOnAss/compare/v1.0.3...v1.0.4
 [1.0.3]: https://github.com/DartsArmaMods/HelmetOnAss/compare/v1.0.2...v1.0.3
 [1.0.2]: https://github.com/DartsArmaMods/HelmetOnAss/compare/v1.0.1...v1.0.2
