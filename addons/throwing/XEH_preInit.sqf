@@ -10,5 +10,6 @@ private _category = [QUOTE(MOD_NAME), LLSTRING(displayName)];
 
 GVAR(helmetMassCache) = createHashMap;
 
+[QGVAR(addGrenade), LINKFUNC(addGrenade)] call CBA_fnc_addEventHandler;
 [QGVAR(applyDamage), LINKFUNC(applyDamage)] call CBA_fnc_addEventHandler;
 ["CAManBase", "SlotItemChanged", LINKFUNC(slotItemChanged)] call CBA_fnc_addClassEventHandler;

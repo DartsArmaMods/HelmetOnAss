@@ -63,9 +63,8 @@ _debugMarker attachTo [_projectile, [0, 0, 0]];
 #endif
 
 // Add another grenade if needed
-// ! TODO: Issue where ace throwing seems to leave you with an empty mag, causing HAS_GRENADE to be false but still appearing in the menu
-if (headgear _unit != "" || GET_SLUNG_ITEMS(_unit) isNotEqualTo [] && { !HAS_GRENADE(_unit) }) then {
-    _unit addMagazine GRENADE_CLASS;
+if (headgear _unit != "" || GET_SLUNG_ITEMS(_unit) isNotEqualTo []) then {
+    _unit call FUNC(addGrenade);
 };
 
 // Would be more correct to create separate groundholders per item, but it's not as needed here

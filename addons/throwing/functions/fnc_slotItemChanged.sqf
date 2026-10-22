@@ -26,12 +26,9 @@ TRACE_3("fnc_slotItemChanged",_unit,_slot,_assigned);
 if !(GVAR(enabled) && local _unit && _slot == TYPE_HEADGEAR) exitWith {};
 
 if (_assigned) then {
-    private _hasGrenade = HAS_GRENADE(_unit);
-    if (!_hasGrenade) then {
-        _unit addMagazine GRENADE_CLASS;
-    };
+    _unit call FUNC(addGrenade);
 } else {
     if (GET_SLUNG_ITEMS(_unit) isEqualTo []) then {
-        _unit removeMagazine GRENADE_CLASS;
+        _unit removeMagazines GRENADE_CLASS;
     };
 };
