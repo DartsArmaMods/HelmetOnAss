@@ -28,6 +28,12 @@
         <Key ID="STR_hoa_sling_position_gendarmerie">
             <English>Gendarmerie</English>
         </Key>
+        <Key ID="STR_hoa_sling_slingItems_all_name">
+            <English>Sling Items (All)</English>
+        </Key>
+        <Key ID="STR_hoa_sling_slingItems_all_tooltip">
+            <English>Slings your helmet, nvgs, and facewear.</English>
+        </Key>
         <Key ID="STR_hoa_sling_slingItems_helmetFacewear_name">
             <English>Sling Items (Helmet + Facewear)</English>
         </Key>

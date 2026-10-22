@@ -17,7 +17,7 @@ class CfgVehicles {
 
                     class hoa_slingItems_helmet {
                         displayName = CSTRING(slingItems_helmet_name);
-                        condition = QUOTE(_player call FUNC(canSlingItems));
+                        condition = "true";
                         statement = QUOTE([ARR_2(_player,SLING_MODE_HELMET)] call FUNC(slingItems));
                         exceptions[] = {ACTION_EXCEPTIONS};
                     };
@@ -28,6 +28,10 @@ class CfgVehicles {
                     class hoa_slingItems_helmetFacewear: hoa_slingItems_helmet {
                         displayName = CSTRING(slingItems_helmetFacewear_name);
                         statement = QUOTE([ARR_2(_player,SLING_MODE_HELMET_FACEWEAR)] call FUNC(slingItems));
+                    };
+                    class hoa_slingItems_all: hoa_slingItems_helmet {
+                        displayName = CSTRING(slingItems_all_name);
+                        statement = QUOTE([ARR_2(_player,SLING_MODE_ALL)] call FUNC(slingItems));
                     };
                 };
 

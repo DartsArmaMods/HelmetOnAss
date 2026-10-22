@@ -6,34 +6,43 @@
         if (ace_player call FUNC(canSlingItems)) then {
             ace_player call FUNC(slingItems);
         };
-    }, {}, []
+    }
 ] call CBA_fnc_addKeybind;
 
 [
     _category, QGVAR(key_slingItems_helmet),
     [LSTRING(slingItems_helmet_name), LSTRING(slingItems_helmet_tooltip)], {
-        if ([ace_player, SLING_MODE_HELMET] call FUNC(canSlingItems)) then {
+        if (ace_player call FUNC(canSlingItems)) then {
             [ace_player, SLING_MODE_HELMET] call FUNC(slingItems);
         };
-    }, {}, []
+    }
 ] call CBA_fnc_addKeybind;
 
 [
     _category, QGVAR(key_slingItems_helmetNVG),
     [LSTRING(slingItems_helmetNVG_name), LSTRING(slingItems_helmetNVG_tooltip)], {
-        if ([ace_player, SLING_MODE_HELMET_NVG] call FUNC(canSlingItems)) then {
+        if (ace_player call FUNC(canSlingItems)) then {
             [ace_player, SLING_MODE_HELMET_NVG] call FUNC(slingItems);
         };
-    }, {}, []
+    }
 ] call CBA_fnc_addKeybind;
 
 [
     _category, QGVAR(key_slingItems_helmetFacewear),
     [LSTRING(slingItems_helmetFacewear_name), LSTRING(slingItems_helmetFacewear_tooltip)], {
-        if ([ace_player, SLING_MODE_HELMET_FACEWEAR] call FUNC(canSlingItems)) then {
+        if (ace_player call FUNC(canSlingItems)) then {
             [ace_player, SLING_MODE_HELMET_FACEWEAR] call FUNC(slingItems);
         };
-    }, {}, []
+    }
+] call CBA_fnc_addKeybind;
+
+[
+    _category, QGVAR(key_slingItems_all),
+    [LSTRING(slingItems_all_name), LSTRING(slingItems_all_tooltip)], {
+        if (ace_player call FUNC(canSlingItems)) then {
+            [ace_player, SLING_MODE_ALL] call FUNC(slingItems);
+        };
+    }
 ] call CBA_fnc_addKeybind;
 
 [
@@ -42,7 +51,7 @@
         if (ace_player call FUNC(canUnslingItems)) then {
             ace_player call FUNC(unslingItems);
         };
-    }, {}, []
+    }
 ] call CBA_fnc_addKeybind;
 
 [
@@ -51,7 +60,7 @@
         if (ace_player call FUNC(canSwapSlungItems)) then {
             ace_player call FUNC(swapSlungItems);
         };
-    }, {}, []
+    }
 ] call CBA_fnc_addKeybind;
 
 [
@@ -60,7 +69,7 @@
         if (ace_player call FUNC(canHideSlungItems)) then {
             ace_player call FUNC(hideSlungItems);
         };
-    }, {}, []
+    }
 ] call CBA_fnc_addKeybind;
 
 [
@@ -69,5 +78,5 @@
         if (ace_player call FUNC(canUnhideSlungItems)) then {
             [ace_player, false] call FUNC(hideSlungItems);
         };
-    }, {}, []
+    }
 ] call CBA_fnc_addKeybind;
