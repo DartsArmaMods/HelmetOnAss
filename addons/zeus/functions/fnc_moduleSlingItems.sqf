@@ -25,11 +25,11 @@ TRACE_3("fnc_moduleSlingItems",_logic,_units,_activated);
 
 if (!_activated) exitWith {};
 
+private _slingMode = _logic getVariable [QGVAR(slingMode), SLING_MODE_DEFAULT];
 private _slingParams = _logic getVariable [QGVAR(slingParams), QEGVAR(sling,slungItemsPosition)];
 
 {
     if (GET_SLUNG_ITEMS(_x) isEqualTo []) then {
-        private _slingMode = _logic getVariable [QGVAR(slingMode), SLING_MODE_DEFAULT];
         [_x, _slingMode, true, _slingParams] call EFUNC(sling,slingItems);
     } else {
         // Unit already has slung items, so just reposition the existing ones

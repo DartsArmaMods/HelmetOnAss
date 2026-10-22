@@ -24,3 +24,4 @@ class CfgPatches {
 #include "CfgFactionClasses.hpp"
 #include "CfgEventHandlers.hpp"
 #include "RscAttributes.hpp"
+#include "zen_context_menu_actions.hpp"
