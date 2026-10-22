@@ -9,7 +9,23 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- Added [keep a changelog](https://keepachangelog.com) style changelog from [@DartRuffian]
+- Add [keep a changelog](https://keepachangelog.com) style changelog from [@DartRuffian]
+- Add helmet throwing from [@DartRuffian]
+- Add "sling all" sling mode for helmet, nvgs, and facewear from [@DartRuffian]
+- Add root action for ACE actions from [@DartRuffian]
+- Add sling mode option to Zeus Module from [@DartRuffian]
+- Add ZEN context menu actions to units to (un)sling items from [@DartRuffian]
+- Drop slung items on ground when a unit is killed from [@DartRuffian]
+
+### Changed
+- Delete ground holders when empty from [@DartRuffian]
+- Fix sometimes accidentally removing items from [@DartRuffian]
+- Move vehicle getIn/getOut code to client from [@DartRuffian]
+- Standardized setting/keybind names, will break from [@DartRuffian]
+
+### Removed
+- Remove allowed sling modes and can hide items settings from [@DartRuffian]
+- Remove `_items` parameter from `fnc_slingItems` from [@DartRuffian]
 
 ## [1.1.7] - 2026-10-19
 
