@@ -21,19 +21,20 @@
     <b>Requires the latest version of <a href="https://github.com/CBATeam/CBA_A3/releases/latest">CBA</a> and <a href="https://github.com/acemod/ACE3/releases/latest">ACE3</a></b>
 </p>
 
-**Helmet on Ass** adds a simple ACE interaction and keybind to sling your helmet, facewear, and nvgs to a configurable point on your uniform.
+**Helmet on Ass** adds a simple ACE interaction and keybind to sling your helmet, facewear, and nvgs to a configurable point.
 
 The project is entirely **open-source** and any contributions are welcome.
 
 ## Core Features
 - Ability to sling your worn helmet to a customizable position.
-  - For modders, helmet positions / angles are configured per-uniform
+- Ability to throw your (worn or slung) helmet as a ~~last resort~~ tactical option.
 - ACE Arsenal action to sling / swap your helmet.
+- Ability to save / load slung items to loadouts.
 
 ## Contributing
 For new contributers, see the [Contributing Setup & Guidelines](./.github/CONTRIBUTING.md).
 
 ## License
-Helmet on Ass is licensed under [APL-ND](./LICENSE.md).
+Helmet on Ass is licensed under the [Legion Studios License](./LICENSE.md).
 
 Helmet on Ass uses a custom model for the ground holder that helmets are placed in, this model is a reupload (with permission) of the model from [GRAD_slingHelmet](https://github.com/gruppe-adler/grad_slingHelmet/blob/master/addons/main/model.p3d) and is instead licensed under the [GRAD APL](https://github.com/gruppe-adler/grad_slingHelmet/blob/master/LICENSE) license.
