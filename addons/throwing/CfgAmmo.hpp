@@ -7,6 +7,7 @@ class CfgAmmo {
         };
     };
     class GVAR(helmetGrenade_ammo): IRStrobeBase {
+        // TODO: fix model
         class NVGMarkers: NVGMarkers {
             class Blinking1: Blinking1 {
                 blinking = 0;

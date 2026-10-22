@@ -1,7 +1,13 @@
 [
     QGVAR(enabled), "CHECKBOX",
     [ELSTRING(sling,enabled_name), LSTRING(enabled_tooltip)],
-    _category, true, true
+    _category, false, 0, {
+        if (_this) then {
+            ace_player call FUNC(addGrenade);
+        } else {
+            ace_player removeWeaponItem [MUZZLE_CLASS, GRENADE_CLASS];
+        };
+    }
 ] call CBA_fnc_addSetting;
 
 [

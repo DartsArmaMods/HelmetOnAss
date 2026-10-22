@@ -30,7 +30,7 @@ TRACE_2("",_unit,_throwables);
 
 if (headgear _unit == "" && GET_SLUNG_ITEMS(_unit) isEqualTo []) exitWith {
     TRACE_1("Unit more items that can be thrown, removing magazine",_unit);
-    _unit removeWeaponItem [QGVAR(helmetGrenade_muzzle), GRENADE_CLASS];
+    _unit removeWeaponItem [MUZZLE_CLASS, GRENADE_CLASS];
 };
 
 // Unit doesn't have any helmet grenades at all, so we can just add one and exit
@@ -42,5 +42,5 @@ if (_throwables isEqualTo []) exitWith {
 private _hasEmptyMuzzle = (_throwables findIf { (_x select 3) == 0}) > -1;
 TRACE_2("",_unit,_hasEmptyMuzzle);
 if (_hasEmptyMuzzle) then {
-    [{ _this setAmmo [QGVAR(helmetGrenade_muzzle), 1] }, _unit] call CBA_fnc_execNextFrame;
+    [{ _this setAmmo [MUZZLE_CLASS, 1] }, _unit] call CBA_fnc_execNextFrame;
 };
