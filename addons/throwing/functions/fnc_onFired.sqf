@@ -63,9 +63,7 @@ _debugMarker attachTo [_projectile, [0, 0, 0]];
 #endif
 
 // Add another grenade if needed
-if (headgear _unit != "" || GET_SLUNG_ITEMS(_unit) isNotEqualTo []) then {
-    _unit call FUNC(addGrenade);
-};
+_unit call FUNC(addGrenade);
 
 // Would be more correct to create separate groundholders per item, but it's not as needed here
 // Harder to see while its being thrown, and it means less objects being moved

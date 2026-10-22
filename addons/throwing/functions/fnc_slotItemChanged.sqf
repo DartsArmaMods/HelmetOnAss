@@ -29,6 +29,6 @@ if (_assigned) then {
     _unit call FUNC(addGrenade);
 } else {
     if (GET_SLUNG_ITEMS(_unit) isEqualTo []) then {
-        _unit removeMagazines GRENADE_CLASS;
+        _unit removeWeaponItem [QGVAR(helmetGrenade_muzzle), GRENADE_CLASS];
     };
 };
