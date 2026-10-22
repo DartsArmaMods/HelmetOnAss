@@ -26,55 +26,57 @@ TRACE_3("fnc_onFired",_unit,_magazine,_projectile);
 
 if !(GVAR(enabled) && local _unit && _magazine == GRENADE_CLASS) exitWith {};
 
+private _slungItems = GET_SLUNG_ITEMS(_unit);
+private _wornItems = [headgear _unit, hmd _unit, goggles _unit] select {
+    (_x call EFUNC(sling,getSlingParams)) select 0
+};
+
+private "_items";
+if (GVAR(helmetPriority) == USE_SLUNG_HELMET) then {
+    if (_slungItems isNotEqualTo []) then {
+        _items = _slungItems;
+        deleteVehicle (GET_SLUNG_HOLDERS(_unit));
+        _unit setVariable [VAR_SLUNG_ITEMS, nil, true];
+    } else {
+        _items = _wornItems;
+        { _unit unlinkItem _x } forEach _items;
+    };
+} else {
+    if (_wornItems isNotEqualTo []) then {
+        _items = _wornItems;
+        { _unit unlinkItem _x } forEach _items;
+    } else {
+        _items = _slungItems;
+        deleteVehicle (GET_SLUNG_HOLDERS(_unit));
+        _unit setVariable [VAR_SLUNG_ITEMS, nil, true];
+    };
+};
+
+if (_items isEqualTo []) exitWith {
+    deleteVehicle _projectile;
+};
+
 #ifdef DEBUG_MODE_FULL
 private _debugMarker = createSimpleObject ["Sign_Sphere25cm_F", getPosASL _projectile];
 _debugMarker attachTo [_projectile, [0, 0, 0]];
+[{ deleteVehicle _this }, _debugMarker, 15] call CBA_fnc_waitAndExecute;
 #endif
 
-// // TODO: Logic could definitely be improved here, without just copy/pasting
-// private ["_items"];
-// private _slungItems = _unit call EFUNC(sling,getSlungItems);
-// private _wornItems = [headgear _unit, hmd _unit, goggles _unit] select {
-//     (_x call EFUNC(sling,getSlingParams)) select 0
-// };
+// Add another grenade if needed
+// ! TODO: Issue where ace throwing seems to leave you with an empty mag, causing HAS_GRENADE to be false but still appearing in the menu
+if (headgear _unit != "" || GET_SLUNG_ITEMS(_unit) isNotEqualTo [] && { !HAS_GRENADE(_unit) }) then {
+    _unit addMagazine GRENADE_CLASS;
+};
 
-// if (GVAR(helmetPriority) == USE_SLUNG_HELMET) then {
-//     if (_slungItems isNotEqualTo []) then {
-//         _items = _slungItems;
-//         deleteVehicle (_unit getVariable [QEGVAR(sling,slungHelmetItems), []]);
-//         _unit setVariable [QEGVAR(sling,slungHelmetItems), nil, true];
-//     } else {
-//         _items = _wornItems;
-//         removeHeadgear _unit;
-//         { _unit unlinkItem _x } forEach _items;
-//     };
-// } else {
-//     if (_wornItems isNotEqualTo []) then {
-//         _items = _wornItems;
-//         removeHeadgear _unit;
-//         { _unit unlinkItem _x } forEach _items;
-//     } else {
-//         _items = _slungItems;
-//         deleteVehicle (_unit getVariable [QEGVAR(sling,slungHelmetItems), []]);
-//         _unit setVariable [QEGVAR(sling,slungHelmetItems), nil, true];
-//     };
-// };
+// Would be more correct to create separate groundholders per item, but it's not as needed here
+// Harder to see while its being thrown, and it means less objects being moved
+private _groundholder = "hoa_groundholder_physx" createVehicle [0, 0, 0];
+_groundholder setPosASL (getPosASL _projectile); // Needed to attach properly
+{ _groundHolder addItemCargoGlobal [_x, 1]; } forEach _items;
 
-// if (_items isEqualTo []) exitWith {
-//     deleteVehicle _projectile;
-// };
-
-// if (headgear _unit != "" || _unit getVariable [QEGVAR(sling,slungHelmetItems), []] isNotEqualTo []) then {
-//     _unit addMagazine QGVAR(helmetGrenade);
-// };
-
-// private _groundholder = "hoa_groundholder_physx" createVehicle [0, 0, 0];
-// _groundholder setPosASL (getPosASL _projectile); // Needed to attach properly
-// {
-//     _groundHolder addItemCargoGlobal [_x, 1];
-// } forEach _items;
-// _groundholder attachTo [_projectile, [0.36, -0.7, 0.52]];
-// _groundholder setVectorDirAndUp [[0, 1, 0], [1, 0, 1]];
-// _projectile setVariable [QGVAR(helmetHitParams), [_items, getPosASL _unit, _groundholder]];
+// Offset to make the actual helmet model look centered on the hitbox
+_groundholder attachTo [_projectile, [0.36, -0.7, 0.52]];
+_groundholder setVectorDirAndUp [[0, 1, 0], [1, 0, 1]];
+_projectile setVariable [QGVAR(helmetHitParams), [_items, getPosASL _unit, _groundholder]];
 
 _projectile addEventHandler ["HitPart", LINKFUNC(onHit)];

@@ -72,7 +72,7 @@ class CfgVehicles {
         isGround = 0;
 
         memoryPointSupply = "supply_pos";
-        forceSupply = 0;
+        forceSupply = 1; // Delete when empty
         supplyRadius = 0;
         showWeaponCargo = 1;
         transportMaxMagazines = 0;
@@ -112,5 +112,7 @@ class CfgVehicles {
         transportMaxBackpacks = 0;
 
         ace_cargo_noRename = 1;
+
+        forceSupply = 1; // Delete when empty
     };
 };

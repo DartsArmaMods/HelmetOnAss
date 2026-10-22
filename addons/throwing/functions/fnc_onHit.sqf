@@ -16,35 +16,47 @@
  * Public: No
  */
 
-params ["_projectile", "_hitEntity", "", "_position", "_velocity", "", "_components", "" ,"", "_instigator"];
-TRACE_6("fnc_onHit",_projectile,_hitEntity,_position,_velocity,_components,_instigator);
+// Prevent hemtt from warning that these are undefined, inherited from EH scope
+#pragma hemtt ignore_variables ["_thisEvent", "_thisEventHandler"]
 
-/*
-// Prevents the HitPart running multiple times
+// Prevent the HitPart running multiple times
 #define EXIT_CODE \
     _projectile removeEventHandler [_thisEvent, _thisEventHandler]; \
     deleteVehicle _projectile
 
+// Arbitrary number, experimented with during testing to get results that felt good
+#define DAMAGE_DIVISOR 1500
+
 params ["_projectile", "_hitEntity", "", "_position", "_velocity", "", "_components", "" ,"", "_instigator"];
+TRACE_6("fnc_onHit",_projectile,_hitEntity,_position,_velocity,_components,_instigator);
 
 (_projectile getVariable [QGVAR(helmetHitParams), []]) params [["_items", []], "_instigatorPositionASL", "_groundholder"];
 
 if (isNull _hitEntity || _items isEqualTo [] || _components isEqualTo [] || { !(_hitEntity isKindOf "CAManBase") }) exitWith { EXIT_CODE };
 
+// Get total mass of all the items
+private _mass = 0;
+{
+    _mass = GVAR(helmetMassCache) getOrDefaultCall [_x, {
+        private _config = configFile >> "CfgWeapons" >> _x;
+        if (isClass _config) then {
+            getNumber (_config >> "ItemInfo" >> "mass");
+        } else {
+            // Facewear
+            getNumber (configFile >> "CfgGlasses" >> _x >> "mass");
+        };
+    }, true];
+} forEach _items;
+
 // Incorporate velocity and helmet mass into damage, with a little randomization to not always get the same results
-private _helmet = _items select 0;
-private _mass = GVAR(helmetMassCache) getOrDefaultCall [_helmet, {
-    getNumber (configFile >> "CfgWeapons" >> _helmet >> "ItemInfo" >> "mass")
-}, true];
-private _damage = ((vectorMagnitude _velocity * _mass) / 1500) * random [0.8, 0.9, 1];
+private _damage = ((vectorMagnitude _velocity * _mass) / DAMAGE_DIVISOR) * random [0.9, 1, 1.1];
 
 private _strength = [0, 0, 0];
 if (GVAR(ragdollStrength) > 0) then {
     private _oppVector = vectorNormalized (_instigatorPositionASL vectorDiff _position);
-    _strength = _oppVector vectorMultiply -(GVAR(ragdollStrength) * 100);
+    _strength = _oppVector vectorMultiply -(GVAR(ragdollStrength) * 100); // x100 is so the CBA setting has smaller numbers for UX
 };
 
 [QGVAR(applyDamage), [_hitEntity, _instigator, _damage, _components select 2, _strength, _position], _hitEntity] call CBA_fnc_targetEvent;
 
 EXIT_CODE;
-*/

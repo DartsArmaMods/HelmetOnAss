@@ -1,4 +1,2 @@
-#define GRENADE_CLASS QEGVAR(throwing,helmetGrenade)
-
 #define USE_WORN_HELMET 0
 #define USE_SLUNG_HELMET 1
