@@ -13,7 +13,8 @@ class CfgPatches {
         };
         units[] = {
             "hoa_groundholder",
-            "hoa_groundholder_facewear"
+            "hoa_groundholder_facewear",
+            "hoa_groundholder_physx",
         };
         weapons[] = {};
         VERSION_CONFIG;
