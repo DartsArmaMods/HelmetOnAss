@@ -20,3 +20,7 @@ exclude = []
 
 [properties]
 author = "DartRuffian"
+
+[hemtt.publish]
+description = "./docs/WORKSHOP_DESCRIPTION.md" # Workaround until https://github.com/BrettMayson/HEMTT/issues/1374 is addressed
+changelog = "CHANGELOG.md"

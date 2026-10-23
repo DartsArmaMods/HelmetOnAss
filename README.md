@@ -1,8 +1,8 @@
-<!-- If you want to make changes to this README, you need to also modify the README.md in the docs folder as well -->
+[//]: # (If you want to make changes to this README, you need to also modify the README.md in the docs folder as well)
 <h1 align="center">Helmet on Ass</h1>
 <p align="center">
     <a href="https://github.com/DartsArmaMods/HelmetOnAss/releases/latest">
-        <img src="https://img.shields.io/badge/Version-1.1.7-blue?style=flat-square" alt="Helmet on Ass Version">
+        <img src="https://img.shields.io/badge/Version-1.1.8-blue?style=flat-square" alt="Helmet on Ass Version">
     </a>
     <a href="https://github.com/DartsArmaMods/HelmetOnAss/issues">
         <img src="https://img.shields.io/github/issues-raw/DartsArmaMods/HelmetOnAss.svg?style=flat-square&label=Issues" alt="Helmet on Ass Issues">
@@ -20,7 +20,6 @@
     <b>Requires the latest version of <a href="https://github.com/CBATeam/CBA_A3/releases/latest">CBA</a> and <a href="https://github.com/acemod/ACE3/releases/latest">ACE3</a></b>
 </p>
 
-<!-- Note that HTML blocks will not appear in the Steam Workshop description, so this is the start -->
 **Helmet on Ass** adds a simple ACE interaction and keybind to sling your helmet, facewear, and nvgs to a configurable point.
 
 The project is entirely **open-source** and any contributions are welcome.
@@ -46,7 +45,7 @@ hoa_sling_slingWithHelmet = 1; // 0-Nothing, 1-Sling with helmet
 hoa_sling_hideWhenSlung = 0;   // 0-Nothing, 1-Hide item when slung
 ```
 
-You can add your own sling option by calling `hoa_sling_fnc_addSlingOption`:
+You can add your own sling option by calling hoa_sling_fnc_addSlingOption:
 ```sqf
 ["Sling Option Name", _position, [_vectorDir, _vectorUp]] call hoa_sling_fnc_addSlingOption;
 ```
