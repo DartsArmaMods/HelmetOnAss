@@ -57,6 +57,12 @@ if (GVAR(ragdollStrength) > 0) then {
     _strength = _oppVector vectorMultiply -(GVAR(ragdollStrength) * 100); // x100 is so the CBA setting has smaller numbers for UX
 };
 
-[QGVAR(applyDamage), [_hitEntity, _instigator, _damage, _components select 2, _strength, _position], _hitEntity] call CBA_fnc_targetEvent;
+private _allBodyParts = ["head", "body", "leftarm", "rightarm", "leftleg", "rightleg"];
+private _componentIndex = _components findIf { (toLowerANSI _x) in _allBodyParts };
+
+if (_componentIndex > -1) then {
+    [QGVAR(applyDamage), [_hitEntity, _instigator, _damage, _components select _componentIndex, _strength, _position], _hitEntity] call CBA_fnc_targetEvent;
+};
+
 
 EXIT_CODE;

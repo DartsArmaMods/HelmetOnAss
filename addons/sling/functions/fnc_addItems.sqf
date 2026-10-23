@@ -6,7 +6,7 @@
  * Arguments:
  * 0: Unit <OBJECT>
  * 1: Items <ARRAY>
- * 2: Display message if some items couldn't fit <BOOL>
+ * 2: Display message if some items couldn't fit (optional, default: true) <BOOL>
  *
  * Return Value:
  * Array of bools for if an item was added or not <ARRAY>
@@ -19,8 +19,10 @@
  * Public: No
  */
 
-params ["_unit", "_items", ["_showMessage", true]];
+params ["_unit", ["_items", []], ["_showMessage", true]];
 TRACE_3("fnc_addItems",_unit,_items,_showMessage);
+
+if (_items isEqualTo []) exitWith { [] };
 
 private _return = [];
 

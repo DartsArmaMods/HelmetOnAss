@@ -1,13 +1,13 @@
 class CfgAmmo {
     // IR strobes are used because shotNVGMarker simulation will collide with units
-    class GrenadeCore;
-    class IRStrobeBase: GrenadeCore {
+    class IRStrobeBase;
+    class B_IRStrobe: IRStrobeBase {
         class NVGMarkers {
             class Blinking1;
         };
     };
-    class GVAR(helmetGrenade_ammo): IRStrobeBase {
-        // TODO: fix model
+    class GVAR(helmetGrenade_ammo): B_IRStrobe {
+        model = "\A3\Weapons_f\empty.p3d";
         class NVGMarkers: NVGMarkers {
             class Blinking1: Blinking1 {
                 blinking = 0;
