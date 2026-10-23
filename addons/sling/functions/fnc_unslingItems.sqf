@@ -12,7 +12,7 @@
  * Example:
  * player call hoa_sling_fnc_unslingItems
  *
- * Public: Yes
+ * Public: No
  */
 
 params [

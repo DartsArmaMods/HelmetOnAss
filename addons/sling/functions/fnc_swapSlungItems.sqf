@@ -12,7 +12,7 @@
  * Example:
  * player call hoa_sling_fnc_swapSlungItems;
  *
- * Public: Yes
+ * Public: No
  */
 
 params [["_unit", objNull, [objNull]]];
