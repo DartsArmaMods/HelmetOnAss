@@ -43,12 +43,7 @@ if (!isNull _arsenal) then {
             if (_unavailableItems isNotEqualTo []) then {
                 _unavailableItems = _unavailableItems apply { getText ((_x call CBA_fnc_getItemConfig) >> "displayName") };
                 [{
-                    // From https://github.com/acemod/ACE3/blob/master/addons/arsenal/functions/fnc_openBox.sqf#L42-L44
-                    private _displayToUse = findDisplay IDD_RSCDISPLAYCURATOR;
-                    _displayToUse = [_displayToUse, findDisplay IDD_MISSION] select (isNull _displayToUse);
-                    _displayToUse = [_displayToUse, findDisplay IDD_DISPLAY3DEN] select is3DEN;
-
-                    [_displayToUse, format [LLSTRING(unavailableItems), _this joinString ", "]] call ace_arsenal_fnc_message;
+                    [findDisplay IDD_ace_arsenal, format [LLSTRING(unavailableItems), _this joinString ", "]] call ace_arsenal_fnc_message;
                 }, _unavailableItems] call CBA_fnc_execNextFrame;
             };
         };

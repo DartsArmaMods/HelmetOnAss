@@ -13,7 +13,7 @@
 [
     QGVAR(helmetPriority), "LIST",
     [LSTRING(helmetPriority_name), LSTRING(helmetPriority_tooltip)],
-    _category, [[USE_WORN_HELMET, USE_SLUNG_HELMET], [LSTRING(wornHelmet), LSTRING(slungHelmet)]]
+    _category, [[USE_WORN_HELMET, USE_SLUNG_HELMET], [LSTRING(wornHelmet), LSTRING(slungHelmet)], USE_SLUNG_HELMET]
 ] call CBA_fnc_addSetting;
 
 [
