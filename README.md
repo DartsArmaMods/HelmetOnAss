@@ -10,7 +10,7 @@
     <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3487820370">
         <img src="https://img.shields.io/steam/downloads/3487820370.svg?style=flat-square&label=Downloads" alt="Helmet on Ass Downloads">
     </a>
-    <a href="https://github.com/DartsArmaMods/HelmetOnAss/blob/master/LICENSE">
+    <a href="https://github.com/DartsArmaMods/HelmetOnAss/blob/master/LICENSE.md">
         <img src="https://img.shields.io/badge/License-Legion Studios-red?style=flat-square" alt="Helmet on Ass License">
     </a>
     <img src="https://img.shields.io/github/actions/workflow/status/DartsArmaMods/HelmetOnAss/hemtt.yml?style=flat-square&label=HEMTT" alt="HEMTT">
