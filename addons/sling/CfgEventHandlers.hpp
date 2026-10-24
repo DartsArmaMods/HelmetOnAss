@@ -10,16 +10,10 @@ class Extended_PreInit_EventHandlers {
     };
 };
 
-class Extended_PostInit_EventHandlers {
-    class ADDON {
-        init = QUOTE(call COMPILE_SCRIPT(XEH_postInit));
-    };
-};
-
 class Extended_GetInMan_EventHandlers {
     class CAManBase {
         class ADDON {
-            serverGetInMan = QUOTE(call FUNC(handleGetInMan));
+            getInMan = QUOTE(call FUNC(handleGetInMan));
         };
     };
 };
@@ -27,7 +21,7 @@ class Extended_GetInMan_EventHandlers {
 class Extended_GetOutMan_EventHandlers {
     class CAManBase {
         class ADDON {
-            serverGetOutMan = QUOTE(call FUNC(handleGetOutMan));
+            getOutMan = QUOTE(call FUNC(handleGetOutMan));
         };
     };
 };

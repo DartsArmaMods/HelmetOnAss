@@ -22,18 +22,6 @@
 params ["_unit"];
 TRACE_1("fnc_handleGetOutMan",_unit);
 
-if (!isServer) exitWith {};
+if !(local _unit && GET_SLUNG_ITEMS(_unit) isNotEqualTo []) exitWith {};
 
-private _slungItems = _unit getVariable [QGVAR(slungItemsTempDoNotUseThis), []];
-if (_slungItems isEqualTo []) exitWith {};
-
-[{
-    params ["_unit", "_slungItems"];
-
-    [_unit, 0, _slungItems, false] call FUNC(slingHelmet);
-    private _groundholders = _unit getVariable [QGVAR(slungHelmetItems), []];
-
-    if (_unit getVariable [QGVAR(slungHelmetHidden), false]) then {
-        [QGVAR(hideObjects), [_groundholders, true]] call CBA_fnc_serverEvent;
-    };
-}, [_unit, _slungItems], 0.1] call CBA_fnc_waitAndExecute;
+[LINKFUNC(createSlungHolders), _unit, 0.1] call CBA_fnc_waitAndExecute;

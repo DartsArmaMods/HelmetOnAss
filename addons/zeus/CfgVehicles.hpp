@@ -1,6 +1,6 @@
 class CfgVehicles {
     class Module_F;
-    class hoa_moduleBase: Module_F {
+    class MODULE(Base): Module_F {
         scope = 0;
         scopeCurator = 2;
         author = AUTHOR;
@@ -8,24 +8,24 @@ class CfgVehicles {
         category = QUOTE(ADDON);
         function = "";
         functionPriority = 1;
-        isGlobal = 1; // 0 = server only, 1 = global, 2 = global w/ JIP
+        isGlobal = GLOBAL;
         isTriggerActivated = 0;
     };
 
-    class hoa_moduleSlingHelmet: hoa_moduleBase {
+    class MODULE(SlingItems): MODULE(Base) {
         scope = 1;
         author = AUTHOR;
-        displayName = ECSTRING(sling,slingHelmet_name);
+        displayName = ECSTRING(sling,slingItems_name);
         curatorCanAttach = 1;
         function = "ace_common_fnc_dummy";
-        curatorInfoType = QGVAR(RscSlingHelmet);
+        curatorInfoType = QGVAR(RscSlingItems);
     };
 
-    class hoa_moduleUnslingHelmet: hoa_moduleBase {
+    class MODULE(UnslingItems): MODULE(Base) {
         scope = 1;
         author = AUTHOR;
-        displayName = ECSTRING(sling,unslingHelmet_name);
+        displayName = ECSTRING(sling,unslingItems_name);
         curatorCanAttach = 1;
-        function = QFUNC(moduleUnslingHelmet);
+        function = QFUNC(moduleUnslingItems);
     };
 };

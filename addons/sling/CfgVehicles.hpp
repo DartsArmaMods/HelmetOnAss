@@ -2,53 +2,63 @@ class CfgVehicles {
     class Man;
     class CAManBase: Man {
         class ACE_SelfActions {
-            class hoa_slingHelmet {
-                displayName = CSTRING(slingHelmet_name);
-                condition = QUOTE(_player call FUNC(canSlingHelmet));
-                statement = QUOTE(_player call FUNC(slingHelmet));
-                exceptions[] = {"isNotSitting", "isNotSwimming"};
+            class hoa {
+                displayName = QUOTE(MOD_NAME);
+                icon = QPATHTOF(data\ui\helmet_ca.paa);
+                condition = "true";
+                statement = "";
+                exceptions[] = {ACTION_EXCEPTIONS};
 
-                class hoa_slingHelmet_helmet {
-                    displayName = CSTRING(slingHelmet_helmet_name);
-                    condition = QUOTE([ARR_2(_player,1)] call FUNC(canSlingHelmet));
-                    statement = QUOTE([ARR_2(_player,1)] call FUNC(slingHelmet));
-                    exceptions[] = {"isNotSitting", "isNotSwimming"};
+                class hoa_slingItems {
+                    displayName = CSTRING(slingItems_name);
+                    condition = QUOTE(_player call FUNC(canSlingItems));
+                    statement = QUOTE(_player call FUNC(slingItems));
+                    exceptions[] = {ACTION_EXCEPTIONS};
+
+                    class hoa_slingItems_helmet {
+                        displayName = CSTRING(slingItems_helmet_name);
+                        condition = "true";
+                        statement = QUOTE([ARR_2(_player,SLING_MODE_HELMET)] call FUNC(slingItems));
+                        exceptions[] = {ACTION_EXCEPTIONS};
+                    };
+                    class hoa_slingItems_helmetNVG: hoa_slingItems_helmet {
+                        displayName = CSTRING(slingItems_helmetNVG_name);
+                        statement = QUOTE([ARR_2(_player,SLING_MODE_HELMET_NVG)] call FUNC(slingItems));
+                    };
+                    class hoa_slingItems_helmetFacewear: hoa_slingItems_helmet {
+                        displayName = CSTRING(slingItems_helmetFacewear_name);
+                        statement = QUOTE([ARR_2(_player,SLING_MODE_HELMET_FACEWEAR)] call FUNC(slingItems));
+                    };
+                    class hoa_slingItems_all: hoa_slingItems_helmet {
+                        displayName = CSTRING(slingItems_all_name);
+                        statement = QUOTE([ARR_2(_player,SLING_MODE_ALL)] call FUNC(slingItems));
+                    };
                 };
-                class hoa_slingHelmet_helmetNVG: hoa_slingHelmet_helmet {
-                    displayName = CSTRING(slingHelmet_helmetNVG_name);
-                    condition = QUOTE([ARR_2(_player,2)] call FUNC(canSlingHelmet));
-                    statement = QUOTE([ARR_2(_player,2)] call FUNC(slingHelmet));
+
+                class hoa_unslingItems {
+                    displayName = CSTRING(unslingItems_name);
+                    condition = QUOTE(_player call FUNC(canUnslingItems));
+                    statement = QUOTE(_player call FUNC(unslingItems));
+                    exceptions[] = {ACTION_EXCEPTIONS};
                 };
-                class hoa_slingHelmet_helmetFacewear: hoa_slingHelmet_helmet {
-                    displayName = CSTRING(slingHelmet_helmetFacewear_name);
-                    condition = QUOTE([ARR_2(_player,3)] call FUNC(canSlingHelmet));
-                    statement = QUOTE([ARR_2(_player,3)] call FUNC(slingHelmet));
+
+                class hoa_swapSlungItems: hoa_unslingItems {
+                    displayName = CSTRING(swapSlungItems_name);
+                    condition = QUOTE(_player call FUNC(canSwapSlungItems));
+                    statement = QUOTE(_player call FUNC(swapSlungItems));
                 };
-            };
 
-            class hoa_unslingHelmet {
-                displayName = CSTRING(unslingHelmet_name);
-                condition = QUOTE(_player call FUNC(canUnslingHelmet));
-                statement = QUOTE(_player call FUNC(unslingHelmet));
-                exceptions[] = {"isNotSitting", "isNotSwimming"};
-            };
+                class hoa_hideSlungItems: hoa_unslingItems {
+                    displayName = CSTRING(hideSlungItems_name);
+                    condition = QUOTE(_player call FUNC(canHideSlungItems));
+                    statement = QUOTE(_player call FUNC(hideSlungItems));
+                };
 
-            class hoa_swapHelmets: hoa_unslingHelmet {
-                displayName = CSTRING(swapHelmets_name);
-                condition = QUOTE(_player call FUNC(canSwapHelmets));
-                statement = QUOTE(_player call FUNC(swapHelmets));
-            };
-
-            class hoa_hideSlungHelmet: hoa_unslingHelmet {
-                displayName = CSTRING(hideHelmet_name);
-                condition = QUOTE(_player call FUNC(canHideHelmet));
-                statement = QUOTE(_player call FUNC(hideHelmet));
-            };
-
-            class hoa_unhideSlungHelmet: hoa_unslingHelmet {
-                displayName = CSTRING(unhideHelmet_name);
-                condition = QUOTE(_player call FUNC(canUnhideHelmet));
-                statement = QUOTE([ARR_2(_player,false)] call FUNC(hideHelmet));
+                class hoa_unhideSlungItems: hoa_unslingItems {
+                    displayName = CSTRING(unhideSlungItems_name);
+                    condition = QUOTE(_player call FUNC(canUnhideSlungItems));
+                    statement = QUOTE([ARR_2(_player,false)] call FUNC(hideSlungItems));
+                };
             };
         };
     };
@@ -59,19 +69,9 @@ class CfgVehicles {
         author = AUTHOR;
 
         model = QPATHTOF(hoa_groundholder.p3d);
-        icon = "iconObject_1x1";
-        mapSize = 1.39;
-        accuracy = 0.2;
-        destrType = "DestructNo";
-        isGround = 0;
-
         memoryPointSupply = "supply_pos";
-        forceSupply = 0;
         supplyRadius = 0;
-        showWeaponCargo = 1;
-        transportMaxMagazines = 0;
-        transportMaxWeapons = 1e+009; // Really big number to allow storing items
-        transportMaxBackpacks = 0;
+        #include "cfg\groundholder_common.hpp"
 
         class TransportWeapons {};
         class TransportMagazines {};
@@ -89,22 +89,9 @@ class CfgVehicles {
     class hoa_groundholder_physx: CargoNet_01_box_F {
         scope = 1;
         author = AUTHOR;
-        displayName = "$STR_cfgVehicles_WeaponHolder0";
 
         model = "\A3\Weapons_f\dummyweapon.p3d";
-
-        icon = "iconObject_1x1";
-        mapSize = 1.39;
-        accuracy = 0.2;
-        destrType = "DestructNo";
-        isGround = 1;
-
         memoryPointSupply = "doplnovani";
-        showWeaponCargo = 1;
-        transportMaxMagazines = 0;
-        transportMaxWeapons = 1e+009; // Really big number to allow storing items
-        transportMaxBackpacks = 0;
-
-        ace_cargo_noRename = 1;
+        #include "cfg\groundholder_common.hpp"
     };
 };

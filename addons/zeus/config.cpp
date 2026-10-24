@@ -12,8 +12,8 @@ class CfgPatches {
             "ace_zeus"
         };
         units[] = {
-            "hoa_moduleSlingHelmet",
-            "hoa_moduleUnslingHelmet"
+            QMODULE(SlingItems),
+            QMODULE(UnslingItems)
         };
         weapons[] = {};
         VERSION_CONFIG;
@@ -24,3 +24,4 @@ class CfgPatches {
 #include "CfgFactionClasses.hpp"
 #include "CfgEventHandlers.hpp"
 #include "RscAttributes.hpp"
+#include "zen_context_menu_actions.hpp"

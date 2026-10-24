@@ -10,12 +10,12 @@
  * True if helmets can be swapped, otherwise false <BOOL>
  *
  * Example:
- * player call hoa_sling_fnc_canSwapHelmets
+ * player call hoa_sling_fnc_canSwapSlungItems
  *
  * Public: No
  */
 
 params ["_unit"];
-TRACE_1("fnc_canSwapHelmets",_unit);
+TRACE_1("fnc_canSwapSlungItems",_unit);
 
-headgear _unit != "" && { _unit getVariable [QGVAR(slungHelmetItems), []] isNotEqualTo [] }
+headgear _unit != "" && { GET_SLUNG_ITEMS(_unit) isNotEqualTo [] };

@@ -10,12 +10,12 @@
  * True if helmet can be unslung, otherwise false
  *
  * Example:
- * player call hoa_sling_fnc_canSlingHelmet
+ * player call hoa_sling_fnc_canUnslingItems
  *
  * Public: No
  */
 
 params ["_unit"];
-TRACE_1("fnc_canUnslingHelmet",_unit);
+TRACE_1("fnc_canUnslingItems",_unit);
 
-GVAR(enabled) && headgear _unit == "" && { _unit getVariable [QGVAR(slungHelmetItems), []] isNotEqualTo [] };
+GVAR(enabled) && alive _unit && { GET_SLUNG_ITEMS(_unit) isNotEqualTo [] };

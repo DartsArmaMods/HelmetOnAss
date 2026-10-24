@@ -10,12 +10,12 @@
  * True if helmet can be hidden, otherwise false
  *
  * Example:
- * player call hoa_sling_fnc_canHideHelmet
+ * player call hoa_sling_fnc_canHideSlungItems
  *
  * Public: No
  */
 
 params ["_unit"];
-TRACE_1("fnc_canHideHelmet",_unit);
+TRACE_1("fnc_canHideSlungItems",_unit);
 
-GVAR(canHideHelmet) && _unit getVariable [QGVAR(slungHelmetItems), []] isNotEqualTo [] && !(_unit getVariable [QGVAR(slungHelmetHidden), false]);
+(GET_SLUNG_ITEMS(_unit) isNotEqualTo []) && !(_unit getVariable [VAR_HIDE_SLUNG_HOLDERS, false]);
