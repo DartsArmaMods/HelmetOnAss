@@ -6,7 +6,7 @@ class CfgVehicles {
         author = AUTHOR;
 
         category = QUOTE(ADDON);
-        function = "";
+        function = "ace_common_fnc_dummy";
         functionPriority = 1;
         isGlobal = GLOBAL;
         isTriggerActivated = 0;
@@ -17,7 +17,6 @@ class CfgVehicles {
         author = AUTHOR;
         displayName = ECSTRING(sling,slingItems_name);
         curatorCanAttach = 1;
-        function = "ace_common_fnc_dummy";
         curatorInfoType = QGVAR(RscSlingItems);
     };
 
