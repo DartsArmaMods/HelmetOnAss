@@ -12,8 +12,8 @@ class CfgPatches {
             "ace_zeus"
         };
         units[] = {
-            QMODULE(SlingItems),
-            QMODULE(UnslingItems)
+            QMODULE(SlingItems_zeus),
+            QMODULE(UnslingItems_zeus)
         };
         weapons[] = {};
         VERSION_CONFIG;

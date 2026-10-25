@@ -12,7 +12,7 @@ class CfgVehicles {
         isTriggerActivated = 0;
     };
 
-    class MODULE(SlingItems): MODULE(Base) {
+    class MODULE(SlingItems_zeus): MODULE(Base) {
         scope = 1;
         author = AUTHOR;
         displayName = ECSTRING(sling,slingItems_name);
@@ -21,7 +21,7 @@ class CfgVehicles {
         curatorInfoType = QGVAR(RscSlingItems);
     };
 
-    class MODULE(UnslingItems): MODULE(Base) {
+    class MODULE(UnslingItems_zeus): MODULE(Base) {
         scope = 1;
         author = AUTHOR;
         displayName = ECSTRING(sling,unslingItems_name);
