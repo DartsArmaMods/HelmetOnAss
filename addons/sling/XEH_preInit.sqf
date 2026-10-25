@@ -25,7 +25,7 @@ GVAR(positions) = [
 
 if (isServer) then {
     [QGVAR(hideObjects), {
-        params ["_objects", "_set"];
+        params ["_objects", ["_set", true]];
         { _x hideObjectGlobal _set } forEach _objects;
     }] call CBA_fnc_addEventHandler;
 };
