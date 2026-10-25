@@ -20,7 +20,7 @@
     <b>Requires the latest version of <a href="https://github.com/CBATeam/CBA_A3/releases/latest">CBA</a> and <a href="https://github.com/acemod/ACE3/releases/latest">ACE3</a></b>
 </p>
 
-**Helmet on Ass** adds a simple ACE interaction and keybind to sling your helmet, facewear, and nvgs to a configurable point. CBA keybinds are also available for accessibility.
+**Helmet on Ass** adds a simple ACE interaction, CBA context action, and keybind to sling your helmet, facewear, and nvgs to a configurable (via CBA setting) point.
 
 The project is entirely **open-source** and any contributions are welcome.
 
