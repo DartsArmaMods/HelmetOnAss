@@ -19,6 +19,8 @@
         _unit setVariable [VAR_SLUNG_ITEMS, _slungItems, true];
         _unit call FUNC(createSlungHolders);
 
+        _unit call EFUNC(throwing,addGrenade);
+
         // consume = True doesn't seem to work for groundholders and containers, so we re-implement our own logic
         // Container == unit when using action on an equipped item
         if (_container == _unit) then {
@@ -27,7 +29,7 @@
             [_container, _item, 1] call CBA_fnc_removeItemCargo;
         };
 
-        false;
+        false; // Close menu
     }, false, _itemType] call CBA_fnc_addItemContextMenuOption;
 } forEach [
     ["##Headgear", "headgear"],

@@ -18,6 +18,8 @@
 params ["_unit"];
 TRACE_1("fnc_addGrenade",_unit);
 
+if (!GVAR(enabled)) exitWith {};
+
 if (!local _unit) exitWith {
     [QGVAR(addGrenade), _this, _unit] call CBA_fnc_targetEvent;
 };
