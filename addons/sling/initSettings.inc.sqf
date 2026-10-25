@@ -13,7 +13,7 @@
 [
     QGVAR(slungItemsPosition), "LIST",
     [LSTRING(slungItemsPosition_name), LSTRING(slungItemsPosition_tooltip)],
-    _category, [GVAR(positions), GVAR(positionNames), 0], 0, {
+    _category, [GVAR(positions), GVAR(positionNames), 1], 0, {
         [ace_player, _this] call FUNC(repositionSlungHolders);
     }
 ] call CBA_fnc_addSetting;
