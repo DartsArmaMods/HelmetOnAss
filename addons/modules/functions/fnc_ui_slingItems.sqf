@@ -5,7 +5,7 @@
  * Based on https://github.com/acemod/ACE3/blob/master/addons/zeus/functions/fnc_ui_garrison.sqf
  *
  * Arguments:
- * 0: Garrison controls group <CONTROL>
+ * 0: Zeus module button <CONTROL>
  *
  * Return Value:
  * None

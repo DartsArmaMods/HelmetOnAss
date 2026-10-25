@@ -1,5 +1,5 @@
-#define COMPONENT zeus
-#define COMPONENT_BEAUTIFIED Zeus
+#define COMPONENT modules
+#define COMPONENT_BEAUTIFIED Modules
 #include "\z\hoa\addons\main\script_mod.hpp"
 
 // #define DEBUG_MODE_FULL
