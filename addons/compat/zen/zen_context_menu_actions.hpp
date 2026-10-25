@@ -1,7 +1,7 @@
 class zen_context_menu_actions {
     class GVAR(slingItems) {
         displayName = ECSTRING(sling,slingItems_name);
-        condition = QUOTE(_hoveredEntity call FUNC(canSlingItems));
+        condition = QUOTE(_hoveredEntity call EFUNC(modules,canSlingItems));
         statement = QUOTE(_hoveredEntity call EFUNC(sling,slingItems));
         icon = QPATHTOEF(sling,data\ui\helmet_ca.paa);
         priority = 41;
@@ -24,7 +24,7 @@ class zen_context_menu_actions {
     };
     class GVAR(unslingItems) {
         displayName = ECSTRING(sling,unslingItems_name);
-        condition = QUOTE(_hoveredEntity call FUNC(canUnslingItems));
+        condition = QUOTE(_hoveredEntity call EFUNC(modules,canUnslingItems));
         statement = QUOTE(_hoveredEntity call EFUNC(sling,unslingItems));
         icon = QPATHTOEF(sling,data\ui\helmet_ca.paa);
         priority = 41;

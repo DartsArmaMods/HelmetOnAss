@@ -28,10 +28,13 @@ if !(local _unit && _activated) exitWith {};
 private _exit = true;
 switch (false) do {
     case (!isNull _unit): {
-        [_logic, "$STR_ace_zeus_nothingSelected"] call FUNC(errorAndClose);
+        ["$STR_ace_zeus_nothingSelected", _logic] call FUNC(errorAndClose);
+    };
+    case (_unit isKindOf "CAManBase"): {
+        ["$STR_ace_zeus_onlyInfantry", _logic] call FUNC(errorAndClose);
     };
     case (alive _unit): {
-        [_logic, "$STR_ace_zeus_onlyAlive"] call FUNC(errorAndClose);
+        ["$STR_ace_zeus_onlyAlive", _logic] call FUNC(errorAndClose);
     };
     case (_unit call EFUNC(sling,canUnslingItems)): {
         [_logic, LSTRING(noSlungItems)] call FUNC(errorAndClose);

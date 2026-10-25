@@ -28,10 +28,13 @@ private _unit = attachedTo _logic;
 private _exit = true;
 switch (false) do {
     case (!isNull _unit): {
-        ["$STR_ace_zeus_nothingSelected", _logic, _display] call FUNC(errorAndClose);
+        [_logic, "$STR_ace_zeus_nothingSelected", _display] call FUNC(errorAndClose);
+    };
+    case (_unit isKindOf "CAManBase"): {
+        [_logic, "$STR_ace_zeus_onlyInfantry", _display] call FUNC(errorAndClose);
     };
     case (alive _unit): {
-        ["$STR_ace_zeus_onlyAlive", _logic, _display] call FUNC(errorAndClose);
+        [_logic, "$STR_ace_zeus_onlyAlive", _display] call FUNC(errorAndClose);
     };
     default {
         _exit = false;
