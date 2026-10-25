@@ -7,6 +7,12 @@
         <Key ID="STR_hoa_sling_displayName">
             <English>Sling</English>
         </Key>
+        <Key ID="STR_hoa_sling_enableContextActions_name">
+            <English>Enable Context Actions</English>
+        </Key>
+        <Key ID="STR_hoa_sling_enableContextActions_tooltip">
+            <English>Enables CBA context actions to sling items from inventories</English>
+        </Key>
         <Key ID="STR_hoa_sling_enabled_name">
             <English>Enabled</English>
         </Key>
@@ -25,11 +31,11 @@
         <Key ID="STR_hoa_sling_position_beltGrad">
             <English>Belt (GRAD)</English>
         </Key>
-        <Key ID="STR_hoa_sling_position_gendarmerie">
-            <English>Gendarmerie</English>
-        </Key>
         <Key ID="STR_hoa_sling_position_disguise">
             <English>Disguise</English>
+        </Key>
+        <Key ID="STR_hoa_sling_position_gendarmerie">
+            <English>Gendarmerie</English>
         </Key>
         <Key ID="STR_hoa_sling_slingItems_all_name">
             <English>Sling Items (All)</English>

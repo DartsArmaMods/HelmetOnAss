@@ -24,6 +24,7 @@ GVAR(positions) = [
 
 #include "initSettings.inc.sqf"
 #include "initKeybinds.inc.sqf"
+#include "initContextActions.inc.sqf"
 
 if (isServer) then {
     [QGVAR(hideObjects), {

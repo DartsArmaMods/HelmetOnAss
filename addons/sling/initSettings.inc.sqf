@@ -1,6 +1,12 @@
 [
     QGVAR(enabled), "CHECKBOX",
-    [ELSTRING(sling,enabled_name), LSTRING(enabled_tooltip)],
+    [LSTRING(enabled_name), LSTRING(enabled_tooltip)],
+    _category, true, true
+] call CBA_fnc_addSetting;
+
+[
+    QGVAR(enableContextActions), "CHECKBOX",
+    [LSTRING(enableContextActions_name), LSTRING(enableContextActions_tooltip)],
     _category, true, true
 ] call CBA_fnc_addSetting;
 
