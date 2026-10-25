@@ -37,7 +37,7 @@ if (isNull _hitEntity || _items isEqualTo [] || _components isEqualTo [] || { !(
 // Get total mass of all the items
 private _mass = 0;
 {
-    _mass = GVAR(helmetMassCache) getOrDefaultCall [_x, {
+    _mass = GVAR(itemMassCache) getOrDefaultCall [_x, {
         private _config = configFile >> "CfgWeapons" >> _x;
         if (isClass _config) then {
             getNumber (_config >> "ItemInfo" >> "mass");

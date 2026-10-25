@@ -8,7 +8,7 @@ private _category = [QUOTE(MOD_NAME), LLSTRING(displayName)];
 
 #include "initSettings.inc.sqf"
 
-GVAR(helmetMassCache) = createHashMap;
+GVAR(itemMassCache) = createHashMap;
 
 [QGVAR(addGrenade), LINKFUNC(addGrenade)] call CBA_fnc_addEventHandler;
 [QGVAR(applyDamage), LINKFUNC(applyDamage)] call CBA_fnc_addEventHandler;
