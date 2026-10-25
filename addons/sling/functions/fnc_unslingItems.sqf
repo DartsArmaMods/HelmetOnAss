@@ -26,3 +26,5 @@ if !(local _unit && { (_unit call FUNC(canUnslingItems)) }) exitWith {};
 deleteVehicle (GET_SLUNG_HOLDERS(_unit));
 _unit setVariable [VAR_SLUNG_HOLDERS, nil, true];
 _unit setVariable [VAR_SLUNG_ITEMS, nil, true];
+
+[QGVAR(unslungItems), [_unit]] call CBA_fnc_localEvent;

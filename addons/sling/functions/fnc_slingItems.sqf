@@ -51,3 +51,5 @@ if (_removeCurrentItems) then {
 
 _unit setVariable [VAR_SLUNG_ITEMS, _items, true];
 [_unit, _slingParams] call FUNC(createSlungHolders);
+
+[QGVAR(slungItems), [_unit, _items, _slingParams]] call CBA_fnc_localEvent;
