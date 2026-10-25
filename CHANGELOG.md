@@ -18,6 +18,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Add CBA context actions to sling items from inventories from [@DartRuffian]
 - Add ZEN context menu actions to units to (un)sling items from [@DartRuffian]
 - Drop slung items on ground when a unit is killed from [@DartRuffian]
+- Add "disguise" sling position, places the slung helmet roughly on top of your other helmet from [@DartRuffian]
 
 ### Changed
 - Delete ground holders when empty from [@DartRuffian]
