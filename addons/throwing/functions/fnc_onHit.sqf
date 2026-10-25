@@ -64,5 +64,4 @@ if (_componentIndex > -1) then {
     [QGVAR(applyDamage), [_hitEntity, _instigator, _damage, _components select _componentIndex, _strength, _position], _hitEntity] call CBA_fnc_targetEvent;
 };
 
-
 EXIT_CODE;
