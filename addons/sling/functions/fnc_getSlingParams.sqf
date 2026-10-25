@@ -21,7 +21,7 @@ params ["_item"];
 TRACE_1("fnc_getSlingParams",_item);
 
 GVAR(slingCache) getOrDefaultCall [_item, {
-    private _type = _item call ace_common_fnc_getItemType select 1;
+    private _type = _item call EFUNC(common,getItemType);
     private _itemConfig = _item call CBA_fnc_getItemConfig;
     [
         _type == "headgear" || { getNumber (_itemConfig >> QGVAR(slingWithHelmet)) == 1 },

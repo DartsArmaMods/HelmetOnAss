@@ -16,7 +16,6 @@ PREP(handleRespawn);
 PREP(hideSlungItems);
 PREP(loadoutGet);
 PREP(loadoutSet);
-PREP(pitchBankYawToVector);
 PREP(repositionSlungHolders);
 PREP(resetVariables);
 PREP(slingItems);

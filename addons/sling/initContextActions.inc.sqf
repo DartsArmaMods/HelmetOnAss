@@ -6,7 +6,7 @@
             params ["_unit", "", "", "", "_params"];
             _params params ["_itemType"];
 
-            private _slungItemTypes = GET_SLUNG_ITEMS(_unit) apply { (_x call ace_common_fnc_getItemType) select 1 };
+            private _slungItemTypes = GET_SLUNG_ITEMS(_unit) apply { _x call EFUNC(common,getItemType) };
 
             !(_itemType in _slungItemTypes);
         },

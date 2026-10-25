@@ -15,8 +15,6 @@
  * Public: No
  */
 
-#define IS_FACEWEAR(CLASS_NAME) ((CLASS_NAME call ace_common_fnc_getItemType) select 1 == "glasses")
-
 params ["_unit", ["_slingParams", []]];
 TRACE_2("fnc_createSlungHolders",_unit,_slingParams);
 
@@ -35,7 +33,8 @@ private _positionASL = getPosASL _unit;
 {
     // Facewear items are rotated 180 degrees when dropped on the ground, so we have a separate class
     // with its proxy rotated 180 degrees to compensate
-    private _groundholderClass = ["hoa_groundholder", "hoa_groundholder_facewear"] select IS_FACEWEAR(_x);
+    private _isFacewear = (_x call EFUNC(common,getItemType)) == "glasses";
+    private _groundholderClass = ["hoa_groundholder", "hoa_groundholder_facewear"] select _isFacewear;
     private _groundholder = createVehicle [_groundholderClass, [0, 0, 0], [], 0, "CAN_COLLIDE"];
     _groundholder addItemCargoGlobal [_x, 1];
 

@@ -27,7 +27,7 @@ if (_items isEqualTo []) exitWith { [] };
 private _return = [];
 
 {
-    private _type = _x call ace_common_fnc_getItemType select 1;
+    private _type = _x call EFUNC(common,getItemType);
     private _slotIsEmpty = switch(_type) do {
         case "headgear": { headgear _unit == "" };
         case "hmd": { hmd _unit == "" };

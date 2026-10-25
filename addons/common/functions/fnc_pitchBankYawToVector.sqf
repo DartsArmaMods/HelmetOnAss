@@ -12,7 +12,7 @@
  * [vectorDir, vectorUp] <ARRAY>
  *
  * Example:
- * [20, 0, 150] call hoa_sling_fnc_pitchBankYawToVector
+ * [20, 0, 150] call hoa_common_fnc_pitchBankYawToVector
  *
  * Public: No
  */
