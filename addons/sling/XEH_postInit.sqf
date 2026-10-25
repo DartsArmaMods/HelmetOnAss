@@ -1,5 +1,7 @@
 #include "script_component.hpp"
 
+#include "initContextActions.inc.sqf"
+
 if (hasInterface) then {
     [[6, 7, 8], QGVAR(slingItems), QUOTE(MOD_NAME), [
         ["text", "Text", {true}, LLSTRING(slingItems_name)],
