@@ -28,6 +28,9 @@
         <Key ID="STR_hoa_sling_position_gendarmerie">
             <English>Gendarmerie</English>
         </Key>
+        <Key ID="STR_hoa_sling_position_disguise">
+            <English>Disguise</English>
+        </Key>
         <Key ID="STR_hoa_sling_slingItems_all_name">
             <English>Sling Items (All)</English>
         </Key>
