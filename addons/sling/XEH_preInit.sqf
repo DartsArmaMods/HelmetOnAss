@@ -30,17 +30,5 @@ if (isServer) then {
     }] call CBA_fnc_addEventHandler;
 };
 
-if (hasInterface) then {
-    [[6, 7, 8], QGVAR(slingItems), QUOTE(MOD_NAME), [
-        ["text", "Text", {true}, LLSTRING(slingItems_name)],
-        ["statement", "Statement", {true}, ""],
-        ["button", "Switch", {true}, "", {}, {
-            ace_arsenal_center call FUNC(swapSlungItems);
-            true call ace_arsenal_fnc_refresh
-        }]
-    ]] call ace_arsenal_fnc_addAction;
-};
-
-
 ["CBA_loadoutGet", LINKFUNC(loadoutGet)] call CBA_fnc_addEventHandler;
 ["CBA_loadoutSet", LINKFUNC(loadoutSet)] call CBA_fnc_addEventHandler;
