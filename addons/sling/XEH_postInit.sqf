@@ -1,16 +1,14 @@
 #include "script_component.hpp"
 
-if (isServer) then {
-    [QGVAR(hideObjects), {
-        params ["_objects", "_set"];
-        { _x hideObjectGlobal _set } forEach _objects;
-    }] call CBA_fnc_addEventHandler;
-};
+#include "initContextActions.inc.sqf"
 
 if (hasInterface) then {
-    [[6, 7, 8], QGVAR(slingHelmet), QUOTE(MOD_NAME), [
-        ["text", "Text", {true}, LLSTRING(slingHelmet_name)],
+    [[6, 7, 8], QGVAR(slingItems), QUOTE(MOD_NAME), [
+        ["text", "Text", {true}, LLSTRING(slingItems_name)],
         ["statement", "Statement", {true}, ""],
-        ["button", "Switch", {true}, "", {}, {ace_arsenal_center call FUNC(swapHelmets); true call ace_arsenal_fnc_refresh}]
+        ["button", "Switch", {true}, "", {}, {
+            ace_arsenal_center call FUNC(swapSlungItems);
+            true call ace_arsenal_fnc_refresh;
+        }]
     ]] call ace_arsenal_fnc_addAction;
 };

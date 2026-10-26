@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project name="HelmetOnAss">
+    <Package name="Modules">
+        <Key ID="STR_hoa_modules_hasSlungItems">
+            <English>Unit already has slung items</English>
+        </Key>
+        <Key ID="STR_hoa_modules_noSlungItems">
+            <English>Unit doesn't have any slung items</English>
+        </Key>
+        <Key ID="STR_hoa_modules_slingMode_all">
+            <English>Helmet + NVGs + Facewear</English>
+        </Key>
+        <Key ID="STR_hoa_modules_slingMode_helmet">
+            <English>Helmet</English>
+        </Key>
+        <Key ID="STR_hoa_modules_slingMode_helmetFacewear">
+            <English>Helmet + Facewear</English>
+        </Key>
+        <Key ID="STR_hoa_modules_slingMode_helmetNVG">
+            <English>Helmet + NVGs</English>
+        </Key>
+        <Key ID="STR_hoa_modules_slingMode_tooltip">
+            <English>Select what items to sling</English>
+        </Key>
+    </Package>
+</Project>

@@ -8,12 +8,13 @@ class CfgPatches {
         name = COMPONENT_NAME;
         requiredVersion = REQUIRED_VERSION;
         requiredAddons[] = {
-            "hoa_main",
+            "hoa_common",
             "ace_arsenal"
         };
         units[] = {
             "hoa_groundholder",
-            "hoa_groundholder_facewear"
+            "hoa_groundholder_facewear",
+            "hoa_groundholder_physx",
         };
         weapons[] = {};
         VERSION_CONFIG;

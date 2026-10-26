@@ -20,4 +20,5 @@ TRACE_1("fnc_handleDeleted",_unit);
 
 if (!local _unit) exitWith {};
 
-deleteVehicle (_unit getVariable [QGVAR(slungHelmetItems), []]);
+// No need to sync variables since the object is being deleted
+[_unit, false] call FUNC(resetVariables);

@@ -5,11 +5,30 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased]
+## [2.0.0]
 
 ### Added
 
-- Added [keep a changelog](https://keepachangelog.com) style changelog from [@DartRuffian]
+- Add [keep a changelog](https://keepachangelog.com) style changelog from [@DartRuffian]
+- Add helmet throwing from [@DartRuffian]
+- Add ability to unsling items when you have a helmet equipped from [@DartRuffian]
+- Add "sling all" sling mode for helmet, nvgs, and facewear from [@DartRuffian]
+- Add root action for ACE actions from [@DartRuffian]
+- Add sling mode option to Zeus Module from [@DartRuffian]
+- Add CBA context actions to sling items from inventories from [@DartRuffian]
+- Add ZEN context menu actions to units to (un)sling items from [@DartRuffian]
+- Add "disguise" sling position, places the slung helmet roughly on top of your other helmet from [@DartRuffian]
+
+### Changed
+- Delete ground holders when empty from [@DartRuffian]
+- Fix sometimes accidentally removing items from [@DartRuffian]
+- Move vehicle getIn/getOut code to client from [@DartRuffian]
+- Standardized setting/keybind names, will break from [@DartRuffian]
+- Drop slung items on ground when a unit is killed from [@DartRuffian]
+
+### Removed
+- Remove allowed sling modes and can hide items settings from [@DartRuffian]
+- Remove `_items` parameter from `fnc_slingItems` from [@DartRuffian]
 
 ## [1.1.7] - 2026-10-19
 
@@ -109,7 +128,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Initial release from [@DartRuffian]
 
-[unreleased]: https://github.com/DartsArmaMods/HelmetOnAss/compare/v1.1.7...HEAD
+[2.0.0]: https://github.com/DartsArmaMods/HelmetOnAss/compare/v1.1.7...v2.0.0
 [1.1.7]: https://github.com/DartsArmaMods/HelmetOnAss/compare/v1.1.6...v1.1.7
 [1.1.6]: https://github.com/DartsArmaMods/HelmetOnAss/compare/v1.1.5...v1.1.6
 [1.1.5]: https://github.com/DartsArmaMods/HelmetOnAss/compare/v1.1.4...v1.1.5

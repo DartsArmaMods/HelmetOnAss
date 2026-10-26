@@ -1,20 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project name="HelmetOnAss">
     <Package name="Sling">
-        <Key ID="STR_hoa_sling_allowedModes_name">
-            <English>Allowed Sling Modes</English>
-        </Key>
-        <Key ID="STR_hoa_sling_allowedModes_tooltip">
-            <English>Sling modes that players can use.\n1: Helmet Only\n2: Helmet and NVGs\n3: Helmet and Facewear</English>
-        </Key>
-        <Key ID="STR_hoa_sling_canHideHelmet_name">
-            <English>Can Hide Helmet</English>
-        </Key>
-        <Key ID="STR_hoa_sling_canHideHelmet_tooltip">
-            <English>If true, players can hide their slung helmets.</English>
+        <Key ID="STR_hoa_sling_couldntFit">
+            <English>Some items couldn't fit into your inventory, check the ground or nearby vehicles</English>
         </Key>
         <Key ID="STR_hoa_sling_displayName">
             <English>Sling</English>
+        </Key>
+        <Key ID="STR_hoa_sling_enableContextActions_name">
+            <English>Enable Context Actions</English>
+        </Key>
+        <Key ID="STR_hoa_sling_enableContextActions_tooltip">
+            <English>Enables CBA context actions to sling items from inventories</English>
         </Key>
         <Key ID="STR_hoa_sling_enabled_name">
             <English>Enabled</English>
@@ -22,10 +19,10 @@
         <Key ID="STR_hoa_sling_enabled_tooltip">
             <English>Enables or disables helmet slinging</English>
         </Key>
-        <Key ID="STR_hoa_sling_hideHelmet_name">
-            <English>Hide Slung Helmet</English>
+        <Key ID="STR_hoa_sling_hideSlungItems_name">
+            <English>Hide Slung Items</English>
         </Key>
-        <Key ID="STR_hoa_sling_hideHelmet_tooltip">
+        <Key ID="STR_hoa_sling_hideSlungItems_tooltip">
             <English>Hides your slung helmet.</English>
         </Key>
         <Key ID="STR_hoa_sling_position_belt">
@@ -34,58 +31,70 @@
         <Key ID="STR_hoa_sling_position_beltGrad">
             <English>Belt (GRAD)</English>
         </Key>
+        <Key ID="STR_hoa_sling_position_disguise">
+            <English>Disguise</English>
+        </Key>
         <Key ID="STR_hoa_sling_position_gendarmerie">
             <English>Gendarmerie</English>
         </Key>
-        <Key ID="STR_hoa_sling_slingHelmet_helmetFacewear_name">
-            <English>Sling Helmet (Helmet + Facewear)</English>
+        <Key ID="STR_hoa_sling_slingItems_all_name">
+            <English>Sling Items (All)</English>
         </Key>
-        <Key ID="STR_hoa_sling_slingHelmet_helmetFacewear_tooltip">
+        <Key ID="STR_hoa_sling_slingItems_all_tooltip">
+            <English>Slings your helmet, nvgs, and facewear.</English>
+        </Key>
+        <Key ID="STR_hoa_sling_slingItems_helmetFacewear_name">
+            <English>Sling Items (Helmet + Facewear)</English>
+        </Key>
+        <Key ID="STR_hoa_sling_slingItems_helmetFacewear_tooltip">
             <English>Slings your helmet and facewear.</English>
         </Key>
-        <Key ID="STR_hoa_sling_slingHelmet_helmetNVG_name">
-            <English>Sling Helmet (Helmet + NVG)</English>
+        <Key ID="STR_hoa_sling_slingItems_helmetNVG_name">
+            <English>Sling Items (Helmet + NVG)</English>
         </Key>
-        <Key ID="STR_hoa_sling_slingHelmet_helmetNVG_tooltip">
+        <Key ID="STR_hoa_sling_slingItems_helmetNVG_tooltip">
             <English>Slings your helmet and nvgs.</English>
         </Key>
-        <Key ID="STR_hoa_sling_slingHelmet_helmet_name">
-            <English>Sling Helmet (Helmet)</English>
+        <Key ID="STR_hoa_sling_slingItems_helmet_name">
+            <English>Sling Items (Helmet)</English>
         </Key>
-        <Key ID="STR_hoa_sling_slingHelmet_helmet_tooltip">
+        <Key ID="STR_hoa_sling_slingItems_helmet_tooltip">
             <English>Slings your helmet.</English>
         </Key>
-        <Key ID="STR_hoa_sling_slingHelmet_name">
-            <English>Sling Helmet</English>
+        <Key ID="STR_hoa_sling_slingItems_name">
+            <English>Sling Items</English>
         </Key>
-        <Key ID="STR_hoa_sling_slingHelmet_tooltip">
+        <Key ID="STR_hoa_sling_slingItems_tooltip">
             <English>Slings your helmet, facewear, and nvg based on their configuration.</English>
         </Key>
-        <Key ID="STR_hoa_sling_slungHelmetPosition_name">
-            <English>Slung Helmet Position</English>
+        <Key ID="STR_hoa_sling_slingMode_name">
+            <English>Sling Mode</English>
         </Key>
-        <Key ID="STR_hoa_sling_slungHelmetPosition_tooltip">
+        <Key ID="STR_hoa_sling_slungItemsPosition_name">
+            <English>Slung Items Position</English>
+        </Key>
+        <Key ID="STR_hoa_sling_slungItemsPosition_tooltip">
             <English>Select where your helmet will be slung.</English>
         </Key>
-        <Key ID="STR_hoa_sling_swapHelmets_name">
-            <English>Swap Helmets</English>
+        <Key ID="STR_hoa_sling_swapSlungItems_name">
+            <English>Swap Slung Items</English>
         </Key>
-        <Key ID="STR_hoa_sling_swapHelmets_tooltip">
+        <Key ID="STR_hoa_sling_swapSlungItems_tooltip">
             <English>Swaps your equipped helmet with your slung helmet.</English>
         </Key>
         <Key ID="STR_hoa_sling_unavailableItems">
             <English>Some items are not available in arsenal: %1</English>
         </Key>
-        <Key ID="STR_hoa_sling_unhideHelmet_name">
-            <English>Unhide Slung Helmet</English>
+        <Key ID="STR_hoa_sling_unhideSlungItems_name">
+            <English>Unhide Slung Items</English>
         </Key>
-        <Key ID="STR_hoa_sling_unhideHelmet_tooltip">
+        <Key ID="STR_hoa_sling_unhideSlungItems_tooltip">
             <English>Unhides your slung helmet.</English>
         </Key>
-        <Key ID="STR_hoa_sling_unslingHelmet_name">
-            <English>Unsling Helmet</English>
+        <Key ID="STR_hoa_sling_unslingItems_name">
+            <English>Unsling Items</English>
         </Key>
-        <Key ID="STR_hoa_sling_unslingHelmet_tooltip">
+        <Key ID="STR_hoa_sling_unslingItems_tooltip">
             <English>Unslings your helmet.</English>
         </Key>
     </Package>
