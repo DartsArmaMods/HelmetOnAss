@@ -3,6 +3,7 @@
 // #define DEBUG_MODE_FULL
 
 #include "\z\ace\addons\main\script_macros.hpp"
+#include "script_macros_debug.hpp"
 
 #define QQUOTE(var1) QUOTE(QUOTE(var1))
 

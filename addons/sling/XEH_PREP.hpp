@@ -1,5 +1,6 @@
 PREP(addItems);
 PREP(addSlingOption);
+PREP(buttonSling);
 PREP(canHideSlungItems);
 PREP(canSlingItems);
 PREP(canSwapSlungItems);
