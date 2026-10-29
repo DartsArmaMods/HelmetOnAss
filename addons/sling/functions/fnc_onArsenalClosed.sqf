@@ -17,8 +17,7 @@
 
 #define IDC_OK 1
 
-params ["_exitCode"];
-_exitCode = IDC_OK; // Temp: https://github.com/acemod/ACE3/pull/11538
+params [["_exitCode", IDC_OK]];
 TRACE_1("fnc_onArsenalClosed",_exitCode);
 
 // https://github.com/acemod/ACE3/blob/master/addons/arsenal/functions/fnc_onArsenalClose.sqf#L34-L41
