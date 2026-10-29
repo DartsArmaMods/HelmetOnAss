@@ -17,10 +17,10 @@
 
 params ["_entity"];
 TRACE_1("fnc_3DEN_addEventHandlers",_entity);
+
 if (_entity getVariable [QGVAR(eden_hasEventHandlers), false]) exitWith {};
 _entity setVariable [QGVAR(eden_hasEventHandlers), true];
 
-// Move groundholders when Eden entity is moved
 _entity addEventHandler ["Dragged3DEN", {
     params ["_entity"];
     private _params = parseSimpleArray ((_entity get3DENAttribute QGVAR(params)) select 0);
@@ -28,7 +28,6 @@ _entity addEventHandler ["Dragged3DEN", {
     [_entity, _slingParams] call FUNC(repositionSlungHolders);
 }];
 
-// Cleanup
 _entity addEventHandler ["UnregisteredFromWorld3DEN", {
     params ["_entity"];
     deleteVehicle GET_SLUNG_HOLDERS(_entity);
