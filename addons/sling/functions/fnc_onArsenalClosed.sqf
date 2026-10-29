@@ -43,10 +43,6 @@ private _slungItems = GET_SLUNG_ITEMS(ace_arsenal_center);
     // setVectorDirAndUp seems to need a delay here? I blame the czech, because it worked fine before
     _edenEntity spawn {
         sleep 0.00000001;
-        GVAR(slungItemsPosition) params ["_bone", "_attachPos", "_vectorDirAndUp"];
-        {
-            _x attachTo [_this, _attachPos, _bone, true];
-            _x setVectorDirAndUp _vectorDirAndUp;
-        } forEach GET_SLUNG_HOLDERS(_this);
+        call FUNC(repositionSlungHolders);
     };
 } forEach _edenEntities;

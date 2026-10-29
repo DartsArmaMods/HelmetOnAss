@@ -55,9 +55,3 @@ class Extended_Deleted_EventHandlers {
         };
     };
 };
-
-class Extended_DisplayLoad_EventHandlers {
-    class Display3DEN {
-        ADDON = QUOTE(call COMPILE_SCRIPT(XEH_init3DEN));
-    };
-};

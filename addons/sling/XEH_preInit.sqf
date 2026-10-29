@@ -39,4 +39,22 @@ if (isServer) then {
 
 if (is3DEN) then {
     ["ace_arsenal_displayClosed", LINKFUNC(onArsenalClosed)] call CBA_fnc_addEventHandler;
+
+    // Only OnMissionPreviewEnd requires a delay to access 3DEN entities, but spawning both makes it simpler
+    {
+        add3DENEventHandler [_x, {
+            [] spawn {
+                sleep 0.5;
+                {
+                    private _params = parseSimpleArray ((_x get3DENAttribute QGVAR(params)) select 0);
+                    _params params ["_slungItems", "_slingParams"];
+
+                    if (_slungItems isEqualTo []) then { continue };
+
+                    _x setVariable [VAR_SLUNG_ITEMS, _slungItems];
+                    [_x, _slingParams] call FUNC(createSlungHolders);
+                } forEach (all3DENEntities select 0);
+            };
+        }];
+    } forEach ["OnMissionLoad", "OnMissionPreviewEnd"];
 };

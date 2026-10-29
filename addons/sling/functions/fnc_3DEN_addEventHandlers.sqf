@@ -25,11 +25,7 @@ _entity addEventHandler ["Dragged3DEN", {
     params ["_entity"];
     private _params = parseSimpleArray ((_entity get3DENAttribute QGVAR(params)) select 0);
     private _slingParams = (_params param [1, GVAR(slungItemsPosition)]);
-    _slingParams params ["_bone", "_attachPos", "_vectorDirAndUp"];
-    {
-        _x attachTo [_entity, _attachPos, _bone, true];
-        _x setVectorDirAndUp _vectorDirAndUp;
-    } forEach GET_SLUNG_HOLDERS(_entity);
+    [_entity, _slingParams] call FUNC(repositionSlungHolders);
 }];
 
 // Cleanup
