@@ -18,13 +18,9 @@
 params ["_entities"];
 TRACE_1("fnc_3DEN_createSlungHolders",_entities);
 
-TRACE_CHAT_2("",_entities,typeName _entities);
-
 if (_entities isEqualType objNull) then {
     _entities = [_entities];
 };
-
-TRACE_CHAT_1("",_entities);
 
 {
     private _params = parseSimpleArray ((_x get3DENAttribute QGVAR(params)) select 0);
