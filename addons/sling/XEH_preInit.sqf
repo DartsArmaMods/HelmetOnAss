@@ -36,3 +36,7 @@ if (isServer) then {
 
 ["CBA_loadoutGet", LINKFUNC(loadoutGet)] call CBA_fnc_addEventHandler;
 ["CBA_loadoutSet", LINKFUNC(loadoutSet)] call CBA_fnc_addEventHandler;
+
+if (is3DEN) then {
+    ["ace_arsenal_displayClosed", LINKFUNC(onArsenalClosed)] call CBA_fnc_addEventHandler;
+};

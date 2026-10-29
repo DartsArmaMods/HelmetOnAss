@@ -22,7 +22,7 @@ private _slungItems = GET_SLUNG_ITEMS(_unit);
 if !(local _unit && alive _unit &&
     isNull objectParent _unit &&
     _slungItems isNotEqualTo []
-) exitWith {};
+) exitWith { [] };
 
 // Always delete the existing ones before re-creating them
 deleteVehicle GET_SLUNG_HOLDERS(_unit);

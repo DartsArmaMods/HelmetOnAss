@@ -32,7 +32,6 @@ class Extended_GetOutMan_EventHandlers {
     };
 };
 
-
 class Extended_Killed_EventHandlers {
     class CAManBase {
         class ADDON {

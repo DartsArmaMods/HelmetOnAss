@@ -17,6 +17,7 @@ PREP(handleRespawn);
 PREP(hideSlungItems);
 PREP(loadoutGet);
 PREP(loadoutSet);
+PREP(onArsenalClosed);
 PREP(repositionSlungHolders);
 PREP(resetVariables);
 PREP(slingItems);
