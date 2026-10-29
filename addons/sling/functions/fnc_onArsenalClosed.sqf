@@ -33,7 +33,7 @@ private _slungItems = GET_SLUNG_ITEMS(ace_arsenal_center);
 
 {
     private _edenEntity = _x;
-    deleteVehicle GET_SLUNG_HOLDERS_3DEN(_edenEntity);
+    deleteVehicle GET_SLUNG_HOLDERS(_edenEntity);
 
     _edenEntity setVariable [VAR_SLUNG_ITEMS, _slungItems];
     _edenEntity call FUNC(createSlungHolders);
@@ -50,22 +50,4 @@ private _slungItems = GET_SLUNG_ITEMS(ace_arsenal_center);
             _x setVectorDirAndUp _vectorDirAndUp;
         } forEach GET_SLUNG_HOLDERS(_this);
     };
-
-    // Move groundholders when Eden entity is moved
-    if (_edenEntity getVariable [QGVAR(eden_hasEventHandlers), false]) exitWith {};
-    _edenEntity setVariable [QGVAR(eden_hasEventHandlers), true];
-    _edenEntity addEventHandler ["Dragged3DEN", {
-        params ["_edenEntity"];
-        private _params = parseSimpleArray ((_edenEntity get3DENAttribute QGVAR(params)) select 0);
-        private _slingParams = (_params param [1, GVAR(slungItemsPosition)]);
-        _slingParams params ["_bone", "_attachPos", "_vectorDirAndUp"];
-        {
-            _x attachTo [_edenEntity, _attachPos, _bone, true];
-            _x setVectorDirAndUp _vectorDirAndUp;
-        } forEach GET_SLUNG_HOLDERS(_edenEntity);
-    }];
-    _edenEntity addEventHandler ["UnregisteredFromWorld3DEN", {
-        params ["_edenEntity"];
-        deleteVehicle GET_SLUNG_HOLDERS(_edenEntity);
-    }];
 } forEach _edenEntities;

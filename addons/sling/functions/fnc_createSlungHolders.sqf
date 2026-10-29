@@ -62,6 +62,10 @@ if (_unit getVariable [VAR_HIDE_SLUNG_HOLDERS, false]) then {
     _unit setVariable [VAR_HIDE_SLUNG_HOLDERS, count _groundHolders == count _groundholdersToHide];
 };
 
+if (is3DEN) then {
+    _unit call FUNC(3DEN_addEventHandlers);
+};
+
 [QGVAR(createdSlungHolders), [_unit, _groundholders, _slingParams]] call CBA_fnc_localEvent;
 
 _groundholders;
