@@ -11,9 +11,11 @@ class Cfg3DEN {
                         property = QGVAR(params);
                         control = "Edit";
                         defaultValue = "'[[],[]]'";
+                        // GET_SLUNG_HOLDERS here is expanded since the variable needs to be quoted again
                         #pragma hemtt suppress pw3_padded_arg line
                         expression = QUOTE( \
                             if (is3DEN) exitWith {}; \
+                            deleteVehicle (_this getVariable [ARR_2(QUOTE(VAR_SLUNG_HOLDERS),[])]); \
                             _value = parseSimpleArray _value; \
                             _value params [ARR_2('_items','_slingParams')]; \
                             _this setVariable [ARR_3(QUOTE(VAR_SLUNG_ITEMS),_items,true)]; \
