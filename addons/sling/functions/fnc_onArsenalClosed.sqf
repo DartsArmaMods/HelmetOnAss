@@ -4,7 +4,7 @@
  * Handles the ACE Arsenal being closed.
  *
  * Arguments:
- * None
+ * 0: Exit code <NUMBER>
  *
  * Return Value:
  * None
