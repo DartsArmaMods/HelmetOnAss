@@ -1,4 +1,5 @@
 PREP(3DEN_addEventHandlers);
+PREP(3DEN_createSlungHolders);
 PREP(addItems);
 PREP(addSlingOption);
 PREP(buttonSling);
