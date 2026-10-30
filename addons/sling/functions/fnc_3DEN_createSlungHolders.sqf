@@ -23,7 +23,7 @@ if (_entities isEqualType objNull) then {
 };
 
 {
-    private _params = parseSimpleArray ((_x get3DENAttribute QGVAR(params)) select 0);
+    private _params = (_x get3DENAttribute QGVAR(params)) select 0;
     _params params ["_slungItems", "_slingParams"];
 
     if (_slungItems isEqualTo []) then { continue };

@@ -31,5 +31,5 @@ private _slungItems = GET_SLUNG_ITEMS(ace_arsenal_center);
 
 {
     // Setting this runs the expression to create the groundholders
-    _x set3DENAttribute [QGVAR(params), str [_slungItems, GVAR(slungItemsPosition)]];
+    _x set3DENAttribute [QGVAR(params), [+_slungItems, +GVAR(slungItemsPosition)]];
 } forEach _edenEntities;

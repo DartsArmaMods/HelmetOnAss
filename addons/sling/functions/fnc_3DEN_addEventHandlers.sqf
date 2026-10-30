@@ -23,7 +23,7 @@ _entity setVariable [QGVAR(eden_hasEventHandlers), true];
 
 _entity addEventHandler ["Dragged3DEN", {
     params ["_entity"];
-    private _params = parseSimpleArray ((_entity get3DENAttribute QGVAR(params)) select 0);
+    private _params = (_entity get3DENAttribute QGVAR(params)) select 0;
     private _slingParams = (_params param [1, GVAR(slungItemsPosition)]);
     [_entity, _slingParams] call FUNC(repositionSlungHolders);
 }];
