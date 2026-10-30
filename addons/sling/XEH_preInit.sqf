@@ -41,10 +41,13 @@ if (is3DEN) then {
     ["ace_arsenal_displayClosed", LINKFUNC(onArsenalClosed)] call CBA_fnc_addEventHandler;
 
     add3DENEventHandler ["OnPaste", {
-        (get3DENSelected "object") call FUNC(3DEN_createSlungHolders);
+        [get3DENSelected "object"] call FUNC(3DEN_createSlungHolders);
     }];
     add3DENEventHandler ["OnMissionLoad", {
-        (all3DENEntities select 0) call FUNC(3DEN_createSlungHolders);
+        [] spawn {
+            sleep 1;
+            [all3DENEntities select 0] call FUNC(3DEN_createSlungHolders);
+        };
     }];
 
     // This is still needed with the Dragged3DEN event, this covers undo's and redo's
@@ -57,7 +60,7 @@ if (is3DEN) then {
     // This has to be scheduled with a delay to have access to Eden entities
     add3DENEventHandler ["OnMissionPreviewEnd", {
         [] spawn {
-            sleep 0.5;
+            sleep 1;
             [all3DENEntities select 0] call FUNC(3DEN_createSlungHolders);
         };
     }];
