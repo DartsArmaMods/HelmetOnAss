@@ -10,7 +10,7 @@
  * None
  *
  * Example:
- * [] call hoa_sling_fnc_onArsenalClosed
+ * 1 call hoa_sling_fnc_onArsenalClosed
  *
  * Public: No
  */
