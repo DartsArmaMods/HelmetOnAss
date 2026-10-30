@@ -1,5 +1,8 @@
+PREP(3DEN_addEventHandlers);
+PREP(3DEN_createSlungHolders);
 PREP(addItems);
 PREP(addSlingOption);
+PREP(buttonSling);
 PREP(canHideSlungItems);
 PREP(canSlingItems);
 PREP(canSwapSlungItems);
@@ -16,6 +19,7 @@ PREP(handleRespawn);
 PREP(hideSlungItems);
 PREP(loadoutGet);
 PREP(loadoutSet);
+PREP(onArsenalClosed);
 PREP(repositionSlungHolders);
 PREP(resetVariables);
 PREP(slingItems);
