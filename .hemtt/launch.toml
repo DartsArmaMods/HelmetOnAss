@@ -1,15 +1,27 @@
-[default]
+[base]
 workshop = [
     "450814997",  # CBA_A3
+    # "463939057",  # ACE
     "3499977893", # Advanced Dev Tools
     "623475643",  # 3DEN Enhanced
     "1779063631", # Zeus Enhanced
-    "463939057",  # ACE
 ]
 presets = []
 dlc = []
 optionals = []
 parameters = []
+
+[default]
+extends = "base"
+workshop = [
+    "463939057",  # ACE
+]
+
+[ace_local]
+extends = "base"
+parameters = [
+    '-mod="E:\GitHub\ACE3\.hemttout\build"'
+]
 
 [photo]
 extends = "default"

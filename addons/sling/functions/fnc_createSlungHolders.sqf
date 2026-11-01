@@ -22,7 +22,7 @@ private _slungItems = GET_SLUNG_ITEMS(_unit);
 if !(local _unit && alive _unit &&
     isNull objectParent _unit &&
     _slungItems isNotEqualTo []
-) exitWith {};
+) exitWith { [] };
 
 // Always delete the existing ones before re-creating them
 deleteVehicle GET_SLUNG_HOLDERS(_unit);
@@ -60,6 +60,10 @@ if (_unit getVariable [VAR_HIDE_SLUNG_HOLDERS, false]) then {
 
     // If every item is hidden, set the variable to true
     _unit setVariable [VAR_HIDE_SLUNG_HOLDERS, count _groundHolders == count _groundholdersToHide];
+};
+
+if (is3DEN) then {
+    _unit call FUNC(3DEN_addEventHandlers);
 };
 
 [QGVAR(createdSlungHolders), [_unit, _groundholders, _slingParams]] call CBA_fnc_localEvent;
