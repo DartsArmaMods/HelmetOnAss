@@ -27,6 +27,7 @@ The project is entirely **open-source** and any contributions are welcome.
 ## Core Features
 - Ability to sling your worn helmet, nvgs, and/or facewear to a customizable position.
 - Ability to throw your (worn or slung) helmet as a ~~last resort~~ tactical option.
+  - Enable the CBA setting to get the grenade, then you can vanilla or ACE throw it
 - ACE Arsenal action to sling / swap your helmet.
 - Ability to save / load slung items to loadouts.
 
