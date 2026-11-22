@@ -11,7 +11,7 @@
  *    2: Helmet and nvg
  *    3: Helmet and facewear
  * 2: Remove current items (optional, default: true) <BOOL>
- * 3: Sling params (optioanl, default: CBA Setting) <ARRAY>
+ * 3: Sling params (optional, default: CBA Setting) <ARRAY>
  *    - See fnc_addSlingOption
  *
  * Return Value:
@@ -31,7 +31,9 @@ params [
 ];
 TRACE_4("fnc_slingItems",_unit,_mode,_removeCurrentItems,_slingParams);
 
-if !(local _unit && { _unit call FUNC(canSlingItems) }) exitWith {};
+if !(_unit call FUNC(canSlingItems)) exitWith {};
+
+if (!local _unit) exitWith { [QGVAR(slingItems), _this, _unit] call CBA_fnc_targetEvent };
 
 private _items = switch (_mode) do {
     case SLING_MODE_HELMET: { [headgear _unit] };

@@ -34,6 +34,9 @@ if (isServer) then {
     }] call CBA_fnc_addEventHandler;
 };
 
+[GVAR(slingItems), LINKFUNC(slingItems)] call CBA_fnc_addEventHandler;
+[GVAR(unslingItems), LINKFUNC(unslingItems)] call CBA_fnc_addEventHandler;
+[GVAR(swapSlungItems), LINKFUNC(swapSlungItems)] call CBA_fnc_addEventHandler;
 ["CBA_loadoutGet", LINKFUNC(loadoutGet)] call CBA_fnc_addEventHandler;
 ["CBA_loadoutSet", LINKFUNC(loadoutSet)] call CBA_fnc_addEventHandler;
 

@@ -15,12 +15,12 @@
  * Public: No
  */
 
-params [
-    ["_unit", objNull, [objNull]]
-];
+params [["_unit", objNull, [objNull]]];
 TRACE_1("fnc_unslingItems",_unit);
 
-if !(local _unit && { (_unit call FUNC(canUnslingItems)) }) exitWith {};
+if !(_unit call FUNC(canUnslingItems)) exitWith {};
+
+if !(local _unit) exitWith { [QGVAR(unslingItems), _this, _unit] call CBA_fnc_targetEvent };
 
 [_unit, GET_SLUNG_ITEMS(_unit)] call FUNC(addItems);
 deleteVehicle (GET_SLUNG_HOLDERS(_unit));

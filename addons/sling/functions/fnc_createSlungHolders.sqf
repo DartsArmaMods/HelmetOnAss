@@ -48,24 +48,32 @@ private _positionASL = getPosASL _unit;
 _unit setVariable [VAR_SLUNG_HOLDERS, _groundholders, true];
 [_unit, _slingParams] call FUNC(repositionSlungHolders);
 
-// If player sets it to hide the slung items, always hide everything
-if (_unit getVariable [VAR_HIDE_SLUNG_HOLDERS, false]) then {
-    [QGVAR(hideObjects), [_groundholders, true]] call CBA_fnc_serverEvent;
-} else {
-    // Otherwise, hide items that are configured to hide on sling
-    private _groundholdersToHide = _groundHolders select {
-        (getItemCargo _x select 0 select 0) call FUNC(getSlingParams) select 1
+private _groundholdersToHide = switch (true) do {
+    case GVAR(trackHiddenItems): {
+        // Hide items based on user data
+        private _trackedItems = profileNamespace getVariable [QGVAR(trackedHiddenItems), createHashMap];
+        [[], _groundholders] select (_trackedItems getOrDefault [_slungItems param [0, ""], false]);
     };
-    [QGVAR(hideObjects), [_groundholdersToHide, true]] call CBA_fnc_serverEvent;
-
-    // If every item is hidden, set the variable to true
-    _unit setVariable [VAR_HIDE_SLUNG_HOLDERS, count _groundHolders == count _groundholdersToHide];
+    case (_unit getVariable [VAR_HIDE_SLUNG_HOLDERS, false]): {
+        // If player sets it to hide the slung items (and setting is disabled), always hide everything
+        _groundholders;
+    };
+    default {
+        // Hide items that are configured to hide on sling
+        _groundHolders select {
+            (_slungItems select 0) call FUNC(getSlingParams) select 1
+        };
+    }
 };
+
+// If every item is hidden, set the variable to true
+_unit setVariable [VAR_HIDE_SLUNG_HOLDERS, count _groundHolders == count _groundholdersToHide];
+
+[QGVAR(hideObjects), [_groundholdersToHide, true]] call CBA_fnc_serverEvent;
+[QGVAR(createdSlungHolders), [_unit, _groundholders, _slingParams]] call CBA_fnc_localEvent;
 
 if (is3DEN) then {
     _unit call FUNC(3DEN_addEventHandlers);
 };
-
-[QGVAR(createdSlungHolders), [_unit, _groundholders, _slingParams]] call CBA_fnc_localEvent;
 
 _groundholders;

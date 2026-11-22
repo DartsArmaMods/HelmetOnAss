@@ -17,3 +17,9 @@
         [ace_player, _this] call FUNC(repositionSlungHolders);
     }
 ] call CBA_fnc_addSetting;
+
+[
+    QGVAR(trackHiddenItems), "CHECKBOX",
+    [LSTRING(trackHiddenItems_name), LSTRING(trackHiddenItems_tooltip)],
+    _category, false
+] call CBA_fnc_addSetting;

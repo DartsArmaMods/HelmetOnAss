@@ -7,10 +7,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [2.1.0]
 
+### Added
+
+- Add ability to track specific helmets and re-hide them automatically from [@DartRuffian]
+- Add ability for AI to unsling helmets in combat from [@DartRuffian]
+
 ### Changed
+
 - Made "Sling Items" arsenal action work in Eden from [@DartRuffian]
 
-## [2.0.0]
+## [2.0.0] - 2026-10-26
 
 ### Added
 
@@ -25,6 +31,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Add "disguise" sling position, places the slung helmet roughly on top of your other helmet from [@DartRuffian]
 
 ### Changed
+
 - Delete ground holders when empty from [@DartRuffian]
 - Fix sometimes accidentally removing items from [@DartRuffian]
 - Move vehicle getIn/getOut code to client from [@DartRuffian]
@@ -32,6 +39,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Drop slung items on ground when a unit is killed from [@DartRuffian]
 
 ### Removed
+
 - Remove allowed sling modes and can hide items settings from [@DartRuffian]
 - Remove `_items` parameter from `fnc_slingItems` from [@DartRuffian]
 
