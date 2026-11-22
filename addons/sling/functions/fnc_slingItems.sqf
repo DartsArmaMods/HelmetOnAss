@@ -11,7 +11,7 @@
  *    2: Helmet and nvg
  *    3: Helmet and facewear
  * 2: Remove current items (optional, default: true) <BOOL>
- * 3: Sling params (optioanl, default: CBA Setting) <ARRAY>
+ * 3: Sling params (optional, default: CBA Setting) <ARRAY>
  *    - See fnc_addSlingOption
  *
  * Return Value:
