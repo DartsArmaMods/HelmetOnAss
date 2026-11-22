@@ -31,7 +31,9 @@ params [
 ];
 TRACE_4("fnc_slingItems",_unit,_mode,_removeCurrentItems,_slingParams);
 
-if !(local _unit && { _unit call FUNC(canSlingItems) }) exitWith {};
+if !(_unit call FUNC(canSlingItems)) exitWith {};
+
+if (!local _unit) exitWith { [QGVAR(slingItems), _this, _unit] call CBA_fnc_targetEvent };
 
 private _items = switch (_mode) do {
     case SLING_MODE_HELMET: { [headgear _unit] };

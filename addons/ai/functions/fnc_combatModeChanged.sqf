@@ -23,15 +23,18 @@ private _units = (units _group) select {
     !(_x call ace_common_fnc_isPlayer) && { _x call ace_common_fnc_isAwake }
 };
 
+private _unitsToSling = [];
+
 // Exit combat, re-sling items
 if (_newMode != "COMBAT") exitWith {
     TRACE_CHAT_0("Exit combat");
     {
         if (_x getVariable [QGVAR(slungInCombat), false]) then {
             _x setVariable [QGVAR(slungInCombat), nil, true];
-            _x call EFUNC(sling,swapSlungItems);
+            _unitsToSling pushBackUnique _x;
         };
     } forEach _units;
+    [QGVAR(swapSlungItemsAI), [_unitsToSling], _unitsToSling] call CBA_fnc_targetEvent;
 };
 
 private _fnc_getArmor = {
@@ -58,6 +61,8 @@ TRACE_CHAT_1("Enter combat",_units);
 
     if (_slungArmor > _currentArmor) then {
         _x setVariable [QGVAR(slungInCombat), true, true];
-        _x call EFUNC(sling,swapSlungItems);
+        _unitsToSling pushBackUnique _x;
     };
 } forEach _units;
+
+[QGVAR(swapSlungItemsAI), [_unitsToSling], _unitsToSling] call CBA_fnc_targetEvent;
