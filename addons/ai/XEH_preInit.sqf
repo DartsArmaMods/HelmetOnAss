@@ -10,12 +10,13 @@ private _category = [QUOTE(MOD_NAME), LLSTRING(displayName)];
 
 GVAR(armorCache) = createHashMap;
 
-// Bulks networking calls for multiple units
+// Mainly to bulks networking calls for multiple units
 [QGVAR(swapSlungItemsAI), {
     params ["_units"];
     TRACE_CHAT_1("",_units);
 
     {
+        _x playAction "Gear";
         _x call EFUNC(sling,swapSlungItems);
     } forEach (_units select { local _x });
 }] call CBA_fnc_addEventHandler;
