@@ -18,6 +18,8 @@
 params [["_unit", objNull, [objNull]]];
 TRACE_1("fnc_swapSlungItems",_unit);
 
+if (!local _unit) exitWith { [QGVAR(swapSlungItems), _this, _unit] call CBA_fnc_targetEvent };
+
 private _slungItems = GET_SLUNG_ITEMS(_unit);
 _unit setVariable [VAR_SLUNG_ITEMS, nil];
 deleteVehicle GET_SLUNG_HOLDERS(_unit);
