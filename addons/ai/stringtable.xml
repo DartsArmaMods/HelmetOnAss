@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project name="HelmetOnAss">
+    <Package name="AI">
+        <Key ID="STR_hoa_ai_displayName">
+            <English>AI</English>
+        </Key>
+        <Key ID="STR_hoa_ai_unslingInCombat_name">
+            <English>Unsling in Combat</English>
+        </Key>
+        <Key ID="STR_hoa_ai_unslingInCombat_tooltip">
+            <English>If enabled, AI will equip their slung helmet if it offers better protection (total armor) than their equipped helmet.</English>
+        </Key>
+    </Package>
+</Project>
