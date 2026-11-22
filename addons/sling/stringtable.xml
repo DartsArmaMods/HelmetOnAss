@@ -82,6 +82,12 @@
         <Key ID="STR_hoa_sling_swapSlungItems_tooltip">
             <English>Swaps your equipped helmet with your slung helmet.</English>
         </Key>
+        <Key ID="STR_hoa_sling_trackHiddenItems_name">
+            <English>Track Hidden Items</English>
+        </Key>
+        <Key ID="STR_hoa_sling_trackHiddenItems_tooltip">
+            <English>If enabled, the mod will track what helmets you hide while slung, and will automatically re-hide items when slinging that helmet.</English>
+        </Key>
         <Key ID="STR_hoa_sling_unavailableItems">
             <English>Some items are not available in arsenal: %1</English>
         </Key>

@@ -19,10 +19,23 @@
 params ["_unit", ["_set", true]];
 TRACE_2("fnc_hideSlungItems",_unit,_set);
 
-private _slungItems = GET_SLUNG_HOLDERS(_unit);
+private _slungHolders = GET_SLUNG_HOLDERS(_unit);
 
-if (_slungItems isNotEqualTo []) then {
-    [QGVAR(hideObjects), [_slungItems, _set]] call CBA_fnc_serverEvent;
+if (_slungHolders isNotEqualTo []) then {
+    [QGVAR(hideObjects), [_slungHolders, _set]] call CBA_fnc_serverEvent;
 };
 
 _unit setVariable [VAR_HIDE_SLUNG_HOLDERS, _set];
+
+if (GVAR(trackHiddenItems)) then {
+    private _headgear = GET_SLUNG_ITEMS(_unit) param [0, ""];
+
+    // Only track positives to not save too much data
+    private _trackedItems = profileNamespace getVariable [QGVAR(trackedHiddenItems), createHashMap];
+    if (_set) then {
+        _trackedItems set [_headgear, true];
+    } else {
+        _trackedItems deleteAt _headgear;
+    };
+    profileNamespace setVariable [QGVAR(trackedHiddenItems), _trackedItems];
+};

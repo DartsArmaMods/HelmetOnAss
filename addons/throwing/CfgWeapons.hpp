@@ -11,6 +11,7 @@ class CfgWeapons {
             // Makes it so that the first grenade is kept loaded in the muzzle
             // This means it won't be saved in the inventory, and needs to be added manually
             keepInInventory = 0;
+            magazineReloadTime = 0.5;
         };
     };
 };

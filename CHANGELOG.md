@@ -8,7 +8,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [2.1.0]
 
 ### Added
-- Ability for AI to unsling helmets in combat from [@DartRuffian]
+
+- Add ability to track specific helmets and re-hide them automatically from [@DartRuffian]
+- Add ability for AI to unsling helmets in combat from [@DartRuffian]
 
 ## [2.0.0]
 
