@@ -52,8 +52,7 @@ private _groundholdersToHide = switch (true) do {
     case GVAR(trackHiddenItems): {
         // Hide items based on user data
         private _trackedItems = profileNamespace getVariable [QGVAR(trackedHiddenItems), createHashMap];
-        private _hide = _trackedItems getOrDefault [_slungItems param [0, ""], false];
-        [[], _groundholders] select _hide;
+        [[], _groundholders] select (_trackedItems getOrDefault [_slungItems param [0, ""], false]);
     };
     case (_unit getVariable [VAR_HIDE_SLUNG_HOLDERS, false]): {
         // If player sets it to hide the slung items (and setting is disabled), always hide everything
