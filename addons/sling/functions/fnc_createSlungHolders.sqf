@@ -63,7 +63,7 @@ private _groundholdersToHide = switch (true) do {
         _groundHolders select {
             (_slungItems select 0) call FUNC(getSlingParams) select 1
         };
-    }
+    };
 };
 
 // If every item is hidden, set the variable to true
