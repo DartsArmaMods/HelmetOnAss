@@ -49,7 +49,7 @@ _unit setVariable [VAR_SLUNG_HOLDERS, _groundholders, true];
 [_unit, _slingParams] call FUNC(repositionSlungHolders);
 
 private _groundholdersToHide = switch (true) do {
-    case GVAR(trackHiddenItems): {
+    case (_unit == ace_player && GVAR(trackHiddenItems)): {
         // Hide items based on user data
         private _trackedItems = profileNamespace getVariable [QGVAR(trackedHiddenItems), createHashMap];
         [[], _groundholders] select (_trackedItems getOrDefault [_slungItems param [0, ""], false]);

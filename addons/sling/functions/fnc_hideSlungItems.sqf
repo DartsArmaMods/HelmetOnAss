@@ -27,7 +27,7 @@ if (_slungHolders isNotEqualTo []) then {
 
 _unit setVariable [VAR_HIDE_SLUNG_HOLDERS, _set];
 
-if (GVAR(trackHiddenItems)) then {
+if (_unit == ace_player && GVAR(trackHiddenItems)) then {
     private _headgear = GET_SLUNG_ITEMS(_unit) param [0, ""];
 
     // Only track positives to not save too much data
