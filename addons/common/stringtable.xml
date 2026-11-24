@@ -1,4 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project name="HelmetOnAss">
-    <Package name="common"></Package>
+    <Package name="common">
+        <!-- From https://github.com/acemod/ACE3/blob/e8705ef1f2de5bf9c26222aa2b33548891e7589b/addons/common/stringtable.xml#L1183-L1200 -->
+        <Key ID="STR_hoa_common_options">
+            <English>HOA Options</English>
+            <Czech>HOA Nastavení</Czech>
+            <French>Options HOA</French>
+            <Spanish>Opciones HOA</Spanish>
+            <Italian>Opzioni HOA</Italian>
+            <Polish>Ustawienia HOA</Polish>
+            <Portuguese>Opções do HOA</Portuguese>
+            <Russian>HOA Настройки</Russian>
+            <German>HOA-Optionen</German>
+            <Korean>HOA 옵션</Korean>
+            <Japanese>HOA オプション</Japanese>
+            <Chinese>HOA設定選項</Chinese>
+            <Chinesesimp>HOA 设定选项</Chinesesimp>
+            <Turkish>HOA Ayarları</Turkish>
+            <Hungarian>HOA Beállítások</Hungarian>
+            <Ukrainian>HOA Налаштування</Ukrainian>
+        </Key>
+    </Package>
 </Project>
