@@ -1,3 +1,4 @@
+"hoa_ai",
 "hoa_common",
 "hoa_compat",
 "hoa_main",
